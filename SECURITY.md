@@ -65,4 +65,4 @@ Do not open a public issue for a suspected vulnerability. Follow the private rep
 - The bundled limiter is not distributed.
 - Browser-rendered audit history is demonstration evidence, not a signed system of record.
 - Security headers require the provided host configuration; the Vite development server is not production hardening.
-- No public deployment URL or credential is available in the current workspace, so hosted response-header verification remains explicitly unverified.
+- Production header evidence is generated from https://resolve-90.vercel.app; authentication, distributed limiting, and signed audit storage remain production limitations.

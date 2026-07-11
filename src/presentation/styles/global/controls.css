@@ -1,0 +1,96 @@
+@layer components {
+  .ui-card {
+    min-width: 0;
+  }
+
+  .button {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    padding: 0.8rem 1.05rem;
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-weight: 800;
+    text-decoration: none;
+    transition:
+      background-color 160ms ease,
+      border-color 160ms ease,
+      transform 160ms ease;
+  }
+
+  .button:hover:not(:disabled) {
+    transform: translateY(-2px);
+  }
+
+  .button .icon {
+    transition: transform 160ms ease;
+  }
+
+  .button:hover:not(:disabled) .icon {
+    transform: translateX(2px);
+  }
+
+  .button.is-processing .icon {
+    animation: processing-spin 1s linear infinite;
+  }
+
+  .button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+
+  .button--primary {
+    background: var(--accent);
+    color: #152221;
+  }
+
+  .button--primary:hover:not(:disabled) {
+    background: #ffab89;
+    color: #152221;
+  }
+
+  .button--secondary {
+    border-color: var(--line);
+    background: var(--surface-2);
+    color: var(--ink);
+  }
+
+  .button--quiet {
+    min-height: 40px;
+    padding: 0.55rem 0.75rem;
+    border-color: var(--line);
+    background: transparent;
+    color: var(--muted-strong);
+  }
+
+  .icon {
+    flex: none;
+  }
+
+  .status-pill--pass {
+    border-color: rgb(115 228 185 / 35%);
+    background: rgb(115 228 185 / 8%);
+    color: var(--mint);
+  }
+
+  .status-pill--warn {
+    border-color: rgb(255 210 122 / 35%);
+    background: rgb(255 210 122 / 8%);
+    color: var(--amber);
+  }
+
+  .status-pill--fail {
+    border-color: rgb(255 149 153 / 35%);
+    background: rgb(255 149 153 / 8%);
+    color: var(--red);
+  }
+
+  .card {
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+  }
+}

@@ -2,6 +2,7 @@ import { useState, type SyntheticEvent } from "react";
 
 import type { CompiledDecision } from "../../domain/entities/decision";
 import { Icon } from "../../shared/components/Icon";
+import { Button } from "../../shared/components/ui/Button";
 
 interface ApprovalPanelProps {
   readonly decision: CompiledDecision;
@@ -100,16 +101,17 @@ export function ApprovalPanel({
             </span>
           </label>
         </fieldset>
-        <button
-          className="button button--primary approval-button"
+        <Button
+          className="approval-button"
           type="submit"
+          busy={submitting}
           disabled={submitting}
         >
           <Icon name="shield" />
           {submitting
             ? "Writing audit receipt…"
             : "Approve plan and unlock relay"}
-        </button>
+        </Button>
         <p className="approval-form__note">
           No gate, route, security, medical, or evacuation control is automated.
         </p>

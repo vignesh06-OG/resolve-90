@@ -1,0 +1,60 @@
+@layer pages {
+  @keyframes signal-arrive {
+    from {
+      opacity: 0;
+      transform: translateX(8px);
+    }
+  }
+
+  @keyframes critical-signal {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgb(216 88 72 / 0%);
+    }
+    50% {
+      box-shadow: 0 0 0 4px rgb(216 88 72 / 12%);
+    }
+  }
+
+  @keyframes checkpoint-confirm {
+    from {
+      transform: scale(0.82);
+    }
+  }
+
+  @keyframes connector-confirm {
+    from {
+      transform: scaleX(0);
+    }
+  }
+
+  @keyframes confidence-resolve {
+    from {
+      transform: scaleX(0);
+    }
+  }
+
+  @keyframes current-stage {
+    0%,
+    100% {
+      box-shadow: 0 0 0 5px rgb(255 147 104 / 8%);
+    }
+    50% {
+      box-shadow: 0 0 0 8px rgb(255 147 104 / 3%);
+    }
+  }
+
+  @keyframes packet-arrive {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.995);
+    }
+  }
+
+  @keyframes relay-confirmed {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+}

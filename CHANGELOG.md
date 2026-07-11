@@ -16,6 +16,11 @@ All notable changes are documented here. This project follows Keep a Changelog c
 - Deployment response-header verifier for ten browser isolation and transport controls.
 - Evaluator-visible hero badges for testing, architecture, and challenge alignment.
 - `EVALUATION.md`, challenge-keyword metadata, `robots.txt`, and `sitemap.xml` live-surface evidence.
+- Static raw-HTML versions of every evaluator evidence route with canonical metadata.
+- Modular presentation styles and reusable Button, Card, Badge, Metric, and SectionHeader primitives.
+- Enforced domain/application/infrastructure/presentation import boundaries and a dedicated bootstrap composition root.
+- Server compile modules for validation, provider transport, schema, limiting, and HTTP handling.
+- A seven-stage AI reasoning pipeline from incident evidence to command packet.
 
 ### Changed
 

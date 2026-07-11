@@ -4,6 +4,7 @@ import type {
   GuardrailCheck,
 } from "../../domain/entities/decision";
 import { Icon } from "../../shared/components/Icon";
+import { Badge } from "../../shared/components/ui/Badge";
 
 function ValidationRow({
   check,
@@ -20,9 +21,7 @@ function ValidationRow({
         <strong>{check.label}</strong>
         <small>{check.detail}</small>
       </span>
-      <span className={`status-pill status-pill--${check.status}`}>
-        {check.status}
-      </span>
+      <Badge tone={check.status}>{check.status}</Badge>
     </li>
   );
 }

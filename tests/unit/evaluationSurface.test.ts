@@ -125,6 +125,10 @@ describe("evaluation-visible production surface", () => {
     }
   });
 
+  it("disables public production source maps", () => {
+    expect(read("vite.config.ts")).toContain("sourcemap: false");
+  });
+
   it("keeps evaluator evidence linked directly from the hero", () => {
     const hero = read("src/presentation/components/IncidentBrief.tsx");
 

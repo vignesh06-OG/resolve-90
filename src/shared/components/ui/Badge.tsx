@@ -1,0 +1,21 @@
+import type { ReactNode } from "react";
+
+interface BadgeProps {
+  readonly tone: "fail" | "pass" | "warn";
+  readonly children: ReactNode;
+  readonly className?: string;
+}
+
+export function Badge({
+  tone,
+  children,
+  className = "",
+}: BadgeProps): React.JSX.Element {
+  return (
+    <span
+      className={`status-pill status-pill--${tone}${className ? ` ${className}` : ""}`}
+    >
+      {children}
+    </span>
+  );
+}

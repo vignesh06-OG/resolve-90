@@ -91,12 +91,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 685,
+                  "duration": 696,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-11T11:48:10.458Z",
+                  "startTime": "2026-07-11T12:51:13.248Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -125,12 +125,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 577,
+                  "duration": 815,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-11T11:48:11.253Z",
+                  "startTime": "2026-07-11T12:51:14.070Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -140,7 +140,7 @@
           ],
           "id": "316e4272d13ffa8f4bb0-c40fb8652b4df16a43a6",
           "file": "critical-path.spec.ts",
-          "line": 39,
+          "line": 44,
           "column": 1
         },
         {
@@ -159,12 +159,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 414,
+                  "duration": 430,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-11T11:48:11.843Z",
+                  "startTime": "2026-07-11T12:51:14.906Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -174,7 +174,7 @@
           ],
           "id": "316e4272d13ffa8f4bb0-067ca8bb5772655a4b65",
           "file": "critical-path.spec.ts",
-          "line": 65,
+          "line": 70,
           "column": 1
         },
         {
@@ -193,12 +193,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 664,
+                  "duration": 671,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-11T11:48:12.269Z",
+                  "startTime": "2026-07-11T12:51:15.347Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -208,7 +208,7 @@
           ],
           "id": "316e4272d13ffa8f4bb0-af9691cef4ab54c589ce",
           "file": "critical-path.spec.ts",
-          "line": 83,
+          "line": 88,
           "column": 1
         },
         {
@@ -227,12 +227,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 22,
+                  "duration": 23,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-11T11:48:12.946Z",
+                  "startTime": "2026-07-11T12:51:16.032Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -242,7 +242,7 @@
           ],
           "id": "316e4272d13ffa8f4bb0-729a2c6233f2cfdb46cd",
           "file": "critical-path.spec.ts",
-          "line": 98,
+          "line": 103,
           "column": 1
         },
         {
@@ -261,12 +261,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 171,
+                  "duration": 173,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-11T11:48:12.979Z",
+                  "startTime": "2026-07-11T12:51:16.065Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -276,7 +276,7 @@
           ],
           "id": "316e4272d13ffa8f4bb0-435b4494ed754bfe5ac3",
           "file": "critical-path.spec.ts",
-          "line": 112,
+          "line": 117,
           "column": 1
         }
       ]
@@ -303,12 +303,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3,
+                  "duration": 4,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-11T11:48:13.250Z",
+                  "startTime": "2026-07-11T12:51:16.363Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -342,7 +342,7 @@
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-11T11:48:13.264Z",
+                  "startTime": "2026-07-11T12:51:16.378Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -376,7 +376,7 @@
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-11T11:48:13.277Z",
+                  "startTime": "2026-07-11T12:51:16.391Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -405,12 +405,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2,
+                  "duration": 4,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-11T11:48:13.286Z",
+                  "startTime": "2026-07-11T12:51:16.401Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -439,12 +439,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 6,
+                  "duration": 7,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-11T11:48:13.297Z",
+                  "startTime": "2026-07-11T12:51:16.415Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -462,8 +462,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-07-11T11:48:09.482Z",
-    "duration": 3877.2890000000007,
+    "startTime": "2026-07-11T12:51:11.953Z",
+    "duration": 4530.233,
     "expected": 11,
     "skipped": 0,
     "unexpected": 0,

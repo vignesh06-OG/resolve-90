@@ -4,7 +4,7 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
 const css = readFileSync(
-  resolve(process.cwd(), "src/presentation/styles/global.css"),
+  resolve(process.cwd(), "src/presentation/styles/global/foundation.css"),
   "utf8",
 );
 

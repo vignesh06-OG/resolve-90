@@ -3,6 +3,8 @@ import type {
   CompiledDecision,
 } from "../../domain/entities/decision";
 import { Icon, type IconName } from "../../shared/components/Icon";
+import { Card } from "../../shared/components/ui/Card";
+import { SectionHeader } from "../../shared/components/ui/SectionHeader";
 
 interface ImpactMetric {
   readonly label: string;
@@ -68,19 +70,15 @@ export function ImpactProof({ decision }: ImpactProofProps): React.JSX.Element {
 
   return (
     <section className="impact-proof" aria-labelledby="impact-title">
-      <div className="section-intro">
-        <div>
-          <p className="section-kicker">Modeled outcome evidence</p>
-          <h2 id="impact-title">One decision, six observable outcomes</h2>
-        </div>
-        <p>
-          Projections from synthetic replay inputs. Safety and accessibility
-          pass before carbon can influence ranking.
-        </p>
-      </div>
+      <SectionHeader
+        kicker="Modeled outcome evidence"
+        title="One decision, six observable outcomes"
+        titleId="impact-title"
+        summary="Projections from synthetic replay inputs. Safety and accessibility pass before carbon can influence ranking."
+      />
       <div className="impact-grid">
         {metrics.map(({ label, before, after, outcome, icon }) => (
-          <article className="impact-card" key={label}>
+          <Card className="impact-card" key={label}>
             <div className="impact-card__heading">
               <span className="impact-card__icon">
                 <Icon name={icon} />
@@ -99,7 +97,7 @@ export function ImpactProof({ decision }: ImpactProofProps): React.JSX.Element {
               </span>
             </div>
             <p>{outcome}</p>
-          </article>
+          </Card>
         ))}
       </div>
     </section>

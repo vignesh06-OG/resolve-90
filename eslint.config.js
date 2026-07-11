@@ -48,6 +48,87 @@ export default tseslint.config(
     },
   },
   {
+    files: ["src/domain/**/*.{ts,tsx}"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              group: [
+                "**/application/**",
+                "**/infrastructure/**",
+                "**/presentation/**",
+                "**/bootstrap/**",
+                "react",
+                "react-dom",
+              ],
+              message:
+                "Domain code must remain framework-independent and inward-only.",
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    files: ["src/application/**/*.{ts,tsx}"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              group: [
+                "**/infrastructure/**",
+                "**/presentation/**",
+                "**/bootstrap/**",
+                "react",
+                "react-dom",
+              ],
+              message:
+                "Application code may depend only on domain and shared contracts.",
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    files: ["src/infrastructure/**/*.{ts,tsx}"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              group: ["**/presentation/**", "**/bootstrap/**"],
+              message:
+                "Infrastructure adapters cannot depend on presentation or bootstrap code.",
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    files: ["src/presentation/**/*.{ts,tsx}"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              group: ["**/infrastructure/**"],
+              message:
+                "Presentation must use application contracts through the bootstrap composition root.",
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
     files: ["scripts/**/*.{js,mjs}", "eslint.config.js"],
     languageOptions: { globals: globals.node },
   },

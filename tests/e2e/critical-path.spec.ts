@@ -17,10 +17,15 @@ test("commander can compile, review, approve, and verify an audit receipt", asyn
       name: "What the model proposed. What code allowed.",
     }),
   ).toBeVisible();
+  const explainability = page.getByRole("region", {
+    name: "What the model proposed. What code allowed.",
+  });
   await expect(
-    page.getByText("Accessibility validation", { exact: true }),
+    explainability.getByText("Accessibility validation", { exact: true }),
   ).toBeVisible();
-  await expect(page.getByText("Safety validation")).toBeVisible();
+  await expect(
+    explainability.getByText("Safety validation", { exact: true }),
+  ).toBeVisible();
 
   await page.getByLabel(/Modeled impact reviewed/).check();
   await page.getByLabel(/Accessibility validation reviewed/).check();

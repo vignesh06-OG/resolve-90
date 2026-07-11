@@ -1,0 +1,58 @@
+{
+  "generatedAt": "2026-07-11T11:53:46.328Z",
+  "status": "pass",
+  "origin": "https://resolve-90.vercel.app/",
+  "httpStatus": 200,
+  "checks": {
+    "contentSecurityPolicy": {
+      "header": "content-security-policy",
+      "actual": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests",
+      "passed": true
+    },
+    "strictTransportSecurity": {
+      "header": "strict-transport-security",
+      "actual": "max-age=63072000; includeSubDomains; preload",
+      "passed": true
+    },
+    "permissionsPolicy": {
+      "header": "permissions-policy",
+      "actual": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+      "passed": true
+    },
+    "frameProtection": {
+      "header": "x-frame-options",
+      "actual": "DENY",
+      "passed": true
+    },
+    "contentTypeProtection": {
+      "header": "x-content-type-options",
+      "actual": "nosniff",
+      "passed": true
+    },
+    "crossOriginOpenerPolicy": {
+      "header": "cross-origin-opener-policy",
+      "actual": "same-origin",
+      "passed": true
+    },
+    "crossOriginResourcePolicy": {
+      "header": "cross-origin-resource-policy",
+      "actual": "same-origin",
+      "passed": true
+    },
+    "dnsPrefetchControl": {
+      "header": "x-dns-prefetch-control",
+      "actual": "off",
+      "passed": true
+    },
+    "permittedCrossDomainPolicies": {
+      "header": "x-permitted-cross-domain-policies",
+      "actual": "none",
+      "passed": true
+    },
+    "referrerPolicy": {
+      "header": "referrer-policy",
+      "actual": "no-referrer",
+      "passed": true
+    }
+  }
+}

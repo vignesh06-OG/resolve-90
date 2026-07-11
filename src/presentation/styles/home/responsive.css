@@ -1,0 +1,161 @@
+@media (max-width: 960px) {
+  .incident-hero,
+  .explainability-grid,
+  .approval-panel,
+  .relay-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .incident-hero {
+    min-height: auto;
+  }
+
+  .incident-hero h1 {
+    max-width: 12ch;
+  }
+
+  .incident-card {
+    max-width: 640px;
+    transform: none;
+  }
+
+  .operational-flow__heading {
+    grid-template-columns: 1fr;
+  }
+
+  .flow-track {
+    grid-template-columns: repeat(7, 140px);
+  }
+
+  .reasoning-card,
+  .role-relay {
+    border-right: 0;
+    border-bottom: 1px solid var(--paper-line);
+  }
+
+  .impact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .audit-receipt {
+    grid-template-columns: auto 1fr;
+  }
+
+  .audit-receipt dl {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 650px) {
+  .incident-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 3.5rem;
+  }
+
+  .incident-hero__actions .button {
+    width: 100%;
+  }
+
+  .hero-evidence {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-evidence a {
+    width: 100%;
+  }
+
+  .incident-card {
+    width: 100%;
+    padding: 1.2rem;
+  }
+
+  .incident-card::before {
+    display: none;
+  }
+
+  .incident-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .incident-stats div {
+    border: 0;
+  }
+
+  .incident-stats div:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .decision-placeholder {
+    grid-template-columns: 1fr;
+  }
+
+  .decision-placeholder__number {
+    font-size: 6rem;
+  }
+
+  .explainability-panel__header,
+  .validation-section__heading,
+  .rejected-section__heading,
+  .relay-panel__header {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .explainability-score {
+    justify-items: start;
+  }
+
+  .explainability-meta,
+  .constraint-list,
+  .rejected-grid,
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .validation-row {
+    grid-template-columns: auto 1fr;
+  }
+
+  .validation-row > .status-pill {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .generation-receipt {
+    grid-template-columns: auto 1fr;
+  }
+
+  .generation-receipt > span {
+    grid-column: 1 / -1;
+  }
+
+  .action-list > li {
+    grid-template-columns: 2.6rem 1fr;
+    gap: 0.65rem;
+  }
+
+  .action-list__sequence {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+
+  .action-list::before {
+    left: 1.3rem;
+  }
+
+  .role-relay li {
+    grid-template-columns: auto 1fr;
+  }
+
+  .role-relay .status-pill {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .audit-receipt dl {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+}

@@ -1,13 +1,13 @@
 import { useCallback, useMemo, useState } from "react";
 
+import { createUiRuntime } from "../../bootstrap/createUiRuntime";
 import type {
   ApprovalAcknowledgement,
   ApprovedDecision,
   CompiledDecision,
   GenerationMode,
 } from "../../domain/entities/decision";
-import { createApplicationServices } from "../../infrastructure/createApplicationServices";
-import { EAST_CONCOURSE_INCIDENT } from "../../infrastructure/repositories/replayScenario";
+import type { IncidentContext } from "../../domain/entities/incident";
 
 export type DecisionWorkflowState =
   | { readonly status: "idle" }
@@ -19,6 +19,7 @@ export type DecisionWorkflowState =
 export interface DecisionWorkflow {
   readonly state: DecisionWorkflowState;
   readonly mode: GenerationMode;
+  readonly incident: IncidentContext;
   readonly compile: () => Promise<void>;
   readonly approve: (
     acknowledgement: ApprovalAcknowledgement,
@@ -30,16 +31,16 @@ export function useDecisionWorkflow(): DecisionWorkflow {
   const mode: GenerationMode =
     import.meta.env.VITE_DECISION_API_MODE === "live" ? "live" : "replay";
   const apiUrl = import.meta.env.VITE_DECISION_API_URL ?? "/api/compile";
-  const services = useMemo(
-    () => createApplicationServices({ mode, apiUrl }),
+  const runtime = useMemo(
+    () => createUiRuntime({ mode, apiUrl }),
     [apiUrl, mode],
   );
   const [state, setState] = useState<DecisionWorkflowState>({ status: "idle" });
 
   const compile = useCallback(async (): Promise<void> => {
     setState({ status: "compiling" });
-    const result = await services.compileIncident.execute(
-      EAST_CONCOURSE_INCIDENT.id,
+    const result = await runtime.services.compileIncident.execute(
+      runtime.incident.id,
     );
 
     setState(
@@ -47,13 +48,13 @@ export function useDecisionWorkflow(): DecisionWorkflow {
         ? { status: "compiled", decision: result.value }
         : { status: "error", message: result.error.message },
     );
-  }, [services]);
+  }, [runtime]);
 
   const approve = useCallback(
     async (acknowledgement: ApprovalAcknowledgement): Promise<boolean> => {
       if (state.status !== "compiled") return false;
 
-      const result = await services.approveDecision.execute(
+      const result = await runtime.services.approveDecision.execute(
         state.decision,
         acknowledgement,
       );
@@ -64,12 +65,19 @@ export function useDecisionWorkflow(): DecisionWorkflow {
       );
       return result.ok;
     },
-    [services, state],
+    [runtime, state],
   );
 
   const reset = useCallback(() => {
     setState({ status: "idle" });
   }, []);
 
-  return { state, mode, compile, approve, reset };
+  return {
+    state,
+    mode,
+    incident: runtime.incident,
+    compile,
+    approve,
+    reset,
+  };
 }

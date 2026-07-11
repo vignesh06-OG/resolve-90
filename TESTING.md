@@ -21,7 +21,7 @@ Coverage is evidence, not the goal. The configured gate requires at least:
 - 75% branches;
 - 80% statements.
 
-The latest local report exceeds the evaluation target: **99.33% lines, 98.75% statements, 97.22% functions, and 97.74% branches**. It contains **67 Vitest checks across 15 files plus 11 Playwright checks**. Counts are regenerated into `public/quality/latest.json`; remote CI status is reported independently from local evidence.
+The latest local report exceeds the evaluation target: **99.48% lines, 99.03% statements, 97.60% functions, and 96.68% branches**. It contains **75 Vitest checks across 16 files plus 11 Playwright checks**. Counts are regenerated into `public/quality/latest.json`; remote CI status is reported independently from local evidence.
 
 Pure safety-critical domain services are expected to exceed the repository threshold. Presentation pages with static evidence content are excluded from percentage calculations but still receive route smoke and accessibility coverage.
 

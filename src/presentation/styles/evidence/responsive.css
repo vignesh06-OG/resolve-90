@@ -1,0 +1,53 @@
+@media (max-width: 1000px) {
+  .quality-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .architecture-layers {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .architecture-layer::after {
+    display: none;
+  }
+
+  .threat-grid,
+  .boundary-rules {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .page-heading .status-pill {
+    margin-left: 1.2rem;
+  }
+
+  .quality-grid,
+  .coverage-grid,
+  .architecture-layers,
+  .boundary-rules,
+  .audit-summary,
+  .audit-categories,
+  .threat-grid,
+  .alignment-summary,
+  .evidence-integrity {
+    grid-template-columns: 1fr;
+  }
+
+  .quality-card:first-child {
+    grid-column: auto;
+  }
+
+  .quality-pipeline {
+    grid-template-columns: repeat(7, 130px);
+  }
+
+  .test-pyramid__layer {
+    width: 100% !important;
+    grid-template-columns: auto 1fr;
+  }
+
+  .test-pyramid__layer code {
+    grid-column: 2;
+  }
+}

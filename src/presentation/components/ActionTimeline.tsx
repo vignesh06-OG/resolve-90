@@ -1,5 +1,6 @@
 import type { PlanAction } from "../../domain/entities/decision";
 import { Icon } from "../../shared/components/Icon";
+import { SectionHeader } from "../../shared/components/ui/SectionHeader";
 
 interface ActionTimelineProps {
   readonly actions: readonly PlanAction[];
@@ -10,16 +11,12 @@ export function ActionTimeline({
 }: ActionTimelineProps): React.JSX.Element {
   return (
     <section className="action-timeline" aria-labelledby="actions-title">
-      <div className="section-intro">
-        <div>
-          <p className="section-kicker">Executable response packet</p>
-          <h2 id="actions-title">Six owners. Seventy seconds. One sequence.</h2>
-        </div>
-        <p>
-          Every action includes a place, deadline, evidence, and a safe
-          fallback.
-        </p>
-      </div>
+      <SectionHeader
+        kicker="Executable response packet"
+        title="Six owners. Seventy seconds. One sequence."
+        titleId="actions-title"
+        summary="Every action includes a place, deadline, evidence, and a safe fallback."
+      />
       <ol className="action-list">
         {actions.map((action) => (
           <li key={action.id}>

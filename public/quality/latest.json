@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-07-11T11:48:26.221Z",
-  "commit": "d571777",
+  "generatedAt": "2026-07-11T12:51:16.740Z",
+  "commit": "6ab9944",
   "tests": {
     "status": "pass",
-    "total": 78,
-    "passed": 78,
+    "total": 86,
+    "passed": 86,
     "failed": 0,
     "vitest": {
-      "files": 15,
-      "total": 67,
-      "passed": 67
+      "files": 16,
+      "total": 75,
+      "passed": 75
     },
     "playwright": {
       "total": 11,
@@ -19,17 +19,17 @@
   },
   "coverage": {
     "status": "pass",
-    "lines": 99.33,
-    "statements": 98.75,
-    "functions": 97.22,
-    "branches": 97.74
+    "lines": 99.48,
+    "statements": 99.03,
+    "functions": 97.6,
+    "branches": 96.68
   },
   "build": {
     "status": "pass",
-    "javascriptGzipBytes": 106932,
-    "cssGzipBytes": 9505,
+    "javascriptGzipBytes": 107227,
+    "cssGzipBytes": 9579,
     "javascriptChunks": 11,
-    "largestJavaScriptGzipBytes": 59002
+    "largestJavaScriptGzipBytes": 58967
   },
   "security": {
     "status": "pass",
@@ -51,9 +51,9 @@
       "bestPractices": 100,
       "seo": 100,
       "cls": 0,
-      "fcpMilliseconds": 1416.1216,
-      "lcpMilliseconds": 1416.1216,
-      "totalBlockingTimeMilliseconds": 0
+      "fcpMilliseconds": 1436.8989,
+      "lcpMilliseconds": 1436.8989,
+      "totalBlockingTimeMilliseconds": 8.5
     }
   },
   "accessibility": {
@@ -71,8 +71,59 @@
     "dependabot": true
   },
   "headers": {
-    "status": "unverified",
-    "origin": null,
-    "checks": {}
+    "status": "pass",
+    "origin": "https://resolve-90.vercel.app/",
+    "checks": {
+      "contentSecurityPolicy": {
+        "header": "content-security-policy",
+        "actual": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests",
+        "passed": true
+      },
+      "strictTransportSecurity": {
+        "header": "strict-transport-security",
+        "actual": "max-age=63072000; includeSubDomains; preload",
+        "passed": true
+      },
+      "permissionsPolicy": {
+        "header": "permissions-policy",
+        "actual": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+        "passed": true
+      },
+      "frameProtection": {
+        "header": "x-frame-options",
+        "actual": "DENY",
+        "passed": true
+      },
+      "contentTypeProtection": {
+        "header": "x-content-type-options",
+        "actual": "nosniff",
+        "passed": true
+      },
+      "crossOriginOpenerPolicy": {
+        "header": "cross-origin-opener-policy",
+        "actual": "same-origin",
+        "passed": true
+      },
+      "crossOriginResourcePolicy": {
+        "header": "cross-origin-resource-policy",
+        "actual": "same-origin",
+        "passed": true
+      },
+      "dnsPrefetchControl": {
+        "header": "x-dns-prefetch-control",
+        "actual": "off",
+        "passed": true
+      },
+      "permittedCrossDomainPolicies": {
+        "header": "x-permitted-cross-domain-policies",
+        "actual": "none",
+        "passed": true
+      },
+      "referrerPolicy": {
+        "header": "referrer-policy",
+        "actual": "no-referrer",
+        "passed": true
+      }
+    }
   }
 }

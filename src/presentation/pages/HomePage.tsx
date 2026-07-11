@@ -21,6 +21,7 @@ export default function HomePage(): React.JSX.Element {
       <div className="home-hero-wrap">
         <div className="shell-width">
           <IncidentBrief
+            incident={workflow.incident}
             state={workflow.state}
             onCompile={workflow.compile}
             onReset={workflow.reset}

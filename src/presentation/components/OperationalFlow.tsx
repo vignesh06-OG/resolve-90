@@ -8,21 +8,29 @@ interface FlowStage {
 }
 
 const stages: readonly FlowStage[] = [
-  { label: "Input", note: "5 normalized signals", icon: "evidence" },
+  { label: "Incident", note: "5 normalized signals", icon: "evidence" },
   { label: "Analysis", note: "Ground facts + policy", icon: "code" },
-  { label: "Risk detection", note: "Cross-domain conflict", icon: "warning" },
-  { label: "AI planning", note: "3 structured plans", icon: "spark" },
-  { label: "Validation", note: "5 deterministic checks", icon: "shield" },
+  {
+    label: "Safety validation",
+    note: "Pressure envelope",
+    icon: "shield",
+  },
+  {
+    label: "Accessibility validation",
+    note: "Step-free veto",
+    icon: "access",
+  },
+  { label: "Risk scoring", note: "3 alternatives ranked", icon: "warning" },
   { label: "Human approval", note: "Authority retained", icon: "users" },
-  { label: "Audit receipt", note: "Decision trace", icon: "evidence" },
+  { label: "Command packet", note: "Owned actions + receipt", icon: "spark" },
 ];
 
-function completedCount(state: DecisionWorkflowState): number {
+function activeStage(state: DecisionWorkflowState): number {
   switch (state.status) {
     case "idle":
       return 1;
     case "compiling":
-      return 4;
+      return 2;
     case "compiled":
       return 6;
     case "approved":
@@ -39,27 +47,27 @@ interface OperationalFlowProps {
 export function OperationalFlow({
   state,
 }: OperationalFlowProps): React.JSX.Element {
-  const completed = completedCount(state);
+  const active = activeStage(state);
 
   return (
     <section className="operational-flow" aria-labelledby="flow-title">
       <div className="operational-flow__heading">
         <div>
-          <p className="section-kicker">Observable operational flow</p>
-          <h2 id="flow-title">From fragmented signal to accountable action</h2>
+          <p className="section-kicker">Live AI reasoning pipeline</p>
+          <h2 id="flow-title">From incident signal to accountable command</h2>
         </div>
         <p>
-          Generation is one bounded stage. Validation and human authority stay
-          outside the model.
+          Each transition exposes a real decision boundary. Generation cannot
+          bypass safety, accessibility, or human authority.
         </p>
       </div>
-      <ol className="flow-track">
+      <ol className="flow-track" aria-label="AI incident reasoning stages">
         {stages.map(({ label, note, icon }, index) => {
           const stageNumber = index + 1;
           const status =
-            stageNumber < completed
+            stageNumber < active
               ? "complete"
-              : stageNumber === completed
+              : stageNumber === active
                 ? "current"
                 : "pending";
           return (

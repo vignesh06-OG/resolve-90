@@ -2,6 +2,7 @@ import "../styles/evidence.css";
 
 import { EvidencePageHeader } from "../components/EvidencePageHeader";
 import { Icon, type IconName } from "../../shared/components/Icon";
+import { Metric } from "../../shared/components/ui/Metric";
 import { QUALITY_REPORT } from "../../generated/qualityReport";
 
 interface QualityCardProps {
@@ -29,9 +30,7 @@ function QualityCard({
         </span>
         <span className={`status-pill status-pill--${status}`}>{label}</span>
       </div>
-      <p>{title}</p>
-      <strong>{metric}</strong>
-      <small>{detail}</small>
+      <Metric label={title} value={metric} detail={detail} />
     </article>
   );
 }

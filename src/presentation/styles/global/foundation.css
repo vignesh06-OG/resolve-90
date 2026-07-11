@@ -1,0 +1,164 @@
+@layer reset, tokens, base, components, pages, utilities;
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  ul,
+  ol,
+  figure {
+    margin: 0;
+  }
+
+  button,
+  input,
+  select {
+    font: inherit;
+  }
+
+  img,
+  svg {
+    display: block;
+  }
+}
+
+@layer tokens {
+  :root {
+    color-scheme: dark;
+    font-family:
+      Inter,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    --ink: #f7f5ed;
+    --ink-strong: #ffffff;
+    --muted: #a9bfbd;
+    --muted-strong: #c9d7d5;
+    --night: #061516;
+    --night-soft: #091b1c;
+    --surface: #0d2425;
+    --surface-2: #122f30;
+    --surface-3: #183839;
+    --line: #2b4a4b;
+    --line-soft: #1c3839;
+    --accent: #ff9368;
+    --accent-strong: #ff7846;
+    --mint: #73e4b9;
+    --mint-soft: #bff5de;
+    --amber: #ffd27a;
+    --red: #ff9599;
+    --violet: #b8b0ff;
+    --paper: #f2f0e7;
+    --paper-ink: #122727;
+    --paper-muted: #526766;
+    --paper-line: #ced7d2;
+    --radius-xs: 0.45rem;
+    --radius-sm: 0.75rem;
+    --radius-md: 1rem;
+    --radius-lg: 1.4rem;
+    --shadow: 0 28px 70px rgb(0 0 0 / 28%);
+    --shell: min(1180px, calc(100% - 40px));
+  }
+}
+
+@layer base {
+  html {
+    background: var(--night);
+  }
+
+  body {
+    min-width: 320px;
+    min-height: 100vh;
+    background:
+      radial-gradient(
+        circle at 82% 2%,
+        rgb(69 142 127 / 12%),
+        transparent 27rem
+      ),
+      var(--night);
+    color: var(--ink);
+    line-height: 1.55;
+  }
+
+  button,
+  a,
+  input {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  a {
+    color: var(--mint);
+    text-underline-offset: 0.22em;
+  }
+
+  a:hover {
+    color: var(--mint-soft);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--amber);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--paper-ink);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--ink-strong);
+    font-weight: 680;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+  }
+
+  h1 {
+    font-size: clamp(2.4rem, 6vw, 5.5rem);
+  }
+
+  h2 {
+    font-size: clamp(1.7rem, 4vw, 2.8rem);
+  }
+
+  h3 {
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+  }
+
+  p {
+    max-width: 72ch;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th {
+    text-align: left;
+  }
+
+  button {
+    border: 0;
+  }
+}

@@ -13,7 +13,7 @@ export default defineConfig({
   build: {
     target: "es2022",
     cssCodeSplit: true,
-    sourcemap: true,
+    sourcemap: false,
     rollupOptions: {
       output: {
         manualChunks(id) {

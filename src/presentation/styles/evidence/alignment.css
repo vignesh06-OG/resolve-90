@@ -1,0 +1,28 @@
+@layer pages {
+  .alignment-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .alignment-summary article {
+    padding: 1rem;
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+  }
+
+  .alignment-summary strong {
+    display: block;
+    color: var(--mint);
+    font-size: 1.7rem;
+    letter-spacing: -0.05em;
+  }
+
+  .alignment-summary span {
+    color: var(--muted);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+  }
+}

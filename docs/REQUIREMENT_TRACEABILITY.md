@@ -62,12 +62,12 @@ Every direct challenge term and every quality category is mapped to an observabl
 
 ## Latest verification snapshot
 
-- 67 Vitest checks and 11 Playwright checks pass locally.
-- Coverage: 99.33% lines, 98.75% statements, 97.22% functions, 97.74% branches.
+- 75 Vitest checks and 11 Playwright checks pass locally.
+- Coverage: 99.48% lines, 99.03% statements, 97.60% functions, 96.68% branches.
 - Lighthouse: 100 Performance, 100 Accessibility, 100 Best Practices, 100 SEO; CLS 0.
 - Dependency audit: zero advisories.
 - Bundle budget: passing.
-- Public deployment and hosted response headers remain pending until a Vercel URL is available. GitHub Actions and CodeQL are verified independently from local report generation.
+- Production, direct-refresh evidence routes, robots, sitemap, canonical metadata, and ten security headers are verified at https://resolve-90.vercel.app. GitHub Actions and CodeQL are verified independently from local report generation.
 - The in-product Quality page reads generated report data rather than manually entered totals.
 
 ## Evidence integrity rules

@@ -10,7 +10,7 @@ import { OperationalFlow } from "../../src/presentation/components/OperationalFl
 import { RelayPanel } from "../../src/presentation/components/RelayPanel";
 import { navigate } from "../../src/presentation/routes/router";
 import { AppLink } from "../../src/shared/components/AppLink";
-import { buildCompiledDecision } from "../fixtures/builders";
+import { buildCompiledDecision, buildIncident } from "../fixtures/builders";
 
 function buildApprovedDecision(): ApprovedDecision {
   const result = approveDecision(
@@ -52,7 +52,12 @@ describe("presentation failure and terminal branches", () => {
 
     for (const { state, label } of states) {
       const view = render(
-        <IncidentBrief state={state} onCompile={compile} onReset={reset} />,
+        <IncidentBrief
+          incident={buildIncident()}
+          state={state}
+          onCompile={compile}
+          onReset={reset}
+        />,
       );
       expect(screen.getByRole("button", { name: label })).toBeDisabled();
       view.unmount();
@@ -60,6 +65,7 @@ describe("presentation failure and terminal branches", () => {
 
     render(
       <IncidentBrief
+        incident={buildIncident()}
         state={{ status: "error", message: "Provider unavailable." }}
         onCompile={compile}
         onReset={reset}
@@ -78,6 +84,7 @@ describe("presentation failure and terminal branches", () => {
     const reset = vi.fn();
     render(
       <IncidentBrief
+        incident={buildIncident()}
         state={{ status: "error", message: "Provider unavailable." }}
         onCompile={compile}
         onReset={reset}

@@ -1,10 +1,10 @@
 {
-  "numTotalTestSuites": 31,
-  "numPassedTestSuites": 31,
+  "numTotalTestSuites": 34,
+  "numPassedTestSuites": 34,
   "numFailedTestSuites": 0,
   "numPendingTestSuites": 0,
-  "numTotalTests": 67,
-  "numPassedTests": 67,
+  "numTotalTests": 75,
+  "numPassedTests": 75,
   "numFailedTests": 0,
   "numPendingTests": 0,
   "numTodoTests": 0,
@@ -24,7 +24,7 @@
     "updated": 0,
     "didUpdate": false
   },
-  "startTime": 1783770385530,
+  "startTime": 1783774187729,
   "success": true,
   "testResults": [
     {
@@ -34,7 +34,7 @@
           "fullName": "application accessibility has no detectable violations in the initial decision workspace",
           "status": "passed",
           "title": "has no detectable violations in the initial decision workspace",
-          "duration": 493.23456699999997,
+          "duration": 502.88099799999986,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -44,7 +44,7 @@
           "fullName": "application accessibility has no detectable violations in the generated approval state",
           "status": "passed",
           "title": "has no detectable violations in the generated approval state",
-          "duration": 891.2499890000001,
+          "duration": 1006.8459309999998,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -54,14 +54,14 @@
           "fullName": "application accessibility supports arrow, Home, and End keys in multilingual tabs",
           "status": "passed",
           "title": "supports arrow, Home, and End keys in multilingual tabs",
-          "duration": 314.456103,
+          "duration": 333.09353999999985,
           "failureMessages": [],
           "meta": {},
           "tags": []
         }
       ],
-      "startTime": 1783770390449,
-      "endTime": 1783770392148.456,
+      "startTime": 1783774192882,
+      "endTime": 1783774194725.0935,
       "status": "passed",
       "message": "",
       "name": "/home/user/stadium-ops/tests/accessibility/AppAccessibility.test.tsx"
@@ -73,7 +73,7 @@
           "fullName": "design-token contrast keeps ink on night at WCAG AA normal-text contrast",
           "status": "passed",
           "title": "keeps ink on night at WCAG AA normal-text contrast",
-          "duration": 1.798921000000064,
+          "duration": 1.7385160000000042,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -83,7 +83,7 @@
           "fullName": "design-token contrast keeps muted on night at WCAG AA normal-text contrast",
           "status": "passed",
           "title": "keeps muted on night at WCAG AA normal-text contrast",
-          "duration": 0.2776570000000902,
+          "duration": 0.2799810000000207,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -93,7 +93,7 @@
           "fullName": "design-token contrast keeps accent on night at WCAG AA normal-text contrast",
           "status": "passed",
           "title": "keeps accent on night at WCAG AA normal-text contrast",
-          "duration": 0.3824489999999514,
+          "duration": 0.4501070000000027,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -103,7 +103,7 @@
           "fullName": "design-token contrast keeps paper-ink on paper at WCAG AA normal-text contrast",
           "status": "passed",
           "title": "keeps paper-ink on paper at WCAG AA normal-text contrast",
-          "duration": 0.42713399999991,
+          "duration": 0.40729799999996885,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -113,7 +113,7 @@
           "fullName": "design-token contrast keeps paper-muted on paper at WCAG AA normal-text contrast",
           "status": "passed",
           "title": "keeps paper-muted on paper at WCAG AA normal-text contrast",
-          "duration": 0.28286499999990156,
+          "duration": 0.2775420000000395,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -123,7 +123,7 @@
           "fullName": "design-token contrast keeps mint on surface at WCAG AA normal-text contrast",
           "status": "passed",
           "title": "keeps mint on surface at WCAG AA normal-text contrast",
-          "duration": 0.24047200000006796,
+          "duration": 0.25029800000004343,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -133,7 +133,7 @@
           "fullName": "design-token contrast keeps muted on surface at WCAG AA normal-text contrast",
           "status": "passed",
           "title": "keeps muted on surface at WCAG AA normal-text contrast",
-          "duration": 0.2127810000000636,
+          "duration": 0.20009400000003552,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -143,14 +143,14 @@
           "fullName": "design-token contrast keeps primary button text above AA contrast",
           "status": "passed",
           "title": "keeps primary button text above AA contrast",
-          "duration": 0.17097499999999854,
+          "duration": 0.17679999999995744,
           "failureMessages": [],
           "meta": {},
           "tags": []
         }
       ],
-      "startTime": 1783770405480,
-      "endTime": 1783770405484.2405,
+      "startTime": 1783774210266,
+      "endTime": 1783774210269.2776,
       "status": "passed",
       "message": "",
       "name": "/home/user/stadium-ops/tests/accessibility/contrastTokens.test.ts"
@@ -162,7 +162,7 @@
           "fullName": "visible decision workflow explains the product purpose before any interaction",
           "status": "passed",
           "title": "explains the product purpose before any interaction",
-          "duration": 201.75691199999983,
+          "duration": 292.76469399999996,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -172,7 +172,7 @@
           "fullName": "visible decision workflow surfaces reasoning, confidence, constraints, validation, and rejected alternatives",
           "status": "passed",
           "title": "surfaces reasoning, confidence, constraints, validation, and rejected alternatives",
-          "duration": 221.91819800000007,
+          "duration": 220.575061,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -182,14 +182,14 @@
           "fullName": "visible decision workflow keeps relay locked until both acknowledgements and writes an audit receipt",
           "status": "passed",
           "title": "keeps relay locked until both acknowledgements and writes an audit receipt",
-          "duration": 345.7268839999999,
+          "duration": 443.2302319999999,
           "failureMessages": [],
           "meta": {},
           "tags": []
         }
       ],
-      "startTime": 1783770393336,
-      "endTime": 1783770394105.7268,
+      "startTime": 1783774195991,
+      "endTime": 1783774196948.2302,
       "status": "passed",
       "message": "",
       "name": "/home/user/stadium-ops/tests/integration/HomeWorkflow.test.tsx"
@@ -201,7 +201,7 @@
           "fullName": "decision workflow compiles provider candidates, challenges them, and selects the safe plan",
           "status": "passed",
           "title": "compiles provider candidates, challenges them, and selects the safe plan",
-          "duration": 3.375723999999991,
+          "duration": 3.703724999999963,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -211,7 +211,7 @@
           "fullName": "decision workflow returns a typed not-found error",
           "status": "passed",
           "title": "returns a typed not-found error",
-          "duration": 1.3786069999999881,
+          "duration": 1.346812,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -221,7 +221,7 @@
           "fullName": "decision workflow does not blur a provider outage into an unsafe fallback",
           "status": "passed",
           "title": "does not blur a provider outage into an unsafe fallback",
-          "duration": 0.47624999999993634,
+          "duration": 0.5995910000000322,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -231,7 +231,7 @@
           "fullName": "decision workflow rejects a generation response when every candidate is unsafe",
           "status": "passed",
           "title": "rejects a generation response when every candidate is unsafe",
-          "duration": 0.6667260000000397,
+          "duration": 0.6508679999999458,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -241,7 +241,7 @@
           "fullName": "decision workflow persists the approval receipt before returning a relay-ready decision",
           "status": "passed",
           "title": "persists the approval receipt before returning a relay-ready decision",
-          "duration": 1.3692800000000034,
+          "duration": 1.4841229999999541,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -251,7 +251,7 @@
           "fullName": "decision workflow keeps acknowledgement failures out of the audit log",
           "status": "passed",
           "title": "keeps acknowledgement failures out of the audit log",
-          "duration": 0.4893600000000333,
+          "duration": 0.5154639999999517,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -261,14 +261,14 @@
           "fullName": "decision workflow does not report approval when audit persistence fails",
           "status": "passed",
           "title": "does not report approval when audit persistence fails",
-          "duration": 0.3896660000000338,
+          "duration": 0.44676700000002256,
           "failureMessages": [],
           "meta": {},
           "tags": []
         }
       ],
-      "startTime": 1783770401197,
-      "endTime": 1783770401205.4893,
+      "startTime": 1783774205786,
+      "endTime": 1783774205795.4468,
       "status": "passed",
       "message": "",
       "name": "/home/user/stadium-ops/tests/integration/decisionWorkflow.test.ts"
@@ -280,7 +280,7 @@
           "fullName": "visible evidence routes renders /quality with a single explicit page identity",
           "status": "passed",
           "title": "renders /quality with a single explicit page identity",
-          "duration": 388.6627699999999,
+          "duration": 395.88917100000003,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -290,7 +290,7 @@
           "fullName": "visible evidence routes renders /architecture with a single explicit page identity",
           "status": "passed",
           "title": "renders /architecture with a single explicit page identity",
-          "duration": 325.0295199999998,
+          "duration": 330.2033749999998,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -300,7 +300,7 @@
           "fullName": "visible evidence routes renders /security with a single explicit page identity",
           "status": "passed",
           "title": "renders /security with a single explicit page identity",
-          "duration": 326.21134299999994,
+          "duration": 325.1317429999999,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -310,7 +310,7 @@
           "fullName": "visible evidence routes renders /testing with a single explicit page identity",
           "status": "passed",
           "title": "renders /testing with a single explicit page identity",
-          "duration": 324.2775280000001,
+          "duration": 328.9606490000001,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -320,7 +320,7 @@
           "fullName": "visible evidence routes renders /accessibility with a single explicit page identity",
           "status": "passed",
           "title": "renders /accessibility with a single explicit page identity",
-          "duration": 323.2446520000003,
+          "duration": 323.0219020000004,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -330,7 +330,7 @@
           "fullName": "visible evidence routes renders /challenge-alignment with a single explicit page identity",
           "status": "passed",
           "title": "renders /challenge-alignment with a single explicit page identity",
-          "duration": 312.809213,
+          "duration": 317.6566120000002,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -340,7 +340,7 @@
           "fullName": "visible evidence routes navigates without a reload and updates current-page state",
           "status": "passed",
           "title": "navigates without a reload and updates current-page state",
-          "duration": 152.16806899999983,
+          "duration": 162.87017000000014,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -350,14 +350,14 @@
           "fullName": "visible evidence routes provides a safe recovery route for an unknown path",
           "status": "passed",
           "title": "provides a safe recovery route for an unknown path",
-          "duration": 12.10555499999964,
+          "duration": 10.422660999999607,
           "failureMessages": [],
           "meta": {},
           "tags": []
         }
       ],
-      "startTime": 1783770386990,
-      "endTime": 1783770389154.1055,
+      "startTime": 1783774189309,
+      "endTime": 1783774191503.4226,
       "status": "passed",
       "message": "",
       "name": "/home/user/stadium-ops/tests/integration/evidenceRoutes.test.tsx"
@@ -369,14 +369,14 @@
           "fullName": "ErrorBoundary fails closed with a recovery explanation",
           "status": "passed",
           "title": "fails closed with a recovery explanation",
-          "duration": 141.65921200000003,
+          "duration": 151.32495999999992,
           "failureMessages": [],
           "meta": {},
           "tags": []
         }
       ],
-      "startTime": 1783770397362,
-      "endTime": 1783770397503.6592,
+      "startTime": 1783774200506,
+      "endTime": 1783774200657.325,
       "status": "passed",
       "message": "",
       "name": "/home/user/stadium-ops/tests/unit/ErrorBoundary.test.tsx"
@@ -388,7 +388,7 @@
           "fullName": "GatewayDecisionProvider accepts a schema-valid gateway packet",
           "status": "passed",
           "title": "accepts a schema-valid gateway packet",
-          "duration": 14.857033000000001,
+          "duration": 43.972424000000046,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -398,7 +398,7 @@
           "fullName": "GatewayDecisionProvider rejects a non-success gateway response",
           "status": "passed",
           "title": "rejects a non-success gateway response",
-          "duration": 1.7408409999999321,
+          "duration": 2.1736239999999043,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -408,7 +408,7 @@
           "fullName": "GatewayDecisionProvider rejects provider output that misses the strict schema",
           "status": "passed",
           "title": "rejects provider output that misses the strict schema",
-          "duration": 1.725861000000009,
+          "duration": 1.5836570000000165,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -418,7 +418,7 @@
           "fullName": "GatewayDecisionProvider returns a typed unavailable state for a network failure",
           "status": "passed",
           "title": "returns a typed unavailable state for a network failure",
-          "duration": 1.1201940000000832,
+          "duration": 0.7885519999999815,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -428,14 +428,14 @@
           "fullName": "GatewayDecisionProvider distinguishes a timeout from a generic network failure",
           "status": "passed",
           "title": "distinguishes a timeout from a generic network failure",
-          "duration": 1.3773159999999507,
+          "duration": 2.2953019999999924,
           "failureMessages": [],
           "meta": {},
           "tags": []
         }
       ],
-      "startTime": 1783770399362,
-      "endTime": 1783770399382.3772,
+      "startTime": 1783774202663,
+      "endTime": 1783774202714.2954,
       "status": "passed",
       "message": "",
       "name": "/home/user/stadium-ops/tests/unit/GatewayDecisionProvider.test.ts"
@@ -447,14 +447,14 @@
           "fullName": "application service composition loads the live gateway only when live mode is selected",
           "status": "passed",
           "title": "loads the live gateway only when live mode is selected",
-          "duration": 70.04450799999995,
+          "duration": 76.99403500000005,
           "failureMessages": [],
           "meta": {},
           "tags": []
         }
       ],
-      "startTime": 1783770398359,
-      "endTime": 1783770398429.0444,
+      "startTime": 1783774201586,
+      "endTime": 1783774201662.9941,
       "status": "passed",
       "message": "",
       "name": "/home/user/stadium-ops/tests/unit/applicationServices.test.ts"
@@ -466,7 +466,7 @@
           "fullName": "approveDecision blocks approval until both safety acknowledgements are explicit",
           "status": "passed",
           "title": "blocks approval until both safety acknowledgements are explicit",
-          "duration": 2.546944000000053,
+          "duration": 2.5631819999999834,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -476,14 +476,14 @@
           "fullName": "approveDecision creates an immutable approval receipt for a reviewed decision",
           "status": "passed",
           "title": "creates an immutable approval receipt for a reviewed decision",
-          "duration": 0.8605539999999792,
+          "duration": 0.7671360000000504,
           "failureMessages": [],
           "meta": {},
           "tags": []
         }
       ],
-      "startTime": 1783770404627,
-      "endTime": 1783770404629.8606,
+      "startTime": 1783774209369,
+      "endTime": 1783774209372.767,
       "status": "passed",
       "message": "",
       "name": "/home/user/stadium-ops/tests/unit/approveDecision.test.ts"
@@ -495,7 +495,7 @@
           "fullName": "evaluateCandidate accepts a complete, grounded plan inside hard constraints",
           "status": "passed",
           "title": "accepts a complete, grounded plan inside hard constraints",
-          "duration": 3.1172940000000153,
+          "duration": 3.0157959999999093,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -505,7 +505,7 @@
           "fullName": "evaluateCandidate rejects pressure above the operating envelope",
           "status": "passed",
           "title": "rejects pressure above the operating envelope",
-          "duration": 0.7836670000000368,
+          "duration": 0.7625630000000001,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -515,7 +515,7 @@
           "fullName": "evaluateCandidate uses accessibility as a veto instead of a weighted preference",
           "status": "passed",
           "title": "uses accessibility as a veto instead of a weighted preference",
-          "duration": 0.5479689999999664,
+          "duration": 0.5546020000000453,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -525,7 +525,7 @@
           "fullName": "evaluateCandidate warns between the accessibility floor and target",
           "status": "passed",
           "title": "warns between the accessibility floor and target",
-          "duration": 0.471396000000027,
+          "duration": 0.47511099999996986,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -535,7 +535,7 @@
           "fullName": "evaluateCandidate prohibits high confidence when transport evidence is stale",
           "status": "passed",
           "title": "prohibits high confidence when transport evidence is stale",
-          "duration": 0.4576840000000857,
+          "duration": 0.4430619999999408,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -545,7 +545,7 @@
           "fullName": "evaluateCandidate warns rather than fabricating freshness for a medium-confidence plan",
           "status": "passed",
           "title": "warns rather than fabricating freshness for a medium-confidence plan",
-          "duration": 0.36679100000003473,
+          "duration": 0.3651800000000094,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -555,7 +555,7 @@
           "fullName": "evaluateCandidate rejects unsupported model-supplied evidence identifiers",
           "status": "passed",
           "title": "rejects unsupported model-supplied evidence identifiers",
-          "duration": 0.253296999999975,
+          "duration": 0.300907000000052,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -565,7 +565,7 @@
           "fullName": "evaluateCandidate removes latency score when a plan misses the decision target",
           "status": "passed",
           "title": "removes latency score when a plan misses the decision target",
-          "duration": 0.41833199999996395,
+          "duration": 0.35775300000000243,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -575,14 +575,14 @@
           "fullName": "evaluateCandidate rejects incomplete language coverage",
           "status": "passed",
           "title": "rejects incomplete language coverage",
-          "duration": 0.3676659999999856,
+          "duration": 0.41511800000000676,
           "failureMessages": [],
           "meta": {},
           "tags": []
         }
       ],
-      "startTime": 1783770402943,
-      "endTime": 1783770402950.4182,
+      "startTime": 1783774207597,
+      "endTime": 1783774207603.415,
       "status": "passed",
       "message": "",
       "name": "/home/user/stadium-ops/tests/unit/evaluateCandidate.test.ts"
@@ -594,7 +594,7 @@
           "fullName": "evaluation-visible production surface publishes robots and a sitemap containing every evidence route",
           "status": "passed",
           "title": "publishes robots and a sitemap containing every evidence route",
-          "duration": 2.041441999999961,
+          "duration": 2.0283399999999574,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -604,7 +604,7 @@
           "fullName": "evaluation-visible production surface uses the exact stadium challenge vocabulary in metadata",
           "status": "passed",
           "title": "uses the exact stadium challenge vocabulary in metadata",
-          "duration": 0.6564869999999701,
+          "duration": 0.6295559999999796,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -614,7 +614,7 @@
           "fullName": "evaluation-visible production surface configures every required production security header",
           "status": "passed",
           "title": "configures every required production security header",
-          "duration": 0.4767150000000129,
+          "duration": 0.6118510000000015,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -624,7 +624,7 @@
           "fullName": "evaluation-visible production surface uses exact architecture-layer and SOLID vocabulary",
           "status": "passed",
           "title": "uses exact architecture-layer and SOLID vocabulary",
-          "duration": 0.4971290000000863,
+          "duration": 0.4770209999999224,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -634,7 +634,17 @@
           "fullName": "evaluation-visible production surface pre-renders evaluator evidence into raw HTML documents",
           "status": "passed",
           "title": "pre-renders evaluator evidence into raw HTML documents",
-          "duration": 1.0546689999999899,
+          "duration": 1.0427049999999554,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["evaluation-visible production surface"],
+          "fullName": "evaluation-visible production surface disables public production source maps",
+          "status": "passed",
+          "title": "disables public production source maps",
+          "duration": 0.1880710000000363,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -644,7 +654,7 @@
           "fullName": "evaluation-visible production surface keeps evaluator evidence linked directly from the hero",
           "status": "passed",
           "title": "keeps evaluator evidence linked directly from the hero",
-          "duration": 0.26431300000001556,
+          "duration": 0.3808649999999716,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -654,14 +664,14 @@
           "fullName": "evaluation-visible production surface contains no console logging, explicit any, or unresolved markers in source",
           "status": "passed",
           "title": "contains no console logging, explicit any, or unresolved markers in source",
-          "duration": 3.494087000000036,
+          "duration": 3.6909200000000055,
           "failureMessages": [],
           "meta": {},
           "tags": []
         }
       ],
-      "startTime": 1783770402071,
-      "endTime": 1783770402079.4941,
+      "startTime": 1783774206701,
+      "endTime": 1783774206709.691,
       "status": "passed",
       "message": "",
       "name": "/home/user/stadium-ops/tests/unit/evaluationSurface.test.ts"
@@ -673,7 +683,7 @@
           "fullName": "presentation failure and terminal branches labels compiling, compiled, approved, and error states explicitly",
           "status": "passed",
           "title": "labels compiling, compiled, approved, and error states explicitly",
-          "duration": 211.74467700000002,
+          "duration": 230.4354189999999,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -683,7 +693,7 @@
           "fullName": "presentation failure and terminal branches retries the stable replay through the explicit error control",
           "status": "passed",
           "title": "retries the stable replay through the explicit error control",
-          "duration": 60.244324000000006,
+          "duration": 38.01686500000005,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -693,7 +703,7 @@
           "fullName": "presentation failure and terminal branches renders a fully pending operational flow after a typed failure",
           "status": "passed",
           "title": "renders a fully pending operational flow after a typed failure",
-          "duration": 12.159032000000025,
+          "duration": 14.697577000000138,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -703,7 +713,7 @@
           "fullName": "presentation failure and terminal branches keeps the approval panel in place when application approval fails",
           "status": "passed",
           "title": "keeps the approval panel in place when application approval fails",
-          "duration": 102.99864100000013,
+          "duration": 150.18577699999992,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -713,7 +723,7 @@
           "fullName": "presentation failure and terminal branches renders no relay when a validated locale cannot be found",
           "status": "passed",
           "title": "renders no relay when a validated locale cannot be found",
-          "duration": 2.005150000000185,
+          "duration": 2.086913999999979,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -723,7 +733,7 @@
           "fullName": "navigation guard branches does not push duplicate history for the current path",
           "status": "passed",
           "title": "does not push duplicate history for the current path",
-          "duration": 1.7010940000000119,
+          "duration": 1.8222769999999855,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -733,14 +743,14 @@
           "fullName": "navigation guard branches preserves modified and explicitly prevented link behavior",
           "status": "passed",
           "title": "preserves modified and explicitly prevented link behavior",
-          "duration": 10.856179999999995,
+          "duration": 13.94360400000005,
           "failureMessages": [],
           "meta": {},
           "tags": []
         }
       ],
-      "startTime": 1783770395025,
-      "endTime": 1783770395426.8562,
+      "startTime": 1783774197926,
+      "endTime": 1783774198377.9436,
       "status": "passed",
       "message": "",
       "name": "/home/user/stadium-ops/tests/unit/presentationBranches.test.tsx"
@@ -752,7 +762,7 @@
           "fullName": "provider boundary keeps replay fixtures inside the same runtime schemas as live mode",
           "status": "passed",
           "title": "keeps replay fixtures inside the same runtime schemas as live mode",
-          "duration": 13.084339,
+          "duration": 34.34381899999994,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -762,7 +772,7 @@
           "fullName": "provider boundary separates untrusted operational data from the control policy",
           "status": "passed",
           "title": "separates untrusted operational data from the control policy",
-          "duration": 0.6353980000000092,
+          "duration": 0.6530600000000959,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -772,14 +782,14 @@
           "fullName": "provider boundary rejects oversized and unknown candidate fields",
           "status": "passed",
           "title": "rejects oversized and unknown candidate fields",
-          "duration": 1.4315319999999474,
+          "duration": 1.2691079999999602,
           "failureMessages": [],
           "meta": {},
           "tags": []
         }
       ],
-      "startTime": 1783770400309,
-      "endTime": 1783770400324.4316,
+      "startTime": 1783774204814,
+      "endTime": 1783774204850.269,
       "status": "passed",
       "message": "",
       "name": "/home/user/stadium-ops/tests/unit/providerBoundary.test.ts"
@@ -791,7 +801,7 @@
           "fullName": "selectDecision selects an eligible plan ahead of a higher-throughput rejected plan",
           "status": "passed",
           "title": "selects an eligible plan ahead of a higher-throughput rejected plan",
-          "duration": 2.3955720000000156,
+          "duration": 2.5067999999999984,
           "failureMessages": [],
           "meta": {},
           "tags": []
@@ -801,17 +811,96 @@
           "fullName": "selectDecision returns a typed error when no candidate passes hard constraints",
           "status": "passed",
           "title": "returns a typed error when no candidate passes hard constraints",
-          "duration": 1.1982090000000198,
+          "duration": 1.2072930000000497,
           "failureMessages": [],
           "meta": {},
           "tags": []
         }
       ],
-      "startTime": 1783770403784,
-      "endTime": 1783770403787.1982,
+      "startTime": 1783774208487,
+      "endTime": 1783774208490.2073,
       "status": "passed",
       "message": "",
       "name": "/home/user/stadium-ops/tests/unit/selectDecision.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["server compile handler"],
+          "fullName": "server compile handler rejects method, origin, oversized, and malformed requests",
+          "status": "passed",
+          "title": "rejects method, origin, oversized, and malformed requests",
+          "duration": 4.5924119999999675,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["server compile handler"],
+          "fullName": "server compile handler rate limits repeated requests and fails safely without a key",
+          "status": "passed",
+          "title": "rate limits repeated requests and fails safely without a key",
+          "duration": 4.816557999999986,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["server compile handler"],
+          "fullName": "server compile handler returns a validated live packet and rejects invalid provider output",
+          "status": "passed",
+          "title": "returns a validated live packet and rejects invalid provider output",
+          "duration": 9.980015000000094,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["server provider and boundaries"],
+          "fullName": "server provider and boundaries accepts a valid structured Gemini candidate envelope",
+          "status": "passed",
+          "title": "accepts a valid structured Gemini candidate envelope",
+          "duration": 3.1616520000000037,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["server provider and boundaries"],
+          "fullName": "server provider and boundaries classifies unavailable and invalid provider responses",
+          "status": "passed",
+          "title": "classifies unavailable and invalid provider responses",
+          "duration": 2.0086610000000746,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["server provider and boundaries"],
+          "fullName": "server provider and boundaries handles transport exceptions and circular request bodies",
+          "status": "passed",
+          "title": "handles transport exceptions and circular request bodies",
+          "duration": 0.9655990000001111,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["server provider and boundaries"],
+          "fullName": "server provider and boundaries resets limiter buckets after the configured window",
+          "status": "passed",
+          "title": "resets limiter buckets after the configured window",
+          "duration": 0.3999140000000807,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1783774203775,
+      "endTime": 1783774203801.4,
+      "status": "passed",
+      "message": "",
+      "name": "/home/user/stadium-ops/tests/unit/serverCompile.test.ts"
     },
     {
       "assertionResults": [
@@ -820,14 +909,14 @@
           "fullName": "useDecisionWorkflow ignores premature approval and supports an explicit reset",
           "status": "passed",
           "title": "ignores premature approval and supports an explicit reset",
-          "duration": 191.585913,
+          "duration": 242.30284100000006,
           "failureMessages": [],
           "meta": {},
           "tags": []
         }
       ],
-      "startTime": 1783770396324,
-      "endTime": 1783770396515.586,
+      "startTime": 1783774199350,
+      "endTime": 1783774199592.3027,
       "status": "passed",
       "message": "",
       "name": "/home/user/stadium-ops/tests/unit/useDecisionWorkflow.test.tsx"

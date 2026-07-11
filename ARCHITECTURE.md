@@ -29,11 +29,13 @@ Dependencies point inward:
 3. **Infrastructure** implements application ports and validates external data.
 4. **Presentation** invokes use cases and renders application view models. It contains no risk math, plan validation, or network calls.
 
-ESLint, TypeScript project references, review guidance, and tests reinforce the rule. The home decision path is eager to prevent layout shift; evidence routes and the live Gemini adapter are dynamically imported. Replay mode therefore does not need to execute the live provider boundary.
+ESLint import-boundary rules, TypeScript project references, review guidance, and tests enforce the dependency rule. A dedicated bootstrap composition root is the only UI-facing module allowed to assemble infrastructure adapters. The home decision path is eager to prevent layout shift; evidence routes and the live Gemini adapter are dynamically imported. Replay mode therefore does not execute the live provider boundary.
 
 ## Visible evaluation architecture
 
-The product exposes architecture and operational evidence through `/architecture`, `/quality`, `/security`, `/testing`, `/accessibility`, and `/challenge-alignment`. Quality statistics are generated from machine-readable reports by `scripts/generate-quality-report.mjs`; React does not contain manually entered test, coverage, bundle, audit, or Lighthouse values.
+The product exposes architecture and operational evidence through `/architecture`, `/quality`, `/security`, `/testing`, `/accessibility`, and `/challenge-alignment`. Quality statistics are generated from machine-readable reports by `scripts/generate-quality-report.mjs`; React does not contain manually entered test, coverage, bundle, audit, or Lighthouse values. The same six evidence routes are generated as static HTML during every build, so raw-HTML evaluators and direct refreshes receive complete evidence without executing JavaScript.
+
+Presentation styles are split into focused global, home, and evidence modules. Shared Button, Card, Badge, Metric, and SectionHeader primitives keep interaction and evidence patterns consistent. The server compile boundary is divided into handler, validation, limiter, provider, and structured-output schema modules.
 
 ## Runtime sequence
 

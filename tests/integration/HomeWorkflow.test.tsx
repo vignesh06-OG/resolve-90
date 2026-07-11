@@ -39,6 +39,17 @@ describe("visible decision workflow", () => {
     expect(
       screen.getByRole("link", { name: /17 \/ 17 mapped Challenge alignment/ }),
     ).toHaveAttribute("href", "/challenge-alignment");
+    for (const stage of [
+      "Incident",
+      "Analysis",
+      "Safety validation",
+      "Accessibility validation",
+      "Risk scoring",
+      "Human approval",
+      "Command packet",
+    ]) {
+      expect(screen.getByText(stage)).toBeVisible();
+    }
   });
 
   it("surfaces reasoning, confidence, constraints, validation, and rejected alternatives", async () => {

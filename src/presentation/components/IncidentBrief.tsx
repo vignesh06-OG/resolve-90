@@ -1,10 +1,12 @@
+import type { IncidentContext } from "../../domain/entities/incident";
 import { QUALITY_REPORT } from "../../generated/qualityReport";
-import { EAST_CONCOURSE_INCIDENT } from "../../infrastructure/repositories/replayScenario";
 import { AppLink } from "../../shared/components/AppLink";
 import { Icon } from "../../shared/components/Icon";
+import { Button } from "../../shared/components/ui/Button";
 import type { DecisionWorkflowState } from "../hooks/useDecisionWorkflow";
 
 interface IncidentBriefProps {
+  readonly incident: IncidentContext;
   readonly state: DecisionWorkflowState;
   readonly onCompile: () => Promise<void>;
   readonly onReset: () => void;
@@ -26,6 +28,7 @@ function actionLabel(state: DecisionWorkflowState): string {
 }
 
 export function IncidentBrief({
+  incident,
   state,
   onCompile,
   onReset,
@@ -45,10 +48,9 @@ export function IncidentBrief({
           before a human approves anything.
         </p>
         <div className="incident-hero__actions">
-          <button
-            className={`button button--primary${state.status === "compiling" ? " is-processing" : ""}`}
+          <Button
             type="button"
-            aria-busy={state.status === "compiling"}
+            busy={state.status === "compiling"}
             disabled={!canCompile}
             onClick={() => {
               if (state.status === "error") onReset();
@@ -57,7 +59,7 @@ export function IncidentBrief({
           >
             <Icon name={state.status === "compiling" ? "clock" : "spark"} />
             {actionLabel(state)}
-          </button>
+          </Button>
           <a className="button button--quiet" href="#operational-flow">
             See how it works
             <Icon name="arrow" />
@@ -122,12 +124,12 @@ export function IncidentBrief({
             <span className="live-label">
               <span aria-hidden="true" /> Synthetic incident replay
             </span>
-            <p>{EAST_CONCOURSE_INCIDENT.code} · 18:42:10 local</p>
+            <p>{incident.code} · 18:42:10 local</p>
           </div>
           <span className="severity-badge">Critical</span>
         </div>
-        <h2 id="incident-title">{EAST_CONCOURSE_INCIDENT.title}</h2>
-        <p>{EAST_CONCOURSE_INCIDENT.summary}</p>
+        <h2 id="incident-title">{incident.title}</h2>
+        <p>{incident.summary}</p>
         <dl className="incident-stats">
           <div>
             <dt>Pressure</dt>
@@ -145,7 +147,7 @@ export function IncidentBrief({
           </div>
         </dl>
         <ul className="signal-list" aria-label="Critical incident signals">
-          {EAST_CONCOURSE_INCIDENT.signals.slice(0, 4).map((signal) => (
+          {incident.signals.slice(0, 4).map((signal) => (
             <li key={signal.id}>
               <span className={`signal-dot signal-dot--${signal.severity}`} />
               <span>{signal.label}</span>
