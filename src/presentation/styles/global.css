@@ -287,6 +287,7 @@
     border-radius: 50%;
     background: var(--amber);
     box-shadow: 0 0 0 4px rgb(255 210 122 / 10%);
+    animation: status-breathe 2.8s ease-in-out infinite;
   }
 
   .site-nav {
@@ -441,6 +442,18 @@
 
   .button:hover:not(:disabled) {
     transform: translateY(-2px);
+  }
+
+  .button .icon {
+    transition: transform 160ms ease;
+  }
+
+  .button:hover:not(:disabled) .icon {
+    transform: translateX(2px);
+  }
+
+  .button.is-processing .icon {
+    animation: processing-spin 1s linear infinite;
   }
 
   .button:disabled {
@@ -634,6 +647,8 @@
     aspect-ratio: 1;
     border-radius: 50%;
     background: var(--accent);
+    box-shadow: 0 0 0 0 rgb(255 147 104 / 30%);
+    animation: loader-pulse 1.2s ease-out infinite;
   }
 
   .two-column {
@@ -669,6 +684,30 @@
 
   .check-list small {
     color: var(--muted);
+  }
+  @keyframes status-breathe {
+    0%,
+    100% {
+      box-shadow: 0 0 0 4px rgb(255 210 122 / 10%);
+    }
+    50% {
+      box-shadow: 0 0 0 7px rgb(255 210 122 / 4%);
+    }
+  }
+
+  @keyframes processing-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes loader-pulse {
+    70% {
+      box-shadow: 0 0 0 9px rgb(255 147 104 / 0%);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgb(255 147 104 / 0%);
+    }
   }
 }
 

@@ -229,6 +229,19 @@
     background: #e6e9e2;
     color: #405251;
     font-size: 0.78rem;
+    animation: signal-arrive 360ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  }
+
+  .signal-list li:nth-child(2) {
+    animation-delay: 60ms;
+  }
+
+  .signal-list li:nth-child(3) {
+    animation-delay: 120ms;
+  }
+
+  .signal-list li:nth-child(4) {
+    animation-delay: 180ms;
   }
 
   .signal-list strong {
@@ -244,6 +257,7 @@
 
   .signal-dot--critical {
     background: #d85848;
+    animation: critical-signal 2.2s ease-in-out infinite;
   }
 
   .signal-dot--watch {
@@ -312,6 +326,8 @@
     width: calc(100% - 46px);
     height: 1px;
     background: var(--line);
+    transform-origin: left;
+    transition: background-color 220ms ease;
   }
 
   .flow-step:last-child::after {
@@ -329,12 +345,18 @@
     border-radius: 50%;
     background: var(--night-soft);
     color: var(--muted);
+    transition:
+      border-color 220ms ease,
+      background-color 220ms ease,
+      color 220ms ease,
+      box-shadow 220ms ease;
   }
 
   .flow-step--complete .flow-step__icon {
     border-color: rgb(115 228 185 / 45%);
     background: rgb(115 228 185 / 10%);
     color: var(--mint);
+    animation: checkpoint-confirm 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
   .flow-step--complete::after {
@@ -345,6 +367,7 @@
     border-color: var(--accent);
     color: var(--accent);
     box-shadow: 0 0 0 5px rgb(255 147 104 / 8%);
+    animation: current-stage 2.4s ease-in-out infinite;
   }
 
   .flow-step > div:last-of-type {
@@ -406,6 +429,7 @@
     background: var(--paper);
     box-shadow: var(--shadow);
     color: var(--paper-ink);
+    animation: packet-arrive 420ms cubic-bezier(0.2, 0.75, 0.2, 1) both;
   }
 
   .explainability-panel h2,
@@ -526,6 +550,53 @@
 
   .explainability-meta dd.text-amber {
     color: #a54d28;
+  }
+
+  .confidence-visual {
+    margin-top: 1.2rem;
+  }
+
+  .confidence-visual__label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.45rem;
+    color: var(--paper-muted);
+    font-size: 0.67rem;
+    font-weight: 750;
+  }
+
+  .confidence-visual__label strong {
+    color: #8c4a20;
+  }
+
+  .confidence-meter {
+    height: 6px;
+    overflow: hidden;
+    border-radius: 99px;
+    background: #d4dbd4;
+  }
+
+  .confidence-meter__fill {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #c87335, #e39b42);
+    transform-origin: left;
+    animation: confidence-resolve 620ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .confidence-meter__fill--low {
+    width: 34%;
+  }
+
+  .confidence-meter__fill--medium {
+    width: 67%;
+  }
+
+  .confidence-meter__fill--high {
+    width: 100%;
   }
 
   .confidence-note {
@@ -1008,6 +1079,7 @@
     border: 1px solid rgb(115 228 185 / 36%);
     border-radius: var(--radius-lg);
     background: var(--surface);
+    animation: relay-confirmed 420ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
   }
 
   .relay-panel__header {
@@ -1237,6 +1309,59 @@
     color: var(--muted-strong);
     font-size: 0.68rem;
     text-transform: none;
+  }
+
+  @keyframes signal-arrive {
+    from {
+      opacity: 0;
+      transform: translateX(8px);
+    }
+  }
+
+  @keyframes critical-signal {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgb(216 88 72 / 0%);
+    }
+    50% {
+      box-shadow: 0 0 0 4px rgb(216 88 72 / 12%);
+    }
+  }
+
+  @keyframes checkpoint-confirm {
+    from {
+      transform: scale(0.82);
+    }
+  }
+
+  @keyframes confidence-resolve {
+    from {
+      transform: scaleX(0);
+    }
+  }
+
+  @keyframes current-stage {
+    0%,
+    100% {
+      box-shadow: 0 0 0 5px rgb(255 147 104 / 8%);
+    }
+    50% {
+      box-shadow: 0 0 0 8px rgb(255 147 104 / 3%);
+    }
+  }
+
+  @keyframes packet-arrive {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.995);
+    }
+  }
+
+  @keyframes relay-confirmed {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
   }
 }
 

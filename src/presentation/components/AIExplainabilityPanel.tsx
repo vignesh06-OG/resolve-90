@@ -31,6 +31,12 @@ interface AIExplainabilityPanelProps {
   readonly decision: CompiledDecision | ApprovedDecision;
 }
 
+const CONFIDENCE_PERCENT = {
+  low: 34,
+  medium: 67,
+  high: 100,
+} as const;
+
 export function AIExplainabilityPanel({
   decision,
 }: AIExplainabilityPanelProps): React.JSX.Element {
@@ -85,6 +91,25 @@ export function AIExplainabilityPanel({
               <dd>{selected.actions.length}</dd>
             </div>
           </dl>
+          <div className="confidence-visual">
+            <div className="confidence-visual__label">
+              <span>Calibrated confidence</span>
+              <strong>{CONFIDENCE_PERCENT[selected.confidence]}%</strong>
+            </div>
+            <div
+              className="confidence-meter"
+              role="progressbar"
+              aria-label="AI recommendation confidence"
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={CONFIDENCE_PERCENT[selected.confidence]}
+              aria-valuetext={`${selected.confidence} confidence`}
+            >
+              <span
+                className={`confidence-meter__fill confidence-meter__fill--${selected.confidence}`}
+              />
+            </div>
+          </div>
           <p className="confidence-note">
             <Icon name="warning" size={17} /> Confidence cannot be “high” until
             the stale Blue Line headway is reconfirmed.

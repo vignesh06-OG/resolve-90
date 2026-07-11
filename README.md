@@ -40,7 +40,7 @@ npm run quality
 
 This single command checks formatting, lint, strict TypeScript, coverage, production build, bundle budgets, Lighthouse thresholds, dependency advisories, Playwright, report generation, and the final production build.
 
-Latest locally generated evidence is stored in [`public/quality/latest.json`](public/quality/latest.json) and rendered by `/quality`; the page does not contain hand-entered statistics. The current verified snapshot contains **60 Vitest checks, 10 Playwright checks, 97.71% branch coverage, Lighthouse 100/100/100/100, CLS 0, and zero dependency advisories**. Remote CI, public deployment, and hosted-header verification remain explicitly unverified because no GitHub remote or deployment credential is available in this workspace.
+Latest locally generated evidence is stored in [`public/quality/latest.json`](public/quality/latest.json) and rendered by `/quality`; the page does not contain hand-entered statistics. The current verified snapshot contains **60 Vitest checks, 10 Playwright checks, 97.74% branch coverage, Lighthouse 100/100/100/100, CLS 0, and zero dependency advisories**. The public GitHub repository is configured. Public deployment and hosted-header verification remain pending until a Vercel production URL is supplied; remote CI status is verified independently from local report data.
 
 | Check                       | Command                    | Enforced by CI |
 | --------------------------- | -------------------------- | -------------- |

@@ -44,8 +44,9 @@ export function IncidentBrief({
         </p>
         <div className="incident-hero__actions">
           <button
-            className="button button--primary"
+            className={`button button--primary${state.status === "compiling" ? " is-processing" : ""}`}
             type="button"
+            aria-busy={state.status === "compiling"}
             disabled={!canCompile}
             onClick={() => {
               if (state.status === "error") onReset();

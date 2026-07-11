@@ -44,6 +44,9 @@ describe("visible decision workflow", () => {
 
     expect(panel.getByText("Reasoning")).toBeVisible();
     expect(panel.getByText("medium")).toBeVisible();
+    expect(
+      panel.getByRole("progressbar", { name: "AI recommendation confidence" }),
+    ).toHaveAttribute("aria-valuenow", "67");
     expect(panel.getByText("Non-negotiable operating envelope")).toBeVisible();
     expect(panel.getByText("Accessibility validation")).toBeVisible();
     expect(panel.getByText("Safety validation")).toBeVisible();

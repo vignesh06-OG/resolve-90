@@ -63,11 +63,11 @@ Every direct challenge term and every quality category is mapped to an observabl
 ## Latest verification snapshot
 
 - 60 Vitest checks and 10 Playwright checks pass locally.
-- Coverage: 99.33% lines, 98.75% statements, 97.22% functions, 97.71% branches.
+- Coverage: 99.33% lines, 98.75% statements, 97.22% functions, 97.74% branches.
 - Lighthouse: 100 Performance, 100 Accessibility, 100 Best Practices, 100 SEO; CLS 0.
 - Dependency audit: zero advisories.
 - Bundle budget: passing.
-- Public deployment, hosted response headers, GitHub Actions, and CodeQL remain externally unverified because no remote or deployment credential is available.
+- Public deployment and hosted response headers remain pending until a Vercel URL is available. GitHub Actions and CodeQL are verified independently from local report generation.
 - The in-product Quality page reads generated report data rather than manually entered totals.
 
 ## Evidence integrity rules
