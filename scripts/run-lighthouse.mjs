@@ -1,55 +1,51 @@
 import { mkdir, readFile } from "node:fs/promises";
-import { spawn, spawnSync } from "node:child_process";
+import { spawn } from "node:child_process";
 
 import { chromium } from "@playwright/test";
+import { preview as startPreview } from "vite";
 
 const host = "127.0.0.1";
 const port = 4173;
 const url = `http://${host}:${port}/`;
-const npm = process.platform === "win32" ? "npm.cmd" : "npm";
 const npx = process.platform === "win32" ? "npx.cmd" : "npx";
 const reportDirectory = new URL("../reports/", import.meta.url);
 const reportPath = new URL("lighthouse.json", reportDirectory);
 await mkdir(reportDirectory, { recursive: true });
 
-const preview = spawn(npm, ["run", "preview", "--", "--host", host], {
-  cwd: process.cwd(),
-  stdio: "ignore",
+const preview = await startPreview({
+  preview: { host, port, strictPort: true },
 });
 
-async function waitForServer() {
-  for (let attempt = 0; attempt < 50; attempt += 1) {
-    try {
-      const response = await fetch(url);
-      if (response.ok) return;
-    } catch {
-      // The preview process may still be starting.
-    }
-    await new Promise((resolve) => setTimeout(resolve, 200));
-  }
-  throw new Error("Timed out waiting for the production preview server.");
-}
-
 try {
-  await waitForServer();
-  const run = spawnSync(
-    npx,
-    [
-      "--yes",
-      "lighthouse@12.8.2",
-      url,
-      "--quiet",
-      "--chrome-flags=--headless --no-sandbox --disable-dev-shm-usage",
-      "--only-categories=performance,accessibility,best-practices,seo",
-      "--output=json",
-      `--output-path=${reportPath.pathname}`,
-    ],
-    {
-      cwd: process.cwd(),
-      encoding: "utf8",
-      env: { ...process.env, CHROME_PATH: chromium.executablePath() },
-    },
-  );
+  const run = await new Promise((resolve, reject) => {
+    const child = spawn(
+      npx,
+      [
+        "--yes",
+        "lighthouse@12.8.2",
+        url,
+        "--quiet",
+        "--chrome-flags=--headless --no-sandbox --disable-dev-shm-usage",
+        "--only-categories=performance,accessibility,best-practices,seo",
+        "--output=json",
+        `--output-path=${reportPath.pathname}`,
+      ],
+      {
+        cwd: process.cwd(),
+        env: { ...process.env, CHROME_PATH: chromium.executablePath() },
+      },
+    );
+    let stdout = "";
+    let stderr = "";
+    child.stdout.on("data", (chunk) => {
+      stdout += chunk.toString();
+    });
+    child.stderr.on("data", (chunk) => {
+      stderr += chunk.toString();
+    });
+    child.on("error", reject);
+    child.on("close", (status) => resolve({ status, stdout, stderr }));
+  });
   if (run.status !== 0) {
     if (run.stdout) console.error(run.stdout);
     if (run.stderr) console.error(run.stderr);
@@ -80,5 +76,5 @@ try {
     }
   }
 } finally {
-  preview.kill("SIGTERM");
+  await preview.close();
 }
