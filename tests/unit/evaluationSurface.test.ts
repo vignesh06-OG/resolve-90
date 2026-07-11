@@ -57,6 +57,9 @@ describe("evaluation-visible production surface", () => {
     ];
 
     for (const keyword of keywords) expect(metadata).toContain(keyword);
+    expect(metadata).toContain(
+      '<link rel="canonical" href="https://resolve-90.vercel.app/"',
+    );
   });
 
   it("configures every required production security header", () => {
