@@ -1,0 +1,92 @@
+# Resolve 90
+
+[![CI workflow](https://img.shields.io/badge/CI-workflow%20configured-176b5b?style=flat-square&logo=githubactions&logoColor=white)](.github/workflows/ci.yml)
+[![TypeScript strict](https://img.shields.io/badge/TypeScript-strict-3178c6?style=flat-square&logo=typescript&logoColor=white)](tsconfig.app.json)
+[![WCAG 2.2 AA](https://img.shields.io/badge/accessibility-WCAG%202.2%20AA-7646ff?style=flat-square)](ACCESSIBILITY.md)
+[![License: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-f58b57?style=flat-square)](LICENSE)
+
+**A grounded GenAI incident-to-action compiler for inclusive stadium operations.**
+
+Resolve 90 turns fragmented match-day signals into a coordinated decision packet that a human commander can inspect and approve in under 90 seconds. It explicitly prevents a “safe” crowd action from silently breaking accessible routes, transit capacity, multilingual communication, or sustainability constraints.
+
+> **Honest demo contract:** The included scenario runs in clearly labeled **Replay mode**, so judging is fast, offline, and reproducible. Production mode routes structured generation to Gemini through a server-side gateway. Generated plans are untrusted until schema validation and deterministic policy guardrails pass.
+
+## Why this is not another chatbot or dashboard
+
+The product performs one consequential operational job:
+
+`signals → grounding → generated candidate → guardrail challenge → counterfactuals → human approval → role relay → audit receipt`
+
+The interface is a decision narrative, not a wall of generic KPIs. Every recommendation carries evidence, assumptions, confidence, ownership, accessible alternatives, and a fallback.
+
+## Quick start
+
+Requirements: Node.js 20.19+ and npm 10+.
+
+```bash
+npm ci
+npm run dev
+```
+
+Open `http://localhost:5173`. Select **Compile response** to run the stable East Concourse incident replay.
+
+## Quality gate
+
+```bash
+npm run quality
+```
+
+This single command checks formatting, lint, strict TypeScript, coverage thresholds, production build, performance budgets, and high-severity dependency advisories.
+
+| Check                       | Command                    | Enforced by CI |
+| --------------------------- | -------------------------- | -------------- |
+| Formatting                  | `npm run format:check`     | Yes            |
+| ESLint, zero warnings       | `npm run lint`             | Yes            |
+| Strict TypeScript           | `npm run typecheck`        | Yes            |
+| Unit/integration/a11y tests | `npm run test:coverage`    | Yes            |
+| End-to-end critical path    | `npm run test:e2e`         | Yes            |
+| Production build            | `npm run build`            | Yes            |
+| JS/CSS performance budget   | `npm run test:performance` | Yes            |
+| Dependency audit            | `npm run security:audit`   | Yes            |
+
+## Architecture at a glance
+
+```text
+presentation ──calls──▶ application ──depends on──▶ domain
+     │                       │                         ▲
+     │                       └── ports ◀── adapters ──┘
+     └──── never imports provider SDKs or business rules
+```
+
+- `src/domain`: pure incident, plan, route, and impact invariants.
+- `src/application`: use cases and provider/repository ports.
+- `src/infrastructure`: replay/live adapters, schemas, telemetry.
+- `src/presentation`: accessible React components and lazy routes.
+- `src/shared`: non-domain utilities and primitives.
+- `api`: server-only Gemini gateway with validation and rate limiting.
+
+See [ARCHITECTURE.md](ARCHITECTURE.md) and the in-product `/architecture` route.
+
+## Responsible AI boundary
+
+- No autonomous gate, evacuation, medical, or security action.
+- No biometrics, individual tracking, or personal profiles.
+- Gemini output is schema-validated and policy-checked.
+- Evidence references and rejected alternatives are visible.
+- Low-confidence and safety-critical actions require explicit approval.
+- Replay data and modeled impact are labeled; no live-integration claim is made.
+
+## Evidence index
+
+- [Concept selection](docs/CONCEPT_EVALUATION.md)
+- [Challenge traceability](docs/REQUIREMENT_TRACEABILITY.md)
+- [Architecture](ARCHITECTURE.md)
+- [Security and threat model](SECURITY.md)
+- [Accessibility](ACCESSIBILITY.md)
+- [Testing](TESTING.md)
+- [Contribution guide](CONTRIBUTING.md)
+- [Changelog](CHANGELOG.md)
+
+## License
+
+Apache-2.0. “FIFA” is referenced only as part of the supplied challenge context. Resolve 90 is not affiliated with or endorsed by FIFA.

@@ -34,30 +34,30 @@
 
 Scoring is 1–10. **Engineering leverage** rewards meaningful technical depth that remains feasible in a hackathon; needless complexity scores low. Weighted total: originality 20%, feasibility 15%, scalability 15%, evaluation visibility 20%, engineering leverage 10%, problem alignment 20%.
 
-| # | Concept | Core operational decision | O | F | S | V | E | A | Weighted |
-|---:|---|---|---:|---:|---:|---:|---:|---:|---:|
-| 1 | Generic multilingual venue chatbot | Answer fan questions | 2 | 9 | 7 | 5 | 3 | 6 | 5.15 |
-| 2 | Static smart stadium dashboard | Visualize venue KPIs | 2 | 8 | 8 | 6 | 4 | 6 | 5.55 |
-| 3 | AI map recommendation viewer | Recommend a gate or route | 3 | 8 | 7 | 6 | 4 | 7 | 5.90 |
-| 4 | Tournament CRUD command center | Manage incidents and tasks | 2 | 8 | 8 | 5 | 4 | 6 | 5.30 |
-| 5 | **Resolve 90 — incident-to-action compiler** | Compile one safe, coordinated 90-second response from conflicting live signals | **10** | **9** | **9** | **10** | **9** | **10** | **9.60** |
-| 6 | Crowd pressure digital twin | Predict density propagation between zones | 8 | 6 | 8 | 8 | 9 | 9 | 8.05 |
-| 7 | Accessible route capacity exchange | Reserve and rebalance step-free route capacity | 9 | 7 | 8 | 8 | 8 | 9 | 8.25 |
-| 8 | Volunteer micro-brief generator | Generate role/location-specific staff briefings | 7 | 9 | 8 | 8 | 6 | 8 | 7.80 |
-| 9 | Multilingual safety phrase compiler | Produce controlled-language emergency messages with back-translation checks | 8 | 8 | 9 | 8 | 7 | 8 | 8.10 |
-| 10 | Transit pulse synchronizer | Coordinate release waves with transit headways | 8 | 7 | 9 | 8 | 8 | 9 | 8.25 |
-| 11 | Carbon-aware egress orchestrator | Select egress interventions by safety and emissions | 9 | 6 | 8 | 8 | 8 | 8 | 7.85 |
-| 12 | Lost-party reunification protocol | Generate privacy-preserving reunification steps | 8 | 7 | 7 | 8 | 7 | 8 | 7.65 |
-| 13 | Sensory load guardian | Forecast noise/light/queue stress and open low-sensory alternatives | 9 | 7 | 7 | 9 | 7 | 8 | 7.95 |
-| 14 | Supply shock playbook generator | Reallocate water, medical, and sanitation resources | 7 | 8 | 8 | 8 | 7 | 8 | 7.75 |
-| 15 | Weather-to-operations compiler | Convert heat/storm alerts into venue-wide role actions | 7 | 8 | 9 | 8 | 7 | 9 | 8.15 |
-| 16 | Policy conflict resolver | Detect contradictions across security, accessibility, and transit SOPs | 9 | 7 | 9 | 8 | 9 | 9 | 8.50 |
-| 17 | Shift handover intelligence capsule | Generate evidence-linked continuity briefs | 7 | 9 | 8 | 8 | 6 | 8 | 7.80 |
-| 18 | Counterfactual intervention lab | Compare crowd actions before approval | 9 | 7 | 9 | 9 | 9 | 9 | 8.70 |
-| 19 | Venue-to-venue risk transfer network | Detect displaced transport/crowd risk across tournament sites | 10 | 5 | 10 | 8 | 9 | 9 | 8.45 |
-| 20 | Explainable queue fairness engine | Balance wait time without penalizing accessible/family lanes | 9 | 8 | 8 | 9 | 8 | 9 | 8.55 |
-| 21 | Rumor containment evidence engine | Turn social reports into verified, non-amplifying public guidance | 9 | 7 | 9 | 8 | 8 | 8 | 8.15 |
-| 22 | Post-match learning synthesizer | Convert decisions and outcomes into next-match policy changes | 8 | 9 | 9 | 8 | 7 | 8 | 8.20 |
+|   # | Concept                                      | Core operational decision                                                      |      O |     F |     S |      V |     E |      A | Weighted |
+| --: | -------------------------------------------- | ------------------------------------------------------------------------------ | -----: | ----: | ----: | -----: | ----: | -----: | -------: |
+|   1 | Generic multilingual venue chatbot           | Answer fan questions                                                           |      2 |     9 |     7 |      5 |     3 |      6 |     5.15 |
+|   2 | Static smart stadium dashboard               | Visualize venue KPIs                                                           |      2 |     8 |     8 |      6 |     4 |      6 |     5.55 |
+|   3 | AI map recommendation viewer                 | Recommend a gate or route                                                      |      3 |     8 |     7 |      6 |     4 |      7 |     5.90 |
+|   4 | Tournament CRUD command center               | Manage incidents and tasks                                                     |      2 |     8 |     8 |      5 |     4 |      6 |     5.30 |
+|   5 | **Resolve 90 — incident-to-action compiler** | Compile one safe, coordinated 90-second response from conflicting live signals | **10** | **9** | **9** | **10** | **9** | **10** | **9.60** |
+|   6 | Crowd pressure digital twin                  | Predict density propagation between zones                                      |      8 |     6 |     8 |      8 |     9 |      9 |     8.05 |
+|   7 | Accessible route capacity exchange           | Reserve and rebalance step-free route capacity                                 |      9 |     7 |     8 |      8 |     8 |      9 |     8.25 |
+|   8 | Volunteer micro-brief generator              | Generate role/location-specific staff briefings                                |      7 |     9 |     8 |      8 |     6 |      8 |     7.80 |
+|   9 | Multilingual safety phrase compiler          | Produce controlled-language emergency messages with back-translation checks    |      8 |     8 |     9 |      8 |     7 |      8 |     8.10 |
+|  10 | Transit pulse synchronizer                   | Coordinate release waves with transit headways                                 |      8 |     7 |     9 |      8 |     8 |      9 |     8.25 |
+|  11 | Carbon-aware egress orchestrator             | Select egress interventions by safety and emissions                            |      9 |     6 |     8 |      8 |     8 |      8 |     7.85 |
+|  12 | Lost-party reunification protocol            | Generate privacy-preserving reunification steps                                |      8 |     7 |     7 |      8 |     7 |      8 |     7.65 |
+|  13 | Sensory load guardian                        | Forecast noise/light/queue stress and open low-sensory alternatives            |      9 |     7 |     7 |      9 |     7 |      8 |     7.95 |
+|  14 | Supply shock playbook generator              | Reallocate water, medical, and sanitation resources                            |      7 |     8 |     8 |      8 |     7 |      8 |     7.75 |
+|  15 | Weather-to-operations compiler               | Convert heat/storm alerts into venue-wide role actions                         |      7 |     8 |     9 |      8 |     7 |      9 |     8.15 |
+|  16 | Policy conflict resolver                     | Detect contradictions across security, accessibility, and transit SOPs         |      9 |     7 |     9 |      8 |     9 |      9 |     8.50 |
+|  17 | Shift handover intelligence capsule          | Generate evidence-linked continuity briefs                                     |      7 |     9 |     8 |      8 |     6 |      8 |     7.80 |
+|  18 | Counterfactual intervention lab              | Compare crowd actions before approval                                          |      9 |     7 |     9 |      9 |     9 |      9 |     8.70 |
+|  19 | Venue-to-venue risk transfer network         | Detect displaced transport/crowd risk across tournament sites                  |     10 |     5 |    10 |      8 |     9 |      9 |     8.45 |
+|  20 | Explainable queue fairness engine            | Balance wait time without penalizing accessible/family lanes                   |      9 |     8 |     8 |      9 |     8 |      9 |     8.55 |
+|  21 | Rumor containment evidence engine            | Turn social reports into verified, non-amplifying public guidance              |      9 |     7 |     9 |      8 |     8 |      8 |     8.15 |
+|  22 | Post-match learning synthesizer              | Convert decisions and outcomes into next-match policy changes                  |      8 |     9 |     9 |      8 |     7 |      8 |     8.20 |
 
 ## 3. Rejections
 

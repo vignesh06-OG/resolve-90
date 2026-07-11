@@ -1,0 +1,26 @@
+name: Feature proposal
+description: Propose a measurable operational improvement.
+title: "feat: "
+labels: [enhancement, triage]
+body:
+  - type: textarea
+    id: decision
+    attributes:
+      label: Operational decision improved
+      description: What user decision becomes safer, faster, or more inclusive?
+    validations:
+      required: true
+  - type: textarea
+    id: measure
+    attributes:
+      label: Success and guardrail measures
+      description: Include at least one outcome and one safety/accessibility guardrail.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Challenge/evaluation evidence
+      description: Which mapped challenge requirement and quality category improve?
+    validations:
+      required: true
