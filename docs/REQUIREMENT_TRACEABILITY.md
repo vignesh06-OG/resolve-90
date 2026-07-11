@@ -1,0 +1,69 @@
+# Phase 0 — Requirement Traceability
+
+Every direct challenge term and every quality category is mapped to an observable product or repository artifact. “Visible evidence” means a judge can verify it without reading implementation details.
+
+## Challenge mapping
+
+| Requirement | Primary user | Product feature | Technical implementation | Visible evidence | Expected evaluation benefit |
+|---|---|---|---|---|---|
+| Build a working solution | Evaluator, operator | End-to-end incident replay and approval flow | Deployable React/TypeScript application with deterministic replay data and provider ports | “Run scenario” produces a complete decision packet | Feasibility, completeness, demo reliability |
+| GenAI-enabled | Venue commander | Grounded decision compiler | Server-side Gemini adapter contract; typed structured output schema; deterministic replay adapter for offline judging; evidence citations and guardrail pass | Generation receipt names mode/model, sources, confidence, guardrail results, and timestamp | AI relevance, safety, technical depth |
+| Enhance stadium operations | Venue staff, organizer | 90-second incident-to-action workflow | Domain risk model, policy retrieval, plan validation, role assignment | Before/after operational impact and decision clock | Problem alignment, measurable impact |
+| Improve tournament experience | Fans | Calm, channel-ready, actionable disruption guidance | Controlled-language message generator with next step, location, time, and accessible alternative | Fan journey preview and experience metrics | User value, clarity, trust |
+| Fans | Fans with varied language/access needs | Multilingual, accessible fan relay | Language variants, plain-language checks, channel adaptation | English, Spanish, French and accessible-format previews | Inclusion, multilingual alignment |
+| Organizers | Tournament organizer | Cross-domain counterfactual comparison | Scored candidate interventions and policy conflict graph | “Why this plan” comparison with trade-offs | Decision support, explainability |
+| Volunteers | Volunteers | 20-second micro-briefs | Role/location-specific action compiler and acknowledgement state | Volunteer brief card with say/do/escalate sections | Operational usefulness |
+| Venue staff | Security, mobility, accessibility, transport leads | Owned action sequence | Typed action model with owner, deadline, dependency, fallback | Relay board with roles and due times | Coordination and deployability |
+| Navigation | Fans, mobility lead | Dynamic route intervention | Venue zone graph, capacity and accessibility constraints, route alternative calculation | Reroute shows start/end, reason, added time, step-free status | Navigation alignment, algorithmic evidence |
+| Crowd management | Safety lead | Pressure forecast and counterfactual action | Deterministic pressure index and spillover constraints | Pressure delta, affected zones, guardrail result | Safety impact, operational intelligence |
+| Accessibility | Accessibility lead, disabled fans | Accessibility veto and protected route | Route accessibility attributes, no-regression policy, semantic UI, WCAG checks | Accessibility impact called out before approval; `/accessibility` audit | Inclusion and WCAG score |
+| Transportation | Transport lead, fans | Egress/transit synchronization | Transit headway and arrival-capacity constraints | Transport fit delta and departure guidance | End-to-end journey alignment |
+| Sustainability | Sustainability lead | Carbon-aware tie-breaker | Intervention emissions estimator; safety remains a hard constraint | Avoided kgCO₂e shown with assumptions | Sustainability alignment without safety-washing |
+| Multilingual assistance | International fans, volunteers | Controlled multilingual relay | Locale packs, language-risk notice, production translation provider port | Side-by-side locale preview; glossary constraints | Global tournament relevance |
+| Operational intelligence | Venue commander | Evidence-linked situation synthesis | Signal normalization, policy grounding, domain scoring, evidence graph | Evidence drawer traces each action to a signal/policy | Explainability, architecture depth |
+| Real-time decision support | Venue commander | 90-second decision clock | Fast local domain evaluation, lazy non-critical routes, explicit freshness | Signal timestamps, stale-data warnings, time-to-decision KPI | Real-time alignment, performance |
+| FIFA World Cup 2026 context | All tournament roles | Multi-venue-ready scenario and host-language guidance | Venue-agnostic ports and scenario packs; locale/time-zone aware types | 2026 match-day scenario; venue configuration architecture | Specificity and scalability |
+
+## Quality mapping
+
+| Requirement | Primary user | Product/repository feature | Technical implementation | Visible evidence | Expected evaluation benefit |
+|---|---|---|---|---|---|
+| Production architecture | Engineer, evaluator | Clean dependency boundaries | `domain → application → infrastructure/presentation`; ports/adapters; architecture decision records | `/architecture`, `ARCHITECTURE.md`, dependency diagram | Code quality, maintainability |
+| Strict typing | Engineer | Typed schemas and domain types | TypeScript strict flags, Zod at boundaries, exhaustive states | Quality page and CI commands | Correctness, code quality |
+| No business/API logic in UI | Engineer | Use-case orchestration and provider ports | React consumes application services; fetch isolated in infrastructure | Architecture diagram and tests | SOLID, testability |
+| Security | Security reviewer, users | Threat model and safe provider boundary | CSP/security headers, input size/schema checks, sanitization-by-construction, rate-limit adapter contract, no client secrets | `/security`, `SECURITY.md`, security test summary | OWASP alignment, trust |
+| Privacy | Fans | No personal tracking | Aggregated signals only, explicit data minimization and retention | Privacy callout and threat model | Responsible AI, legal readiness |
+| Performance | Mobile operators | Fast first load and instant scenario response | Route-level lazy imports, small dependency set, CSS system fonts, performance budget script | `/quality` Web Vitals budget and bundle check | Efficiency, Lighthouse potential |
+| Unit testing | Engineer | Domain invariants tested | Vitest domain suites | `/testing` test inventory and coverage | Testing score |
+| Integration testing | QA lead | Full compile/guardrail/approve flow | Application use-case tests with fake ports | `/testing` integration status | Reliability |
+| End-to-end testing | QA lead | Keyboard-driven critical path | Playwright smoke test | `/testing`, E2E source, CI job | Deployability |
+| Accessibility testing | Accessibility auditor | Automated and manual audit | axe test, semantic landmarks, focus management, reduced motion, contrast tokens | `/accessibility` checklist and test status | WCAG 2.2 AA |
+| Performance testing | Performance engineer | Enforced resource budgets | Build artifact budget script and Lighthouse config | `/quality` budget table, CI command | Efficiency evidence |
+| Error handling | Operator | Recoverable route and generation failures | Error boundary, typed Result/error states, fallback replay | Error recovery UI and architecture docs | Resilience |
+| Observability | Operator, SRE | Correlated decision receipt | Structured audit events, request/decision ID, freshness and mode | Evidence drawer and audit timeline | Operational readiness |
+| Explainability | Commander, evaluator | “Why this plan” | Evidence refs, confidence, rejected alternatives, assumptions | Decision rationale and counterfactual cards | Trust and AI safety |
+| Human control | Commander | Approval gate | State machine prevents relay before approval; high-risk acknowledgement | Explicit approval checkpoint and audit event | Responsible AI, safety |
+| Documentation | Engineer, evaluator | Complete repository handbook | README, architecture, security, accessibility, testing, contributing, changelog, license | Docs plus links in quality routes | Professional quality |
+| CI/CD hygiene | Engineer | Automated quality gates | GitHub Actions, Dependabot, issue/PR templates, lint/format/test/build/audit | CI workflow and quality page | Engineering maturity |
+| Challenge traceability | Judge | Dedicated alignment matrix | Traceability content represented as typed data and static docs | `/challenge-alignment` | Problem statement score |
+| Visible quality | Judge | Inspectable quality center | `/quality`, `/architecture`, `/security`, `/testing`, `/accessibility`, `/challenge-alignment` | Navigation links and honest status vocabulary | Evaluation visibility |
+
+## Success measures used in the product
+
+| Measure | Definition | Demo baseline | Target | Guardrail |
+|---|---|---:|---:|---|
+| Decision latency | Signal bundle received → packet ready for approval | 6m 20s | <90s | Never auto-approve |
+| Peak concourse pressure | Modeled occupancy / safe operating capacity | 1.18 | ≤0.90 | Do not displace >0.95 elsewhere |
+| Accessible path preservation | Viable step-free route capacity after intervention | 62% | ≥95% | No plan below 90% may be recommended |
+| Transport fit | Fans released within modeled transit carrying capacity | 71% | ≥90% | Flag stale headway data |
+| Staff instruction clarity | Actions with owner, place, deadline, fallback | 43% | 100% | Packet fails validation if incomplete |
+| Language coverage | Priority fan message variants prepared | 1 | 3 | Human review warning remains visible |
+| Operational carbon | Modeled intervention transport/energy emissions | 286 kgCO₂e | lower only after safety/access constraints | Sustainability never outranks safety |
+
+## Evidence integrity rules
+
+1. Demo metrics are labeled **modeled**, never presented as live measurements.
+2. Repository quality statuses distinguish **configured**, **verified in this commit**, and **requires deployment measurement**.
+3. The product does not claim FIFA affiliation, certification, or official venue integration.
+4. A deterministic replay may demonstrate the production flow but is always labeled **Replay mode**.
+5. Gemini-generated output, when enabled, is untrusted until schema validation and deterministic guardrails pass.
