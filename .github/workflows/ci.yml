@@ -19,19 +19,41 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: 20.19.0
           cache: npm
       - run: npm ci
       - name: Install browser and system dependencies
         run: npx playwright install --with-deps chromium
-      - name: Run types, lint, tests, coverage, build, Lighthouse, audit, and E2E
-        run: npm run quality
+      - name: Formatting
+        run: npm run format:check
+      - name: ESLint
+        run: npm run lint
+      - name: Strict TypeScript
+        run: npm run typecheck
+      - name: Vitest and coverage
+        run: npm run test:coverage
+      - name: Machine-readable Vitest report
+        run: npm run test:report
+      - name: Production build
+        run: npm run build
+      - name: Bundle performance budget
+        run: npm run test:performance
+      - name: Lighthouse thresholds
+        run: npm run lighthouse
+      - name: Dependency security audit
+        run: npm run security:audit
+      - name: Playwright critical paths
+        run: npm run test:e2e
+      - name: Generate visible quality evidence
+        run: npm run quality:report
+      - name: Final evidence-aware build
+        run: npm run build
       - name: Upload machine-readable quality evidence
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: quality-evidence
           path: |
@@ -42,7 +64,7 @@ jobs:
           if-no-files-found: ignore
           retention-days: 14
       - name: Upload production bundle
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: production-bundle
           path: dist/
