@@ -39,9 +39,14 @@ export default async function compile(
     const { default: handler } =
       await import("../src/infrastructure/server/compile/handler");
     await handler(request, adapted);
-  } catch {
+  } catch (error) {
+    const detail =
+      error instanceof Error
+        ? `${error.name}: ${error.message}`
+        : "Unknown error";
     adapted.setHeader("Cache-Control", "no-store");
     adapted.setHeader("Content-Type", "application/json; charset=utf-8");
+    adapted.setHeader("X-Resolve-Debug", detail.slice(0, 180));
     adapted
       .status(500)
       .json({ error: "Compile gateway initialization failed." });
