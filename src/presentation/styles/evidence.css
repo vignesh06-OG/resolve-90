@@ -1,5 +1,6 @@
 @import "./evidence/quality.css";
 @import "./evidence/architecture.css";
-@import "./evidence/assurance.css";
+@import "./evidence/security-audit.css";
+@import "./evidence/testing-audit.css";
 @import "./evidence/alignment.css";
 @import "./evidence/responsive.css";

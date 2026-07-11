@@ -62,8 +62,8 @@ Every direct challenge term and every quality category is mapped to an observabl
 
 ## Latest verification snapshot
 
-- 75 Vitest checks and 11 Playwright checks pass locally.
-- Coverage: 99.48% lines, 99.03% statements, 97.60% functions, 96.68% branches.
+- 78 Vitest checks and 11 Playwright checks pass locally.
+- Coverage: 99.57% lines, 99.22% statements, 98.57% functions, 97.38% branches.
 - Lighthouse: 100 Performance, 100 Accessibility, 100 Best Practices, 100 SEO; CLS 0.
 - Dependency audit: zero advisories.
 - Bundle budget: passing.

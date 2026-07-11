@@ -7,15 +7,22 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export function Button({
-  variant = "primary",
-  busy = false,
-  className = "",
+  variant,
+  busy,
+  className,
   children,
   ...props
 }: ButtonProps): React.JSX.Element {
-  const classes = `button button--${variant}${busy ? " is-processing" : ""}${className ? ` ${className}` : ""}`;
+  const classes = [
+    "button",
+    `button--${variant ?? "primary"}`,
+    busy && "is-processing",
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
   return (
-    <button className={classes} aria-busy={busy} {...props}>
+    <button className={classes} aria-busy={Boolean(busy)} {...props}>
       {children}
     </button>
   );

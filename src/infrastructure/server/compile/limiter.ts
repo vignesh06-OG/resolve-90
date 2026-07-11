@@ -17,12 +17,14 @@ const RATE_LIMIT = 8;
 const RATE_WINDOW_MILLISECONDS = 60_000;
 const buckets = new Map<string, RateBucket>();
 
-function requestKey(request: ApiRequest): string {
+function forwardedAddress(request: ApiRequest): string | undefined {
   const forwarded = firstHeader(request.headers["x-forwarded-for"]);
-  const address =
-    forwarded?.split(",")[0]?.trim() ??
-    request.socket?.remoteAddress ??
-    "unknown";
+  return forwarded?.split(",")[0]?.trim();
+}
+
+function requestKey(request: ApiRequest): string {
+  const addresses = [forwardedAddress(request), request.socket?.remoteAddress];
+  const address = addresses.find((value) => value !== undefined) ?? "unknown";
   return createHash("sha256").update(address).digest("hex").slice(0, 20);
 }
 

@@ -13,39 +13,41 @@ export type ProviderResult =
       readonly candidates: readonly GeneratedCandidate[];
       readonly model: string;
     }
-  | {
-      readonly ok: false;
-      readonly kind: "invalid" | "unavailable";
-    };
+  | { readonly ok: false; readonly kind: "invalid" | "unavailable" };
 
-const ALLOWED_MODELS = new Set(["gemini-2.5-flash", "gemini-2.0-flash"]);
+const DEFAULT_MODEL = "gemini-2.5-flash";
+const PROVIDER_TIMEOUT_MS = 10_000;
+const MAX_OUTPUT_TOKENS = 8192;
+const GENERATION_TEMPERATURE = 0.2;
+const ALLOWED_MODELS = new Set([DEFAULT_MODEL, "gemini-2.0-flash"]);
 
 function selectedModel(): string {
-  const configured = process.env["GEMINI_MODEL"] ?? "gemini-2.5-flash";
-  return ALLOWED_MODELS.has(configured) ? configured : "gemini-2.5-flash";
+  const configured = process.env["GEMINI_MODEL"] ?? DEFAULT_MODEL;
+  return ALLOWED_MODELS.has(configured) ? configured : DEFAULT_MODEL;
 }
 
-function parseCandidateText(
-  text: string,
-): readonly GeneratedCandidate[] | null {
-  let payload: unknown;
-  try {
-    payload = JSON.parse(text) as unknown;
-  } catch {
-    return null;
-  }
-  const candidates = providerCandidateEnvelopeSchema.safeParse(payload);
-  return candidates.success ? candidates.data.candidates : null;
+function requestBody(incident: IncidentContext): string {
+  return JSON.stringify({
+    systemInstruction: { parts: [{ text: SYSTEM_INSTRUCTION }] },
+    contents: [
+      { role: "user", parts: [{ text: buildGroundedPrompt(incident) }] },
+    ],
+    generationConfig: {
+      temperature: GENERATION_TEMPERATURE,
+      maxOutputTokens: MAX_OUTPUT_TOKENS,
+      responseMimeType: "application/json",
+      responseJsonSchema: OUTPUT_SCHEMA,
+    },
+  });
 }
 
-export async function requestGemini(
+async function callProvider(
   incident: IncidentContext,
   apiKey: string,
-): Promise<ProviderResult> {
-  const model = selectedModel();
-  let response: Response;
+  model: string,
+): Promise<Response | null> {
   try {
-    response = await fetch(
+    return await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,
       {
         method: "POST",
@@ -53,38 +55,49 @@ export async function requestGemini(
           "Content-Type": "application/json",
           "x-goog-api-key": apiKey,
         },
-        body: JSON.stringify({
-          systemInstruction: { parts: [{ text: SYSTEM_INSTRUCTION }] },
-          contents: [
-            {
-              role: "user",
-              parts: [{ text: buildGroundedPrompt(incident) }],
-            },
-          ],
-          generationConfig: {
-            temperature: 0.2,
-            maxOutputTokens: 8192,
-            responseMimeType: "application/json",
-            responseJsonSchema: OUTPUT_SCHEMA,
-          },
-        }),
-        signal: AbortSignal.timeout(10_000),
+        body: requestBody(incident),
+        signal: AbortSignal.timeout(PROVIDER_TIMEOUT_MS),
       },
     );
   } catch {
-    return { ok: false, kind: "unavailable" };
+    return null;
   }
+}
 
-  if (!response.ok) return { ok: false, kind: "unavailable" };
+function parseCandidateText(
+  text: string,
+): readonly GeneratedCandidate[] | null {
+  try {
+    const candidates = providerCandidateEnvelopeSchema.safeParse(
+      JSON.parse(text) as unknown,
+    );
+    return candidates.success ? candidates.data.candidates : null;
+  } catch {
+    return null;
+  }
+}
 
-  const rawPayload: unknown = await response.json();
-  const providerPayload = geminiResponseSchema.safeParse(rawPayload);
-  const generatedText = providerPayload.success
-    ? providerPayload.data.candidates[0]?.content.parts[0]?.text
-    : undefined;
-  if (generatedText === undefined) return { ok: false, kind: "invalid" };
+async function candidatesFrom(
+  response: Response,
+): Promise<readonly GeneratedCandidate[] | null> {
+  const payload: unknown = await response.json();
+  const parsed = geminiResponseSchema.safeParse(payload);
+  if (!parsed.success) return null;
+  const candidate = parsed.data.candidates[0];
+  if (candidate === undefined) return null;
+  const part = candidate.content.parts[0];
+  return part === undefined ? null : parseCandidateText(part.text);
+}
 
-  const candidates = parseCandidateText(generatedText);
+export async function requestGemini(
+  incident: IncidentContext,
+  apiKey: string,
+): Promise<ProviderResult> {
+  const model = selectedModel();
+  const response = await callProvider(incident, apiKey, model);
+  if (response === null || !response.ok)
+    return { ok: false, kind: "unavailable" };
+  const candidates = await candidatesFrom(response);
   return candidates === null
     ? { ok: false, kind: "invalid" }
     : { ok: true, candidates, model };

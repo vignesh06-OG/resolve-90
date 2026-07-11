@@ -233,6 +233,23 @@ describe("server provider and boundaries", () => {
     await expect(
       requestGemini(EAST_CONCOURSE_INCIDENT, "server-key-that-is-long-enough"),
     ).resolves.toEqual({ ok: false, kind: "invalid" });
+
+    vi.stubGlobal(
+      "fetch",
+      vi.fn<typeof fetch>().mockResolvedValue(
+        new Response(
+          JSON.stringify({
+            candidates: [
+              { content: { parts: [{ text: '{"candidates":[]}' }] } },
+            ],
+          }),
+          { status: 200 },
+        ),
+      ),
+    );
+    await expect(
+      requestGemini(EAST_CONCOURSE_INCIDENT, "server-key-that-is-long-enough"),
+    ).resolves.toEqual({ ok: false, kind: "invalid" });
   });
 
   it("handles transport exceptions and circular request bodies", async () => {

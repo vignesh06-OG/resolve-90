@@ -9,11 +9,9 @@ export function Card({
   children,
   ...props
 }: CardProps): React.JSX.Element {
+  const classes = ["ui-card", className].filter(Boolean).join(" ");
   return (
-    <article
-      className={`ui-card${className ? ` ${className}` : ""}`}
-      {...props}
-    >
+    <article className={classes} {...props}>
       {children}
     </article>
   );

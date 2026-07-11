@@ -9,7 +9,7 @@ Resolve 90 is optimized for observable engineering and direct challenge alignmen
 | Code quality        | Strict TypeScript, clean domain/application/infrastructure/presentation boundaries, typed ports, small single-purpose components, zero-warning ESLint, error boundary, generated quality reports           |
 | Security            | Strict CSP, ten deployment header checks, server-only provider secret, Zod boundaries, request-size ceiling, origin check, rate limiting, provider timeout, evidence allowlist, zero dependency advisories |
 | Efficiency          | Lighthouse 100, CLS 0, route splitting, lazy live provider, system fonts, no bitmap media, no heavy visualization dependency, enforced compressed bundle budget                                            |
-| Testing             | 86 automated checks, 99.48% line coverage, 96.68% branch coverage, Vitest unit/integration/accessibility checks, Playwright workflow/security/mobile/keyboard checks                                       |
+| Testing             | 89 automated checks, 99.57% line coverage, 97.38% branch coverage, Vitest unit/integration/accessibility checks, Playwright workflow/security/mobile/keyboard checks                                       |
 | Accessibility       | Lighthouse 100, axe scans, contrast-token tests, skip navigation, semantic landmarks, native controls, live regions, keyboard tabs, focus management, reduced motion                                       |
 | Problem alignment   | Seventeen direct challenge terms mapped to feature, implementation, visible evidence, and impact on `/challenge-alignment`                                                                                 |
 

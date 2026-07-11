@@ -48,6 +48,21 @@ export default tseslint.config(
     },
   },
   {
+    files: ["src/**/*.{ts,tsx}", "api/**/*.{ts,tsx}"],
+    ignores: ["src/generated/**"],
+    rules: {
+      complexity: ["error", 4],
+      "max-lines": [
+        "error",
+        { max: 250, skipBlankLines: true, skipComments: true },
+      ],
+      "max-lines-per-function": [
+        "error",
+        { max: 30, skipBlankLines: true, skipComments: true, IIFEs: true },
+      ],
+    },
+  },
+  {
     files: ["src/domain/**/*.{ts,tsx}"],
     rules: {
       "no-restricted-imports": [

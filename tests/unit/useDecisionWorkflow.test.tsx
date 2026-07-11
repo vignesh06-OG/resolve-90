@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { useDecisionWorkflow } from "../../src/presentation/hooks/useDecisionWorkflow";
 
@@ -30,6 +30,11 @@ function WorkflowHarness(): React.JSX.Element {
   );
 }
 
+afterEach(() => {
+  vi.unstubAllEnvs();
+  vi.unstubAllGlobals();
+});
+
 describe("useDecisionWorkflow", () => {
   it("ignores premature approval and supports an explicit reset", async () => {
     const user = userEvent.setup();
@@ -43,5 +48,16 @@ describe("useDecisionWorkflow", () => {
 
     await user.click(screen.getByRole("button", { name: "reset" }));
     expect(screen.getByLabelText("workflow state")).toHaveTextContent("idle");
+  });
+
+  it("surfaces a typed error when the live provider is unavailable", async () => {
+    vi.stubEnv("VITE_DECISION_API_MODE", "live");
+    vi.stubGlobal(
+      "fetch",
+      vi.fn<typeof fetch>().mockRejectedValue(new Error("offline")),
+    );
+    render(<WorkflowHarness />);
+    await userEvent.click(screen.getByRole("button", { name: "compile" }));
+    expect(await screen.findByText("error")).toBeVisible();
   });
 });

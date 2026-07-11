@@ -81,7 +81,10 @@ describe("evaluation-visible production surface", () => {
   });
 
   it("uses exact architecture-layer and SOLID vocabulary", () => {
-    const architecture = read("src/presentation/pages/ArchitecturePage.tsx");
+    const architecture = [
+      read("src/presentation/pages/ArchitecturePage.tsx"),
+      read("src/presentation/pages/architecture/ArchitectureSections.tsx"),
+    ].join("\n");
     for (const label of [
       "Domain Layer",
       "Application Layer",
@@ -130,11 +133,14 @@ describe("evaluation-visible production surface", () => {
   });
 
   it("keeps evaluator evidence linked directly from the hero", () => {
-    const hero = read("src/presentation/components/IncidentBrief.tsx");
+    const hero = [
+      read("src/presentation/components/IncidentBrief.tsx"),
+      read("src/presentation/components/IncidentBriefSections.tsx"),
+    ].join("\n");
 
-    expect(hero).toContain('href="/quality"');
-    expect(hero).toContain('href="/architecture"');
-    expect(hero).toContain('href="/challenge-alignment"');
+    expect(hero).toContain('href: "/quality"');
+    expect(hero).toContain('href: "/architecture"');
+    expect(hero).toContain('href: "/challenge-alignment"');
     expect(hero).toContain("Testing evidence");
   });
 

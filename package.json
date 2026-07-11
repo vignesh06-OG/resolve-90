@@ -36,7 +36,8 @@
     "audit:security": "npm run security:audit",
     "audit:performance": "npm run test:performance",
     "github:verify": "node scripts/verify-github.mjs",
-    "static:evidence": "node scripts/generate-static-evidence.mjs"
+    "static:evidence": "node scripts/generate-static-evidence.mjs",
+    "coverage": "npm run test:coverage"
   },
   "dependencies": {
     "react": "19.2.7",

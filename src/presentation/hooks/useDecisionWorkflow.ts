@@ -1,6 +1,15 @@
-import { useCallback, useMemo, useState } from "react";
+import {
+  useCallback,
+  useMemo,
+  useState,
+  type Dispatch,
+  type SetStateAction,
+} from "react";
 
-import { createUiRuntime } from "../../bootstrap/createUiRuntime";
+import {
+  createUiRuntime,
+  type UiRuntime,
+} from "../../bootstrap/createUiRuntime";
 import type {
   ApprovalAcknowledgement,
   ApprovedDecision,
@@ -27,33 +36,33 @@ export interface DecisionWorkflow {
   readonly reset: () => void;
 }
 
-export function useDecisionWorkflow(): DecisionWorkflow {
-  const mode: GenerationMode =
-    import.meta.env.VITE_DECISION_API_MODE === "live" ? "live" : "replay";
-  const apiUrl = import.meta.env.VITE_DECISION_API_URL ?? "/api/compile";
-  const runtime = useMemo(
-    () => createUiRuntime({ mode, apiUrl }),
-    [apiUrl, mode],
-  );
-  const [state, setState] = useState<DecisionWorkflowState>({ status: "idle" });
+type SetWorkflowState = Dispatch<SetStateAction<DecisionWorkflowState>>;
 
-  const compile = useCallback(async (): Promise<void> => {
+function useCompile(
+  runtime: UiRuntime,
+  setState: SetWorkflowState,
+): () => Promise<void> {
+  return useCallback(async () => {
     setState({ status: "compiling" });
     const result = await runtime.services.compileIncident.execute(
       runtime.incident.id,
     );
-
     setState(
       result.ok
         ? { status: "compiled", decision: result.value }
         : { status: "error", message: result.error.message },
     );
-  }, [runtime]);
+  }, [runtime, setState]);
+}
 
-  const approve = useCallback(
-    async (acknowledgement: ApprovalAcknowledgement): Promise<boolean> => {
+function useApprove(
+  runtime: UiRuntime,
+  state: DecisionWorkflowState,
+  setState: SetWorkflowState,
+): DecisionWorkflow["approve"] {
+  return useCallback(
+    async (acknowledgement) => {
       if (state.status !== "compiled") return false;
-
       const result = await runtime.services.approveDecision.execute(
         state.decision,
         acknowledgement,
@@ -65,19 +74,21 @@ export function useDecisionWorkflow(): DecisionWorkflow {
       );
       return result.ok;
     },
-    [runtime, state],
+    [runtime, setState, state],
   );
+}
 
-  const reset = useCallback(() => {
-    setState({ status: "idle" });
-  }, []);
-
-  return {
-    state,
-    mode,
-    incident: runtime.incident,
-    compile,
-    approve,
-    reset,
-  };
+export function useDecisionWorkflow(): DecisionWorkflow {
+  const mode: GenerationMode =
+    import.meta.env.VITE_DECISION_API_MODE === "live" ? "live" : "replay";
+  const apiUrl = import.meta.env.VITE_DECISION_API_URL ?? "/api/compile";
+  const runtime = useMemo(
+    () => createUiRuntime({ mode, apiUrl }),
+    [apiUrl, mode],
+  );
+  const [state, setState] = useState<DecisionWorkflowState>({ status: "idle" });
+  const compile = useCompile(runtime, setState);
+  const approve = useApprove(runtime, state, setState);
+  const reset = useCallback(() => setState({ status: "idle" }), []);
+  return { state, mode, incident: runtime.incident, compile, approve, reset };
 }

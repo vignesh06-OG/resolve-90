@@ -12,6 +12,7 @@ export default defineConfig({
   },
   build: {
     target: "es2022",
+    modulePreload: { polyfill: false },
     cssCodeSplit: true,
     sourcemap: false,
     rollupOptions: {

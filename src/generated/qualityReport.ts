@@ -2,17 +2,17 @@
 import type { QualityReport } from "./qualityReportTypes";
 
 export const QUALITY_REPORT: QualityReport = {
-  generatedAt: "2026-07-11T13:00:48.547Z",
-  commit: "e08ff23",
+  generatedAt: "2026-07-11T18:20:03.121Z",
+  commit: "7eef9a3",
   tests: {
     status: "pass",
-    total: 86,
-    passed: 86,
+    total: 89,
+    passed: 89,
     failed: 0,
     vitest: {
-      files: 16,
-      total: 75,
-      passed: 75,
+      files: 17,
+      total: 78,
+      passed: 78,
     },
     playwright: {
       total: 11,
@@ -22,14 +22,14 @@ export const QUALITY_REPORT: QualityReport = {
   },
   coverage: {
     status: "pass",
-    lines: 99.48,
-    statements: 99.03,
-    functions: 97.6,
-    branches: 96.68,
+    lines: 99.57,
+    statements: 99.22,
+    functions: 98.57,
+    branches: 97.38,
   },
   build: {
     status: "pass",
-    javascriptGzipBytes: 107222,
+    javascriptGzipBytes: 107845,
     cssGzipBytes: 9579,
     javascriptChunks: 11,
     largestJavaScriptGzipBytes: 58967,
@@ -54,9 +54,9 @@ export const QUALITY_REPORT: QualityReport = {
       bestPractices: 100,
       seo: 100,
       cls: 0,
-      fcpMilliseconds: 1436.8989,
-      lcpMilliseconds: 1436.8989,
-      totalBlockingTimeMilliseconds: 8.5,
+      fcpMilliseconds: 1410.2271,
+      lcpMilliseconds: 1410.2271,
+      totalBlockingTimeMilliseconds: 0.5,
     },
   },
   accessibility: {

@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-11T12:51:24.983Z",
+  "generatedAt": "2026-07-11T18:18:36.558Z",
   "passed": true,
   "failures": [],
   "totals": {
-    "javascriptGzipBytes": 107222,
+    "javascriptGzipBytes": 107845,
     "cssGzipBytes": 9579,
     "javascriptChunks": 11,
     "largestJavaScriptGzipBytes": 58967
@@ -16,19 +16,19 @@
   },
   "assets": [
     {
-      "name": "AccessibilityPage-DKeLcFPk.js",
+      "name": "AccessibilityPage-D9oAoZAQ.js",
       "type": "js",
-      "gzipBytes": 2304
+      "gzipBytes": 2329
     },
     {
-      "name": "ArchitecturePage-BU0-qHzI.js",
+      "name": "ArchitecturePage-EniTrXS0.js",
       "type": "js",
-      "gzipBytes": 2041
+      "gzipBytes": 1907
     },
     {
-      "name": "ChallengeAlignmentPage-qF-fmyY_.js",
+      "name": "ChallengeAlignmentPage-DXXA6ke3.js",
       "type": "js",
-      "gzipBytes": 2750
+      "gzipBytes": 2804
     },
     {
       "name": "EvidencePageHeader-BEByN45T.js",
@@ -41,29 +41,29 @@
       "gzipBytes": 2049
     },
     {
-      "name": "GatewayDecisionProvider-rEbjdpV2.js",
+      "name": "GatewayDecisionProvider-D7q3YBQX.js",
       "type": "js",
-      "gzipBytes": 1440
+      "gzipBytes": 1490
     },
     {
-      "name": "QualityPage-Dq_aoC3d.js",
+      "name": "QualityPage-ql2l9HVb.js",
       "type": "js",
-      "gzipBytes": 1879
+      "gzipBytes": 1857
     },
     {
-      "name": "SecurityPage-3l69LXsw.js",
+      "name": "SecurityPage-DsAHgvCy.js",
       "type": "js",
-      "gzipBytes": 2529
+      "gzipBytes": 2449
     },
     {
-      "name": "TestingPage-D0UWQBuQ.js",
+      "name": "TestingPage-CKo5nLMo.js",
       "type": "js",
-      "gzipBytes": 1753
+      "gzipBytes": 1740
     },
     {
-      "name": "index-10W-jih1.js",
+      "name": "index-BGw6q48B.js",
       "type": "js",
-      "gzipBytes": 16012
+      "gzipBytes": 16755
     },
     {
       "name": "index-ByQl6esS.css",

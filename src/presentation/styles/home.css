@@ -1,6 +1,8 @@
-@import "./home/hero.css";
+@import "./home/hero-intro.css";
+@import "./home/incident-card.css";
 @import "./home/flow.css";
-@import "./home/explainability.css";
+@import "./home/explainability-overview.css";
+@import "./home/explainability-validation.css";
 @import "./home/impact-actions.css";
 @import "./home/approval.css";
 @import "./home/relay.css";
