@@ -1,10 +1,10 @@
 import { randomUUID } from "node:crypto";
 
-import { PROMPT_VERSION } from "../../ai/buildGroundedPrompt";
-import { applyRateLimit } from "./limiter";
-import { requestGemini } from "./provider";
-import type { ApiRequest, ApiResponse } from "./validation";
-import { firstHeader, sendJson, validateBody } from "./validation";
+import { PROMPT_VERSION } from "../../ai/buildGroundedPrompt.js";
+import { applyRateLimit } from "./limiter.js";
+import { requestGemini } from "./provider.js";
+import type { ApiRequest, ApiResponse } from "./validation.js";
+import { firstHeader, sendJson, validateBody } from "./validation.js";
 
 export default async function handler(
   request: ApiRequest,

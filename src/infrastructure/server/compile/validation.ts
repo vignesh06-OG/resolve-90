@@ -1,5 +1,5 @@
-import type { IncidentContext } from "../../../domain/entities/incident";
-import { compileRequestSchema } from "../../ai/schemas";
+import type { IncidentContext } from "../../../domain/entities/incident.js";
+import { compileRequestSchema } from "../../ai/schemas.js";
 
 export interface ApiRequest {
   readonly method?: string;

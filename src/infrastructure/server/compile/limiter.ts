@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 
-import type { ApiRequest, ApiResponse } from "./validation";
-import { firstHeader } from "./validation";
+import type { ApiRequest, ApiResponse } from "./validation.js";
+import { firstHeader } from "./validation.js";
 
 interface RateBucket {
   count: number;

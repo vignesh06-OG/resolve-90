@@ -1,7 +1,8 @@
+import handler from "../src/infrastructure/server/compile/handler.js";
 import type {
   ApiRequest,
   ApiResponse,
-} from "../src/infrastructure/server/compile/validation";
+} from "../src/infrastructure/server/compile/validation.js";
 
 interface RuntimeResponse {
   statusCode: number;
@@ -30,25 +31,9 @@ function adaptResponse(response: RuntimeResponse): ApiResponse {
   return adapted;
 }
 
-export default async function compile(
+export default function compile(
   request: ApiRequest,
   response: RuntimeResponse,
 ): Promise<void> {
-  const adapted = adaptResponse(response);
-  try {
-    const { default: handler } =
-      await import("../src/infrastructure/server/compile/handler");
-    await handler(request, adapted);
-  } catch (error) {
-    const detail =
-      error instanceof Error
-        ? `${error.name}: ${error.message}`
-        : "Unknown error";
-    adapted.setHeader("Cache-Control", "no-store");
-    adapted.setHeader("Content-Type", "application/json; charset=utf-8");
-    adapted.setHeader("X-Resolve-Debug", detail.slice(0, 180));
-    adapted
-      .status(500)
-      .json({ error: "Compile gateway initialization failed." });
-  }
+  return handler(request, adaptResponse(response));
 }

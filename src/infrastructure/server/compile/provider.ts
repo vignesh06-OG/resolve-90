@@ -1,11 +1,11 @@
-import type { GeneratedCandidate } from "../../../domain/entities/decision";
-import type { IncidentContext } from "../../../domain/entities/incident";
+import type { GeneratedCandidate } from "../../../domain/entities/decision.js";
+import type { IncidentContext } from "../../../domain/entities/incident.js";
 import {
   buildGroundedPrompt,
   SYSTEM_INSTRUCTION,
-} from "../../ai/buildGroundedPrompt";
-import { providerCandidateEnvelopeSchema } from "../../ai/schemas";
-import { geminiResponseSchema, OUTPUT_SCHEMA } from "./schema";
+} from "../../ai/buildGroundedPrompt.js";
+import { providerCandidateEnvelopeSchema } from "../../ai/schemas.js";
+import { geminiResponseSchema, OUTPUT_SCHEMA } from "./schema.js";
 
 export type ProviderResult =
   | {
