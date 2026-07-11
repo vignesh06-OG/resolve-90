@@ -31,7 +31,7 @@ jobs:
         run: npm run quality
       - name: Upload machine-readable quality evidence
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: quality-evidence
           path: |
@@ -42,7 +42,7 @@ jobs:
           if-no-files-found: ignore
           retention-days: 14
       - name: Upload production bundle
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: production-bundle
           path: dist/
