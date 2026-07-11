@@ -39,10 +39,10 @@ test("keyboard user can bypass navigation and operate language tabs", async ({
   page,
 }) => {
   await page.goto("/");
+  const skipLink = page.getByRole("link", { name: "Skip to main content" });
+  await expect(skipLink).toBeAttached();
   await page.keyboard.press("Tab");
-  await expect(
-    page.getByRole("link", { name: "Skip to main content" }),
-  ).toBeFocused();
+  await expect(skipLink).toBeFocused();
   await page.keyboard.press("Enter");
   await expect(page.getByRole("main")).toBeFocused();
 
