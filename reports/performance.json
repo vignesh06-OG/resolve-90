@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-11T11:08:18.439Z",
+  "generatedAt": "2026-07-11T11:48:33.829Z",
   "passed": true,
   "failures": [],
   "totals": {
-    "javascriptGzipBytes": 106868,
+    "javascriptGzipBytes": 106930,
     "cssGzipBytes": 9505,
     "javascriptChunks": 11,
     "largestJavaScriptGzipBytes": 59002
@@ -16,19 +16,19 @@
   },
   "assets": [
     {
-      "name": "AccessibilityPage-DDlYp91F.js",
+      "name": "AccessibilityPage-DRTeCVMQ.js",
       "type": "js",
-      "gzipBytes": 2345
+      "gzipBytes": 2344
     },
     {
-      "name": "ArchitecturePage-CICsjzSO.js",
+      "name": "ArchitecturePage-DBHln9Ck.js",
       "type": "js",
-      "gzipBytes": 2080
+      "gzipBytes": 2079
     },
     {
-      "name": "ChallengeAlignmentPage-B5WQCG2k.js",
+      "name": "ChallengeAlignmentPage-EPeP8_3s.js",
       "type": "js",
-      "gzipBytes": 2792
+      "gzipBytes": 2791
     },
     {
       "name": "EvidencePageHeader-BEByN45T.js",
@@ -41,34 +41,34 @@
       "gzipBytes": 2049
     },
     {
-      "name": "GatewayDecisionProvider-DbJg66ST.js",
+      "name": "GatewayDecisionProvider-q2mwZ15j.js",
       "type": "js",
-      "gzipBytes": 1478
+      "gzipBytes": 1474
     },
     {
-      "name": "QualityPage-DuMPWMUd.js",
+      "name": "QualityPage-BWeBXaY3.js",
       "type": "js",
-      "gzipBytes": 1875
+      "gzipBytes": 1874
     },
     {
-      "name": "SecurityPage-sW7PgDXN.js",
+      "name": "SecurityPage-stEfFByj.js",
       "type": "js",
-      "gzipBytes": 2567
+      "gzipBytes": 2564
     },
     {
-      "name": "TestingPage-C5ECwpPp.js",
+      "name": "TestingPage-C2ExUrTL.js",
       "type": "js",
-      "gzipBytes": 1792
+      "gzipBytes": 1793
+    },
+    {
+      "name": "index-Aehi4bbU.js",
+      "type": "js",
+      "gzipBytes": 15374
     },
     {
       "name": "index-BoUPhaJj.css",
       "type": "css",
       "gzipBytes": 7456
-    },
-    {
-      "name": "index-rCY-6Bc2.js",
-      "type": "js",
-      "gzipBytes": 15302
     },
     {
       "name": "react-DieaS26h.js",

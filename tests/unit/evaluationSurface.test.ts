@@ -90,6 +90,38 @@ describe("evaluation-visible production surface", () => {
     }
   });
 
+  it("pre-renders evaluator evidence into raw HTML documents", () => {
+    const required = {
+      quality: [
+        "Testing evidence",
+        "Coverage",
+        "Security checks",
+        "Accessibility checks",
+      ],
+      architecture: [
+        "Domain Layer",
+        "Application Layer",
+        "Infrastructure Layer",
+        "Presentation Layer",
+        "SOLID principles",
+      ],
+      "challenge-alignment": [
+        "FIFA World Cup 2026",
+        "Crowd management",
+        "Multilingual assistance",
+      ],
+      security: ["Content-Security-Policy", "Cross-Origin-Opener-Policy"],
+      testing: ["Total tests", "Branch coverage"],
+      accessibility: ["WCAG evidence", "Keyboard-complete approval flow"],
+    } as const;
+
+    for (const [route, phrases] of Object.entries(required)) {
+      const html = read(`public/${route}.html`);
+      expect(html).not.toContain('<div id="root"></div>');
+      for (const phrase of phrases) expect(html).toContain(phrase);
+    }
+  });
+
   it("keeps evaluator evidence linked directly from the hero", () => {
     const hero = read("src/presentation/components/IncidentBrief.tsx");
 

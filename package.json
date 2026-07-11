@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && npm run static:evidence && vite build",
     "preview": "vite preview",
     "typecheck": "tsc -b --pretty false",
     "lint": "eslint . --max-warnings 0",
@@ -35,7 +35,8 @@
     "type-check": "npm run typecheck",
     "audit:security": "npm run security:audit",
     "audit:performance": "npm run test:performance",
-    "github:verify": "node scripts/verify-github.mjs"
+    "github:verify": "node scripts/verify-github.mjs",
+    "static:evidence": "node scripts/generate-static-evidence.mjs"
   },
   "dependencies": {
     "react": "19.2.7",
