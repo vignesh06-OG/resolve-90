@@ -2,7 +2,7 @@ import "../styles/evidence.css";
 
 import { EvidencePageHeader } from "../components/EvidencePageHeader";
 import { Icon } from "../../shared/components/Icon";
-import { QUALITY_SNAPSHOT } from "../../shared/lib/qualitySnapshot";
+import { QUALITY_REPORT } from "../../generated/qualityReport";
 
 const suites = [
   [
@@ -50,7 +50,7 @@ const suites = [
 ] as const;
 
 export default function TestingPage(): React.JSX.Element {
-  const quality = QUALITY_SNAPSHOT;
+  const quality = QUALITY_REPORT;
 
   return (
     <div className="page-shell">
@@ -58,7 +58,7 @@ export default function TestingPage(): React.JSX.Element {
         eyebrow="Evaluation evidence · testing"
         title="Test the decision, not the screenshot."
         summary="The highest-value tests attack operational invariants: accessibility outranks throughput, stale evidence limits confidence, and no relay unlocks without human approval and audit persistence."
-        status={`${quality.tests.total} automated checks passing`}
+        status={`${quality.tests.passed} / ${quality.tests.total} automated checks passing`}
       />
 
       <section className="content-section" aria-labelledby="pyramid-title">
@@ -157,17 +157,17 @@ export default function TestingPage(): React.JSX.Element {
         </div>
         <div className="coverage-grid">
           <article>
-            <strong>{quality.coverage.lines}</strong>
+            <strong>{quality.coverage.lines}%</strong>
             <span>Lines</span>
             <small>Gate ≥80%</small>
           </article>
           <article>
-            <strong>{quality.coverage.functions}</strong>
+            <strong>{quality.coverage.functions}%</strong>
             <span>Functions</span>
             <small>Gate ≥80%</small>
           </article>
           <article>
-            <strong>{quality.coverage.branches}</strong>
+            <strong>{quality.coverage.branches}%</strong>
             <span>Branches</span>
             <small>Gate ≥75%</small>
           </article>

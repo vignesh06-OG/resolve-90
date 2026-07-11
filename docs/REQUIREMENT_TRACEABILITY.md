@@ -60,6 +60,16 @@ Every direct challenge term and every quality category is mapped to an observabl
 | Language coverage            | Priority fan message variants prepared                 |             1 |                                          3 | Human review warning remains visible  |
 | Operational carbon           | Modeled intervention transport/energy emissions        |    286 kgCO₂e | lower only after safety/access constraints | Sustainability never outranks safety  |
 
+## Latest verification snapshot
+
+- 60 Vitest checks and 10 Playwright checks pass locally.
+- Coverage: 99.33% lines, 98.75% statements, 97.22% functions, 97.71% branches.
+- Lighthouse: 100 Performance, 100 Accessibility, 100 Best Practices, 100 SEO; CLS 0.
+- Dependency audit: zero advisories.
+- Bundle budget: passing.
+- Public deployment, hosted response headers, GitHub Actions, and CodeQL remain externally unverified because no remote or deployment credential is available.
+- The in-product Quality page reads generated report data rather than manually entered totals.
+
 ## Evidence integrity rules
 
 1. Demo metrics are labeled **modeled**, never presented as live measurements.

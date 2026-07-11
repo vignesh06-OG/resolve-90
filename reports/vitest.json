@@ -1,0 +1,757 @@
+{
+  "numTotalTestSuites": 29,
+  "numPassedTestSuites": 29,
+  "numFailedTestSuites": 0,
+  "numPendingTestSuites": 0,
+  "numTotalTests": 60,
+  "numPassedTests": 60,
+  "numFailedTests": 0,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "snapshot": {
+    "added": 0,
+    "failure": false,
+    "filesAdded": 0,
+    "filesRemoved": 0,
+    "filesRemovedList": [],
+    "filesUnmatched": 0,
+    "filesUpdated": 0,
+    "matched": 0,
+    "total": 0,
+    "unchecked": 0,
+    "uncheckedKeysByFile": [],
+    "unmatched": 0,
+    "updated": 0,
+    "didUpdate": false
+  },
+  "startTime": 1783759427101,
+  "success": true,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["application accessibility"],
+          "fullName": "application accessibility has no detectable violations in the initial decision workspace",
+          "status": "passed",
+          "title": "has no detectable violations in the initial decision workspace",
+          "duration": 441.856898,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["application accessibility"],
+          "fullName": "application accessibility has no detectable violations in the generated approval state",
+          "status": "passed",
+          "title": "has no detectable violations in the generated approval state",
+          "duration": 870.260391,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["application accessibility"],
+          "fullName": "application accessibility supports arrow, Home, and End keys in multilingual tabs",
+          "status": "passed",
+          "title": "supports arrow, Home, and End keys in multilingual tabs",
+          "duration": 297.43661900000006,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1783759431870,
+      "endTime": 1783759433479.4365,
+      "status": "passed",
+      "message": "",
+      "name": "/home/user/stadium-ops/tests/accessibility/AppAccessibility.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["design-token contrast"],
+          "fullName": "design-token contrast keeps ink on night at WCAG AA normal-text contrast",
+          "status": "passed",
+          "title": "keeps ink on night at WCAG AA normal-text contrast",
+          "duration": 1.7057020000000875,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["design-token contrast"],
+          "fullName": "design-token contrast keeps muted on night at WCAG AA normal-text contrast",
+          "status": "passed",
+          "title": "keeps muted on night at WCAG AA normal-text contrast",
+          "duration": 0.2666349999999511,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["design-token contrast"],
+          "fullName": "design-token contrast keeps accent on night at WCAG AA normal-text contrast",
+          "status": "passed",
+          "title": "keeps accent on night at WCAG AA normal-text contrast",
+          "duration": 0.36442299999998795,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["design-token contrast"],
+          "fullName": "design-token contrast keeps paper-ink on paper at WCAG AA normal-text contrast",
+          "status": "passed",
+          "title": "keeps paper-ink on paper at WCAG AA normal-text contrast",
+          "duration": 0.39553000000000793,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["design-token contrast"],
+          "fullName": "design-token contrast keeps paper-muted on paper at WCAG AA normal-text contrast",
+          "status": "passed",
+          "title": "keeps paper-muted on paper at WCAG AA normal-text contrast",
+          "duration": 0.2739879999999175,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["design-token contrast"],
+          "fullName": "design-token contrast keeps mint on surface at WCAG AA normal-text contrast",
+          "status": "passed",
+          "title": "keeps mint on surface at WCAG AA normal-text contrast",
+          "duration": 0.23492700000008426,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["design-token contrast"],
+          "fullName": "design-token contrast keeps muted on surface at WCAG AA normal-text contrast",
+          "status": "passed",
+          "title": "keeps muted on surface at WCAG AA normal-text contrast",
+          "duration": 0.208103000000051,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["design-token contrast"],
+          "fullName": "design-token contrast keeps primary button text above AA contrast",
+          "status": "passed",
+          "title": "keeps primary button text above AA contrast",
+          "duration": 0.16582499999992706,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1783759445887,
+      "endTime": 1783759445891.208,
+      "status": "passed",
+      "message": "",
+      "name": "/home/user/stadium-ops/tests/accessibility/contrastTokens.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["visible decision workflow"],
+          "fullName": "visible decision workflow explains the product purpose before any interaction",
+          "status": "passed",
+          "title": "explains the product purpose before any interaction",
+          "duration": 160.95981600000005,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["visible decision workflow"],
+          "fullName": "visible decision workflow surfaces reasoning, confidence, constraints, validation, and rejected alternatives",
+          "status": "passed",
+          "title": "surfaces reasoning, confidence, constraints, validation, and rejected alternatives",
+          "duration": 217.41477800000007,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["visible decision workflow"],
+          "fullName": "visible decision workflow keeps relay locked until both acknowledgements and writes an audit receipt",
+          "status": "passed",
+          "title": "keeps relay locked until both acknowledgements and writes an audit receipt",
+          "duration": 381.24614899999983,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1783759434596,
+      "endTime": 1783759435355.246,
+      "status": "passed",
+      "message": "",
+      "name": "/home/user/stadium-ops/tests/integration/HomeWorkflow.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["decision workflow"],
+          "fullName": "decision workflow compiles provider candidates, challenges them, and selects the safe plan",
+          "status": "passed",
+          "title": "compiles provider candidates, challenges them, and selects the safe plan",
+          "duration": 3.604569000000083,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["decision workflow"],
+          "fullName": "decision workflow returns a typed not-found error",
+          "status": "passed",
+          "title": "returns a typed not-found error",
+          "duration": 1.2853119999999763,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["decision workflow"],
+          "fullName": "decision workflow does not blur a provider outage into an unsafe fallback",
+          "status": "passed",
+          "title": "does not blur a provider outage into an unsafe fallback",
+          "duration": 0.5182519999999613,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["decision workflow"],
+          "fullName": "decision workflow rejects a generation response when every candidate is unsafe",
+          "status": "passed",
+          "title": "rejects a generation response when every candidate is unsafe",
+          "duration": 0.6833350000000564,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["decision workflow"],
+          "fullName": "decision workflow persists the approval receipt before returning a relay-ready decision",
+          "status": "passed",
+          "title": "persists the approval receipt before returning a relay-ready decision",
+          "duration": 1.3857090000000198,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["decision workflow"],
+          "fullName": "decision workflow keeps acknowledgement failures out of the audit log",
+          "status": "passed",
+          "title": "keeps acknowledgement failures out of the audit log",
+          "duration": 0.4560320000000502,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["decision workflow"],
+          "fullName": "decision workflow does not report approval when audit persistence fails",
+          "status": "passed",
+          "title": "does not report approval when audit persistence fails",
+          "duration": 0.430484999999976,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1783759442477,
+      "endTime": 1783759442485.456,
+      "status": "passed",
+      "message": "",
+      "name": "/home/user/stadium-ops/tests/integration/decisionWorkflow.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["visible evidence routes"],
+          "fullName": "visible evidence routes renders /quality with a single explicit page identity",
+          "status": "passed",
+          "title": "renders /quality with a single explicit page identity",
+          "duration": 392.856632,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["visible evidence routes"],
+          "fullName": "visible evidence routes renders /architecture with a single explicit page identity",
+          "status": "passed",
+          "title": "renders /architecture with a single explicit page identity",
+          "duration": 324.750356,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["visible evidence routes"],
+          "fullName": "visible evidence routes renders /security with a single explicit page identity",
+          "status": "passed",
+          "title": "renders /security with a single explicit page identity",
+          "duration": 326.405761,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["visible evidence routes"],
+          "fullName": "visible evidence routes renders /testing with a single explicit page identity",
+          "status": "passed",
+          "title": "renders /testing with a single explicit page identity",
+          "duration": 317.399993,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["visible evidence routes"],
+          "fullName": "visible evidence routes renders /accessibility with a single explicit page identity",
+          "status": "passed",
+          "title": "renders /accessibility with a single explicit page identity",
+          "duration": 344.0430040000001,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["visible evidence routes"],
+          "fullName": "visible evidence routes renders /challenge-alignment with a single explicit page identity",
+          "status": "passed",
+          "title": "renders /challenge-alignment with a single explicit page identity",
+          "duration": 317.0066660000002,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["visible evidence routes"],
+          "fullName": "visible evidence routes navigates without a reload and updates current-page state",
+          "status": "passed",
+          "title": "navigates without a reload and updates current-page state",
+          "duration": 137.05573800000002,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["visible evidence routes"],
+          "fullName": "visible evidence routes provides a safe recovery route for an unknown path",
+          "status": "passed",
+          "title": "provides a safe recovery route for an unknown path",
+          "duration": 13.105254000000059,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1783759428453,
+      "endTime": 1783759430626.1052,
+      "status": "passed",
+      "message": "",
+      "name": "/home/user/stadium-ops/tests/integration/evidenceRoutes.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["ErrorBoundary"],
+          "fullName": "ErrorBoundary fails closed with a recovery explanation",
+          "status": "passed",
+          "title": "fails closed with a recovery explanation",
+          "duration": 141.00743599999998,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1783759438668,
+      "endTime": 1783759438809.0073,
+      "status": "passed",
+      "message": "",
+      "name": "/home/user/stadium-ops/tests/unit/ErrorBoundary.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["GatewayDecisionProvider"],
+          "fullName": "GatewayDecisionProvider accepts a schema-valid gateway packet",
+          "status": "passed",
+          "title": "accepts a schema-valid gateway packet",
+          "duration": 18.895106000000055,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["GatewayDecisionProvider"],
+          "fullName": "GatewayDecisionProvider rejects a non-success gateway response",
+          "status": "passed",
+          "title": "rejects a non-success gateway response",
+          "duration": 1.5667830000001004,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["GatewayDecisionProvider"],
+          "fullName": "GatewayDecisionProvider rejects provider output that misses the strict schema",
+          "status": "passed",
+          "title": "rejects provider output that misses the strict schema",
+          "duration": 1.6814500000000407,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["GatewayDecisionProvider"],
+          "fullName": "GatewayDecisionProvider returns a typed unavailable state for a network failure",
+          "status": "passed",
+          "title": "returns a typed unavailable state for a network failure",
+          "duration": 0.8796820000000025,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["GatewayDecisionProvider"],
+          "fullName": "GatewayDecisionProvider distinguishes a timeout from a generic network failure",
+          "status": "passed",
+          "title": "distinguishes a timeout from a generic network failure",
+          "duration": 1.075837999999976,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1783759440682,
+      "endTime": 1783759440706.076,
+      "status": "passed",
+      "message": "",
+      "name": "/home/user/stadium-ops/tests/unit/GatewayDecisionProvider.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["application service composition"],
+          "fullName": "application service composition loads the live gateway only when live mode is selected",
+          "status": "passed",
+          "title": "loads the live gateway only when live mode is selected",
+          "duration": 71.878918,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1783759439674,
+      "endTime": 1783759439745.879,
+      "status": "passed",
+      "message": "",
+      "name": "/home/user/stadium-ops/tests/unit/applicationServices.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["approveDecision"],
+          "fullName": "approveDecision blocks approval until both safety acknowledgements are explicit",
+          "status": "passed",
+          "title": "blocks approval until both safety acknowledgements are explicit",
+          "duration": 2.4545960000000377,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["approveDecision"],
+          "fullName": "approveDecision creates an immutable approval receipt for a reviewed decision",
+          "status": "passed",
+          "title": "creates an immutable approval receipt for a reviewed decision",
+          "duration": 0.8346119999999928,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1783759445052,
+      "endTime": 1783759445055.8347,
+      "status": "passed",
+      "message": "",
+      "name": "/home/user/stadium-ops/tests/unit/approveDecision.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["evaluateCandidate"],
+          "fullName": "evaluateCandidate accepts a complete, grounded plan inside hard constraints",
+          "status": "passed",
+          "title": "accepts a complete, grounded plan inside hard constraints",
+          "duration": 2.9076639999999543,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["evaluateCandidate"],
+          "fullName": "evaluateCandidate rejects pressure above the operating envelope",
+          "status": "passed",
+          "title": "rejects pressure above the operating envelope",
+          "duration": 0.7649709999999459,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["evaluateCandidate"],
+          "fullName": "evaluateCandidate uses accessibility as a veto instead of a weighted preference",
+          "status": "passed",
+          "title": "uses accessibility as a veto instead of a weighted preference",
+          "duration": 0.5339269999999487,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["evaluateCandidate"],
+          "fullName": "evaluateCandidate warns between the accessibility floor and target",
+          "status": "passed",
+          "title": "warns between the accessibility floor and target",
+          "duration": 0.4659789999999475,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["evaluateCandidate"],
+          "fullName": "evaluateCandidate prohibits high confidence when transport evidence is stale",
+          "status": "passed",
+          "title": "prohibits high confidence when transport evidence is stale",
+          "duration": 0.43967699999996057,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["evaluateCandidate"],
+          "fullName": "evaluateCandidate warns rather than fabricating freshness for a medium-confidence plan",
+          "status": "passed",
+          "title": "warns rather than fabricating freshness for a medium-confidence plan",
+          "duration": 0.36710200000004534,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["evaluateCandidate"],
+          "fullName": "evaluateCandidate rejects unsupported model-supplied evidence identifiers",
+          "status": "passed",
+          "title": "rejects unsupported model-supplied evidence identifiers",
+          "duration": 0.31798300000002655,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["evaluateCandidate"],
+          "fullName": "evaluateCandidate removes latency score when a plan misses the decision target",
+          "status": "passed",
+          "title": "removes latency score when a plan misses the decision target",
+          "duration": 0.37746199999992314,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["evaluateCandidate"],
+          "fullName": "evaluateCandidate rejects incomplete language coverage",
+          "status": "passed",
+          "title": "rejects incomplete language coverage",
+          "duration": 0.366265999999996,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1783759443321,
+      "endTime": 1783759443328.3662,
+      "status": "passed",
+      "message": "",
+      "name": "/home/user/stadium-ops/tests/unit/evaluateCandidate.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["presentation failure and terminal branches"],
+          "fullName": "presentation failure and terminal branches labels compiling, compiled, approved, and error states explicitly",
+          "status": "passed",
+          "title": "labels compiling, compiled, approved, and error states explicitly",
+          "duration": 198.31834600000013,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["presentation failure and terminal branches"],
+          "fullName": "presentation failure and terminal branches retries the stable replay through the explicit error control",
+          "status": "passed",
+          "title": "retries the stable replay through the explicit error control",
+          "duration": 39.63634999999999,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["presentation failure and terminal branches"],
+          "fullName": "presentation failure and terminal branches renders a fully pending operational flow after a typed failure",
+          "status": "passed",
+          "title": "renders a fully pending operational flow after a typed failure",
+          "duration": 10.149666000000025,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["presentation failure and terminal branches"],
+          "fullName": "presentation failure and terminal branches keeps the approval panel in place when application approval fails",
+          "status": "passed",
+          "title": "keeps the approval panel in place when application approval fails",
+          "duration": 110.28818300000012,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["presentation failure and terminal branches"],
+          "fullName": "presentation failure and terminal branches renders no relay when a validated locale cannot be found",
+          "status": "passed",
+          "title": "renders no relay when a validated locale cannot be found",
+          "duration": 2.034708000000137,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["navigation guard branches"],
+          "fullName": "navigation guard branches does not push duplicate history for the current path",
+          "status": "passed",
+          "title": "does not push duplicate history for the current path",
+          "duration": 1.837680999999975,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["navigation guard branches"],
+          "fullName": "navigation guard branches preserves modified and explicitly prevented link behavior",
+          "status": "passed",
+          "title": "preserves modified and explicitly prevented link behavior",
+          "duration": 11.756952000000183,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1783759436351,
+      "endTime": 1783759436725.7568,
+      "status": "passed",
+      "message": "",
+      "name": "/home/user/stadium-ops/tests/unit/presentationBranches.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["provider boundary"],
+          "fullName": "provider boundary keeps replay fixtures inside the same runtime schemas as live mode",
+          "status": "passed",
+          "title": "keeps replay fixtures inside the same runtime schemas as live mode",
+          "duration": 8.748217000000068,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["provider boundary"],
+          "fullName": "provider boundary separates untrusted operational data from the control policy",
+          "status": "passed",
+          "title": "separates untrusted operational data from the control policy",
+          "duration": 0.6781889999999748,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["provider boundary"],
+          "fullName": "provider boundary rejects oversized and unknown candidate fields",
+          "status": "passed",
+          "title": "rejects oversized and unknown candidate fields",
+          "duration": 1.3644800000000714,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1783759441626,
+      "endTime": 1783759441636.3645,
+      "status": "passed",
+      "message": "",
+      "name": "/home/user/stadium-ops/tests/unit/providerBoundary.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["selectDecision"],
+          "fullName": "selectDecision selects an eligible plan ahead of a higher-throughput rejected plan",
+          "status": "passed",
+          "title": "selects an eligible plan ahead of a higher-throughput rejected plan",
+          "duration": 2.4207229999999527,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": ["selectDecision"],
+          "fullName": "selectDecision returns a typed error when no candidate passes hard constraints",
+          "status": "passed",
+          "title": "returns a typed error when no candidate passes hard constraints",
+          "duration": 1.1899539999999433,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1783759444175,
+      "endTime": 1783759444178.19,
+      "status": "passed",
+      "message": "",
+      "name": "/home/user/stadium-ops/tests/unit/selectDecision.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["useDecisionWorkflow"],
+          "fullName": "useDecisionWorkflow ignores premature approval and supports an explicit reset",
+          "status": "passed",
+          "title": "ignores premature approval and supports an explicit reset",
+          "duration": 188.578527,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1783759437650,
+      "endTime": 1783759437838.5786,
+      "status": "passed",
+      "message": "",
+      "name": "/home/user/stadium-ops/tests/unit/useDecisionWorkflow.test.tsx"
+    }
+  ]
+}

@@ -2,13 +2,13 @@ import "../styles/evidence.css";
 
 import { EvidencePageHeader } from "../components/EvidencePageHeader";
 import { Icon, type IconName } from "../../shared/components/Icon";
-import { QUALITY_SNAPSHOT } from "../../shared/lib/qualitySnapshot";
+import { QUALITY_REPORT } from "../../generated/qualityReport";
 
 interface QualityCardProps {
   readonly title: string;
   readonly metric: string;
   readonly detail: string;
-  readonly status: "pass" | "warn";
+  readonly status: "pass" | "warn" | "fail";
   readonly label: string;
   readonly icon: IconName;
 }
@@ -46,16 +46,25 @@ const pipeline = [
   ["07", "Audit", "High severity = fail"],
 ] as const;
 
+function kibibytes(bytes: number): string {
+  return `${(bytes / 1024).toFixed(1)} KiB`;
+}
+
 export default function QualityPage(): React.JSX.Element {
-  const quality = QUALITY_SNAPSHOT;
+  const quality = QUALITY_REPORT;
+  const lighthouse = quality.performance.lighthouse;
+  const verifiedAt = new Date(quality.generatedAt).toLocaleString("en", {
+    dateStyle: "medium",
+    timeStyle: "short",
+  });
 
   return (
     <div className="page-shell">
       <EvidencePageHeader
         eyebrow="Evaluation evidence · quality"
         title="Quality, made observable."
-        summary="Every claim below maps to an executable repository gate. Honest labels distinguish locally verified checks from configured CI and deployment-only measurement."
-        status={`Snapshot · ${quality.verifiedAt}`}
+        summary="Every value below is generated from machine-readable Vitest, coverage, Playwright, bundle, Lighthouse, and dependency-audit reports."
+        status={`Generated ${verifiedAt} · ${quality.commit}`}
       />
 
       <section
@@ -74,66 +83,58 @@ export default function QualityPage(): React.JSX.Element {
         <div className="quality-grid">
           <QualityCard
             title="Tests"
-            metric={`${quality.tests.total} / ${quality.tests.total}`}
-            detail={quality.tests.detail}
-            status="pass"
-            label="Verified"
+            metric={`${quality.tests.passed} / ${quality.tests.total}`}
+            detail={`${quality.tests.vitest.files} Vitest files · ${quality.tests.playwright.total} Playwright scenarios`}
+            status={quality.tests.status}
+            label="Report verified"
             icon="test"
           />
           <QualityCard
             title="Coverage"
-            metric={quality.coverage.lines}
-            detail={`Functions ${quality.coverage.functions} · Branches ${quality.coverage.branches}`}
+            metric={`${quality.coverage.lines}% lines`}
+            detail={`Functions ${quality.coverage.functions}% · Branches ${quality.coverage.branches}%`}
             status={quality.coverage.status}
-            label={
-              quality.coverage.status === "pass"
-                ? "Threshold met"
-                : "Final audit"
-            }
+            label="Threshold met"
             icon="evidence"
           />
           <QualityCard
             title="CI"
-            metric="2 workflows"
-            detail={quality.ci.detail}
-            status="pass"
-            label="Configured"
+            metric={`${quality.ci.workflows.length} workflows`}
+            detail={`${quality.ci.workflows.join(" + ")} · remote ${quality.ci.remoteVerified ? "verified" : "not verified"}`}
+            status={quality.ci.remoteVerified ? "pass" : "warn"}
+            label={quality.ci.status}
             icon="code"
           />
           <QualityCard
             title="Security"
-            metric="0 high / critical"
-            detail={quality.security.detail}
-            status="pass"
-            label="Verified"
+            metric={`${quality.security.vulnerabilities.high} high / ${quality.security.vulnerabilities.critical} critical`}
+            detail={`${quality.security.vulnerabilities.total} total dependency advisories`}
+            status={quality.security.status}
+            label="Audit verified"
             icon="lock"
           />
           <QualityCard
             title="Performance"
-            metric={quality.performance.lighthouse}
-            detail={quality.performance.detail}
+            metric={`${lighthouse?.performance ?? 0} / 100`}
+            detail={`${kibibytes(quality.build.javascriptGzipBytes)} total JS gzip · CLS ${lighthouse?.cls ?? "n/a"}`}
             status={quality.performance.status}
-            label="Budget passes"
+            label="Lighthouse + budget"
             icon="clock"
           />
           <QualityCard
             title="Accessibility"
-            metric="WCAG 2.2 AA"
-            detail={quality.accessibility.detail}
+            metric={`${quality.accessibility.lighthouseScore ?? 0} / 100`}
+            detail={`${quality.accessibility.automatedChecks} automated accessibility checks`}
             status={quality.accessibility.status}
-            label={
-              quality.accessibility.status === "pass"
-                ? "Audited"
-                : "In progress"
-            }
+            label="Audited"
             icon="access"
           />
           <QualityCard
             title="Build status"
-            metric="Passing"
-            detail={quality.build.detail}
-            status="pass"
-            label="Verified"
+            metric={quality.build.status === "pass" ? "Passing" : "Failing"}
+            detail={`${quality.build.javascriptChunks} JS chunks · largest ${kibibytes(quality.build.largestJavaScriptGzipBytes)} gzip`}
+            status={quality.build.status}
+            label="Report verified"
             icon="check"
           />
         </div>
@@ -168,23 +169,25 @@ export default function QualityPage(): React.JSX.Element {
       >
         <div>
           <p className="section-kicker">Evidence integrity</p>
-          <h2 id="integrity-title">
-            No green badge without a reproducible check.
-          </h2>
+          <h2 id="integrity-title">No green badge without a report.</h2>
         </div>
         <dl>
           <div>
-            <dt>Verified</dt>
-            <dd>Executed successfully in this repository snapshot.</dd>
+            <dt>Generated</dt>
+            <dd>
+              Statistics come from files produced by executable quality tools.
+            </dd>
           </div>
           <div>
             <dt>Configured</dt>
-            <dd>Automation exists; a public remote run is not claimed.</dd>
+            <dd>
+              Automation exists; remote execution is labeled independently.
+            </dd>
           </div>
           <div>
             <dt>Deployment-only</dt>
             <dd>
-              Requires the final hosted origin or real assistive technology.
+              Hosted headers and remote CI require an observable public origin.
             </dd>
           </div>
         </dl>

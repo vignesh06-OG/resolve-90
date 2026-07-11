@@ -19,7 +19,7 @@ export class GatewayDecisionProvider implements DecisionProvider {
     incident: IncidentContext,
   ): Promise<Result<GeneratedResponse, DecisionProviderError>> {
     const controller = new AbortController();
-    const timeout = window.setTimeout(
+    const timeout = globalThis.setTimeout(
       () => controller.abort(),
       this.timeoutMilliseconds,
     );
@@ -61,7 +61,7 @@ export class GatewayDecisionProvider implements DecisionProvider {
           : "The live provider could not be reached. Replay mode remains available.",
       });
     } finally {
-      window.clearTimeout(timeout);
+      globalThis.clearTimeout(timeout);
     }
   }
 }

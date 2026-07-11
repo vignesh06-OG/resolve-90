@@ -2,7 +2,7 @@ import "../styles/evidence.css";
 
 import { EvidencePageHeader } from "../components/EvidencePageHeader";
 import { Icon, type IconName } from "../../shared/components/Icon";
-import { QUALITY_SNAPSHOT } from "../../shared/lib/qualitySnapshot";
+import { QUALITY_REPORT } from "../../generated/qualityReport";
 
 interface AuditCategory {
   readonly title: string;
@@ -110,7 +110,7 @@ const auditRows = [
 ] as const;
 
 export default function AccessibilityPage(): React.JSX.Element {
-  const audit = QUALITY_SNAPSHOT.accessibility;
+  const audit = QUALITY_REPORT.accessibility;
   const complete = audit.status === "pass";
 
   return (
@@ -145,8 +145,12 @@ export default function AccessibilityPage(): React.JSX.Element {
         </div>
         <div className="audit-summary">
           <div className="audit-score">
-            <strong>{complete ? "0" : "—"}</strong>
-            <span>{complete ? "axe violations" : "final scan pending"}</span>
+            <strong>{audit.lighthouseScore ?? "—"}</strong>
+            <span>
+              {complete
+                ? `Lighthouse · ${audit.automatedChecks} automated checks`
+                : "final scan pending"}
+            </span>
           </div>
           <div className="audit-categories">
             {categories.map(({ title, icon, checks }) => (

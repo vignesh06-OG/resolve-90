@@ -1,10 +1,11 @@
-import { readFile, readdir } from "node:fs/promises";
+import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { gzipSync } from "node:zlib";
 
 const budget = JSON.parse(
   await readFile(new URL("./performance-budget.json", import.meta.url), "utf8"),
 );
 const assetDirectory = new URL("../dist/assets/", import.meta.url);
+const reportDirectory = new URL("../reports/", import.meta.url);
 
 let names;
 try {
@@ -30,9 +31,11 @@ const assets = await Promise.all(
 const jsAssets = assets.filter(({ type }) => type === "js");
 const cssAssets = assets.filter(({ type }) => type === "css");
 const total = (items) => items.reduce((sum, item) => sum + item.gzipBytes, 0);
+const totalJavaScriptGzipBytes = total(jsAssets);
+const totalCssGzipBytes = total(cssAssets);
 const failures = [];
 
-if (total(jsAssets) > budget.maximumTotalJavaScriptGzipBytes)
+if (totalJavaScriptGzipBytes > budget.maximumTotalJavaScriptGzipBytes)
   failures.push("total JavaScript");
 if (
   jsAssets.some(
@@ -40,10 +43,32 @@ if (
   )
 )
   failures.push("single JavaScript chunk");
-if (total(cssAssets) > budget.maximumTotalCssGzipBytes)
+if (totalCssGzipBytes > budget.maximumTotalCssGzipBytes)
   failures.push("total CSS");
 if (jsAssets.length > budget.maximumJavaScriptChunks)
   failures.push("JavaScript chunk count");
+
+const report = {
+  generatedAt: new Date().toISOString(),
+  passed: failures.length === 0,
+  failures,
+  totals: {
+    javascriptGzipBytes: totalJavaScriptGzipBytes,
+    cssGzipBytes: totalCssGzipBytes,
+    javascriptChunks: jsAssets.length,
+    largestJavaScriptGzipBytes: Math.max(
+      0,
+      ...jsAssets.map(({ gzipBytes }) => gzipBytes),
+    ),
+  },
+  budget,
+  assets,
+};
+await mkdir(reportDirectory, { recursive: true });
+await writeFile(
+  new URL("performance.json", reportDirectory),
+  `${JSON.stringify(report, null, 2)}\n`,
+);
 
 console.table(
   assets.map(({ name, gzipBytes }) => ({
@@ -52,7 +77,7 @@ console.table(
   })),
 );
 console.log(
-  `Total JS: ${(total(jsAssets) / 1024).toFixed(1)} KiB gzip; CSS: ${(total(cssAssets) / 1024).toFixed(1)} KiB gzip; JS chunks: ${jsAssets.length}.`,
+  `Total JS: ${(totalJavaScriptGzipBytes / 1024).toFixed(1)} KiB gzip; CSS: ${(totalCssGzipBytes / 1024).toFixed(1)} KiB gzip; JS chunks: ${jsAssets.length}.`,
 );
 
 if (failures.length > 0) {

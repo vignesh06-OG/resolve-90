@@ -1,11 +1,13 @@
-# Resolve 90
+# Resolve 90 — AI Stadium Incident Command
 
 [![CI workflow](https://img.shields.io/badge/CI-workflow%20configured-176b5b?style=flat-square&logo=githubactions&logoColor=white)](.github/workflows/ci.yml)
 [![TypeScript strict](https://img.shields.io/badge/TypeScript-strict-3178c6?style=flat-square&logo=typescript&logoColor=white)](tsconfig.app.json)
 [![WCAG 2.2 AA](https://img.shields.io/badge/accessibility-WCAG%202.2%20AA-7646ff?style=flat-square)](ACCESSIBILITY.md)
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-f58b57?style=flat-square)](LICENSE)
 
-**A grounded GenAI incident-to-action compiler for inclusive stadium operations.**
+**Stadium disruption in. Safe plan out.**
+
+A grounded GenAI incident-to-action compiler for inclusive stadium operations.
 
 Resolve 90 turns fragmented match-day signals into a coordinated decision packet that a human commander can inspect and approve in under 90 seconds. It explicitly prevents a “safe” crowd action from silently breaking accessible routes, transit capacity, multilingual communication, or sustainability constraints.
 
@@ -36,7 +38,9 @@ Open `http://localhost:5173`. Select **Compile response** to run the stable East
 npm run quality
 ```
 
-This single command checks formatting, lint, strict TypeScript, coverage thresholds, production build, performance budgets, and high-severity dependency advisories.
+This single command checks formatting, lint, strict TypeScript, coverage, production build, bundle budgets, Lighthouse thresholds, dependency advisories, Playwright, report generation, and the final production build.
+
+Latest locally generated evidence is stored in [`public/quality/latest.json`](public/quality/latest.json) and rendered by `/quality`; the page does not contain hand-entered statistics. The current verified snapshot contains **60 Vitest checks, 10 Playwright checks, 97.71% branch coverage, Lighthouse 100/100/100/100, CLS 0, and zero dependency advisories**. Remote CI, public deployment, and hosted-header verification remain explicitly unverified because no GitHub remote or deployment credential is available in this workspace.
 
 | Check                       | Command                    | Enforced by CI |
 | --------------------------- | -------------------------- | -------------- |
@@ -47,7 +51,9 @@ This single command checks formatting, lint, strict TypeScript, coverage thresho
 | End-to-end critical path    | `npm run test:e2e`         | Yes            |
 | Production build            | `npm run build`            | Yes            |
 | JS/CSS performance budget   | `npm run test:performance` | Yes            |
+| Lighthouse thresholds       | `npm run lighthouse`       | Yes            |
 | Dependency audit            | `npm run security:audit`   | Yes            |
+| Generated quality report    | `npm run quality:report`   | Yes            |
 
 ## Architecture at a glance
 

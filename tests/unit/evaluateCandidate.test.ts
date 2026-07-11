@@ -91,6 +91,23 @@ describe("evaluateCandidate", () => {
     expect(result.rejectionReason).toContain("unsupported evidence");
   });
 
+  it("removes latency score when a plan misses the decision target", () => {
+    const incident = buildIncident();
+    const onTime = evaluateCandidate(buildCandidate(), incident);
+    const late = evaluateCandidate(
+      buildCandidate({
+        impact: {
+          ...buildCandidate().impact,
+          decisionLatencySeconds:
+            incident.constraints.maximumDecisionLatencySeconds + 1,
+        },
+      }),
+      incident,
+    );
+
+    expect(late.score).toBe(onTime.score - 10);
+  });
+
   it("rejects incomplete language coverage", () => {
     const candidate = buildCandidate();
     const result = evaluateCandidate(

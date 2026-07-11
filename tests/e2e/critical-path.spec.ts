@@ -10,6 +10,7 @@ test("commander can compile, review, approve, and verify an audit receipt", asyn
       name: "Stadium disruption in. Safe plan out.",
     }),
   ).toBeVisible();
+  await expect(page.getByText("Replay mode", { exact: true })).toBeVisible();
   await page.getByRole("button", { name: "Compile guarded response" }).click();
   await expect(
     page.getByRole("heading", {
@@ -59,6 +60,39 @@ test("keyboard user can bypass navigation and operate language tabs", async ({
   await expect(page.getByRole("tab", { name: "Español" })).toBeFocused();
   await page.keyboard.press("End");
   await expect(page.getByRole("tab", { name: "Français" })).toBeFocused();
+});
+
+test("approval remains rejected while required review is incomplete", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page.getByRole("button", { name: "Compile guarded response" }).click();
+  const approve = page.getByRole("button", {
+    name: "Approve plan and unlock relay",
+  });
+  await approve.click();
+
+  await expect(page.getByLabel(/Modeled impact reviewed/)).toBeFocused();
+  await expect(
+    page.getByRole("heading", {
+      name: "One plan, adapted to every role and fan.",
+    }),
+  ).toHaveCount(0);
+});
+
+test("evidence navigation updates route, title, and current-page state", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page.getByRole("link", { name: "Quality", exact: true }).click();
+
+  await expect(
+    page.getByRole("heading", { name: "Quality, made observable." }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "Quality", exact: true }),
+  ).toHaveAttribute("aria-current", "page");
+  await expect(page).toHaveTitle("Quality dashboard — Resolve 90");
 });
 
 test("challenge evidence remains readable on a mobile viewport", async ({

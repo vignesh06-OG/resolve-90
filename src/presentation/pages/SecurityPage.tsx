@@ -1,6 +1,7 @@
 import "../styles/evidence.css";
 
 import { EvidencePageHeader } from "../components/EvidencePageHeader";
+import { QUALITY_REPORT } from "../../generated/qualityReport";
 import { Icon, type IconName } from "../../shared/components/Icon";
 
 interface Threat {
@@ -65,6 +66,15 @@ const threats: readonly Threat[] = [
 ];
 
 export default function SecurityPage(): React.JSX.Element {
+  const headerChecks = Object.values(QUALITY_REPORT.headers.checks);
+  const passedHeaders = headerChecks.filter(({ passed }) => passed).length;
+  const headerTone =
+    QUALITY_REPORT.headers.status === "pass"
+      ? "pass"
+      : QUALITY_REPORT.headers.status === "fail"
+        ? "fail"
+        : "warn";
+
   return (
     <div className="page-shell">
       <EvidencePageHeader
@@ -166,17 +176,69 @@ export default function SecurityPage(): React.JSX.Element {
             <span className="evidence-card__icon">
               <Icon name="shield" />
             </span>
-            <span className="status-pill status-pill--pass">Configured</span>
+            <span className={`status-pill status-pill--${headerTone}`}>
+              {QUALITY_REPORT.headers.status}
+            </span>
           </div>
           <p className="evidence-card__metric">
-            7 <small>response headers</small>
+            {passedHeaders} / 6 <small>deployed header checks</small>
           </p>
           <h3>Browser hardening</h3>
           <p>
-            CSP, HSTS, frame denial, nosniff, strict referrer policy,
-            permissions policy, and immutable asset caching.
+            CSP, HSTS, frame denial, nosniff, strict referrer policy, and
+            permissions policy are verified only against a public origin.
           </p>
         </article>
+      </section>
+
+      <section className="content-section" aria-labelledby="headers-title">
+        <div className="section-intro">
+          <div>
+            <p className="section-kicker">Deployed response verification</p>
+            <h2 id="headers-title">Security headers observed over HTTPS</h2>
+          </div>
+          <code className="command-chip">npm run headers:verify -- URL</code>
+        </div>
+        {headerChecks.length > 0 ? (
+          <div className="evidence-table-wrap">
+            <table className="evidence-table">
+              <caption className="visually-hidden">
+                Deployed response-header verification
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Header</th>
+                  <th scope="col">Observed value</th>
+                  <th scope="col">Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                {headerChecks.map(({ header, actual, passed }) => (
+                  <tr key={header}>
+                    <td>{header}</td>
+                    <td>{actual ?? "Missing"}</td>
+                    <td>
+                      <span
+                        className={`status-pill status-pill--${passed ? "pass" : "fail"}`}
+                      >
+                        {passed ? "Verified" : "Failed"}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <aside className="audit-note">
+            <Icon name="warning" />
+            <p>
+              <strong>Public-origin verification pending.</strong> No deployment
+              URL or deployment credential is available in this workspace; the
+              repository does not claim that configured headers were observed.
+            </p>
+          </aside>
+        )}
       </section>
 
       <aside className="audit-note">

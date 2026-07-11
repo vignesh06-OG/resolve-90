@@ -1,0 +1,89 @@
+{
+  "generatedAt": "2026-07-11T08:44:12.978Z",
+  "passed": true,
+  "failures": [],
+  "totals": {
+    "javascriptGzipBytes": 106610,
+    "cssGzipBytes": 8776,
+    "javascriptChunks": 12,
+    "largestJavaScriptGzipBytes": 59002
+  },
+  "budget": {
+    "maximumTotalJavaScriptGzipBytes": 190000,
+    "maximumSingleJavaScriptGzipBytes": 95000,
+    "maximumTotalCssGzipBytes": 30000,
+    "maximumJavaScriptChunks": 14
+  },
+  "assets": [
+    {
+      "name": "AccessibilityPage-DOuIUbvE.js",
+      "type": "js",
+      "gzipBytes": 2362
+    },
+    {
+      "name": "ArchitecturePage-FQ4kG2se.js",
+      "type": "js",
+      "gzipBytes": 2049
+    },
+    {
+      "name": "ChallengeAlignmentPage-iJG6Dna5.js",
+      "type": "js",
+      "gzipBytes": 2791
+    },
+    {
+      "name": "EvidencePageHeader-BEByN45T.js",
+      "type": "js",
+      "gzipBytes": 304
+    },
+    {
+      "name": "EvidencePageHeader-Dn-sRdE_.css",
+      "type": "css",
+      "gzipBytes": 2049
+    },
+    {
+      "name": "GatewayDecisionProvider-1RrDVC1O.js",
+      "type": "js",
+      "gzipBytes": 1479
+    },
+    {
+      "name": "QualityPage-CzYOn9wV.js",
+      "type": "js",
+      "gzipBytes": 1831
+    },
+    {
+      "name": "SecurityPage-BJtjsAYi.js",
+      "type": "js",
+      "gzipBytes": 2583
+    },
+    {
+      "name": "TestingPage-CxX4Dj5l.js",
+      "type": "js",
+      "gzipBytes": 1812
+    },
+    {
+      "name": "index-CsnXXnWZ.css",
+      "type": "css",
+      "gzipBytes": 6727
+    },
+    {
+      "name": "index-DW3uFAqx.js",
+      "type": "js",
+      "gzipBytes": 14502
+    },
+    {
+      "name": "qualityReport-CkVW4xDg.js",
+      "type": "js",
+      "gzipBytes": 564
+    },
+    {
+      "name": "react-DieaS26h.js",
+      "type": "js",
+      "gzipBytes": 59002
+    },
+    {
+      "name": "validation-jLZSjMZJ.js",
+      "type": "js",
+      "gzipBytes": 17331
+    }
+  ]
+}

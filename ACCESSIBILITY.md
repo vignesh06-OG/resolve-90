@@ -48,6 +48,16 @@ Resolve 90 targets **WCAG 2.2 Level AA** for the decision workspace and evidence
 5. Inspect with one desktop and one mobile screen reader before operational deployment.
 6. Validate generated messages with native-language accessibility reviewers; automated translation quality is not certification.
 
+## Latest audit evidence
+
+- Lighthouse accessibility: **100/100**.
+- CLS: **0**.
+- Automated accessibility checks: **11 passing**.
+- axe-core scans cover the initial and generated approval states.
+- Token-level tests verify eight normal-text contrast pairs at or above 4.5:1.
+- Playwright verifies skip navigation, approval, multilingual tab keys, and 360 px reflow.
+- A hosted-build screen-reader session remains a deployment gate and is not claimed as complete.
+
 ## Important distinction
 
 Passing automated checks does not prove conformance. The `/accessibility` page separates automated coverage from manual and deployment-required checks. Operational accessibility configuration must be verified against the actual venue; the demo route graph is synthetic.

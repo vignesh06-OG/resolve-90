@@ -21,6 +21,8 @@ Coverage is evidence, not the goal. The configured gate requires at least:
 - 75% branches;
 - 80% statements.
 
+The latest local report exceeds the evaluation target: **99.33% lines, 98.75% statements, 97.22% functions, and 97.71% branches**. It contains **60 Vitest checks across 14 files plus 10 Playwright checks**. Counts are regenerated into `public/quality/latest.json`; remote CI execution is not claimed.
+
 Pure safety-critical domain services are expected to exceed the repository threshold. Presentation pages with static evidence content are excluded from percentage calculations but still receive route smoke and accessibility coverage.
 
 ## High-value properties
@@ -40,8 +42,14 @@ npm test                 # all Vitest suites
 npm run test:coverage    # suite + coverage thresholds
 npm run test:e2e         # Playwright critical path
 npm run test:performance # requires a production build in dist/
-npm run quality          # complete local/CI quality gate
+npm run lighthouse       # 96/98/98/95 score gates and CLS <0.1
+npm run quality:report    # regenerate visible machine-readable evidence
+npm run quality           # complete local/CI quality gate
 ```
+
+## Browser and boundary coverage
+
+Playwright verifies Replay mode, incomplete-approval rejection, keyboard flow, mobile reflow, evidence navigation, Gemini unavailability, request validation, request-size enforcement, rate limiting, missing server credentials, and the final audit receipt.
 
 ## Test-data policy
 

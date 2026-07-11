@@ -31,8 +31,11 @@ Resolve 90 follows OWASP ASVS-inspired controls for a public decision-support in
 - No local storage of personal data.
 - Correlation ID returned without leaking provider internals.
 - High-risk approval state machine and visible replay/live mode.
+- Machine-readable dependency audit in `reports/security-audit.json`; current total advisories: **0**.
+- Playwright boundary checks cover unsupported methods, malformed input, body limits, rate limiting, missing credentials, and provider unavailability.
 - `npm audit --audit-level=high` in CI.
 - Dependabot weekly dependency updates.
+- `scripts/verify-response-headers.mjs` verifies CSP, HSTS, Permissions Policy, frame protection, nosniff, and Referrer Policy against a supplied HTTPS deployment URL.
 
 ## Content Security Policy
 
@@ -62,3 +65,4 @@ Do not open a public issue for a suspected vulnerability. Follow the private rep
 - The bundled limiter is not distributed.
 - Browser-rendered audit history is demonstration evidence, not a signed system of record.
 - Security headers require the provided host configuration; the Vite development server is not production hardening.
+- No public deployment URL or credential is available in the current workspace, so hosted response-header verification remains explicitly unverified.

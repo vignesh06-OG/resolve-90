@@ -63,5 +63,9 @@ describe("application accessibility", () => {
     expect(screen.getByRole("tab", { name: "Français" })).toHaveFocus();
     await user.keyboard("{Home}");
     expect(english).toHaveFocus();
+    await user.keyboard("x");
+    expect(english).toHaveFocus();
+    await user.keyboard("{ArrowLeft}");
+    expect(screen.getByRole("tab", { name: "Français" })).toHaveFocus();
   });
 });

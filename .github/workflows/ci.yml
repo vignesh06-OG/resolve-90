@@ -15,9 +15,9 @@ concurrency:
 
 jobs:
   quality:
-    name: Quality gate
+    name: Full quality gate
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -25,13 +25,20 @@ jobs:
           node-version: 20.19.0
           cache: npm
       - run: npm ci
-      - run: npm run quality
-      - name: Upload coverage evidence
+      - name: Install browser and system dependencies
+        run: npx playwright install --with-deps chromium
+      - name: Run types, lint, tests, coverage, build, Lighthouse, audit, and E2E
+        run: npm run quality
+      - name: Upload machine-readable quality evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: coverage-report
-          path: coverage/
+          name: quality-evidence
+          path: |
+            reports/
+            coverage/
+            playwright-report/
+            public/quality/latest.json
           if-no-files-found: ignore
           retention-days: 14
       - name: Upload production bundle
@@ -40,27 +47,3 @@ jobs:
           name: production-bundle
           path: dist/
           retention-days: 7
-
-  e2e:
-    name: Keyboard critical path
-    needs: quality
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20.19.0
-          cache: npm
-      - run: npm ci
-      - run: npx playwright install --with-deps chromium
-      - run: npm run build
-      - run: npm run test:e2e
-      - name: Upload Playwright evidence
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: playwright-report
-          path: playwright-report/
-          if-no-files-found: ignore
-          retention-days: 14

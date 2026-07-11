@@ -29,7 +29,11 @@ Dependencies point inward:
 3. **Infrastructure** implements application ports and validates external data.
 4. **Presentation** invokes use cases and renders application view models. It contains no risk math, plan validation, or network calls.
 
-ESLint, TypeScript project references, review guidance, and tests reinforce the rule. A future dependency-cruiser check is documented rather than adding a large dependency for this small graph.
+ESLint, TypeScript project references, review guidance, and tests reinforce the rule. The home decision path is eager to prevent layout shift; evidence routes and the live Gemini adapter are dynamically imported. Replay mode therefore does not need to execute the live provider boundary.
+
+## Visible evaluation architecture
+
+The product exposes architecture and operational evidence through `/architecture`, `/quality`, `/security`, `/testing`, `/accessibility`, and `/challenge-alignment`. Quality statistics are generated from machine-readable reports by `scripts/generate-quality-report.mjs`; React does not contain manually entered test, coverage, bundle, audit, or Lighthouse values.
 
 ## Runtime sequence
 
