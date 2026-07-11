@@ -158,13 +158,11 @@ function calculateScore(
   candidate: GeneratedCandidate,
   incident: IncidentContext,
 ): number {
-  const pressureScore = Math.max(
-    0,
-    35 *
-      (1 -
-        candidate.impact.peakPressureRatio /
-          incident.constraints.maximumPressureRatio),
-  );
+  const pressureImprovement =
+    (incident.baseline.peakPressureRatio - candidate.impact.peakPressureRatio) /
+    (incident.baseline.peakPressureRatio -
+      incident.constraints.maximumPressureRatio);
+  const pressureScore = Math.max(0, Math.min(35, pressureImprovement * 35));
   const accessibilityScore = Math.min(
     25,
     (candidate.impact.accessibleRoutePercent / 100) * 25,
@@ -177,13 +175,11 @@ function calculateScore(
     10,
     (candidate.impact.instructionClarityPercent / 100) * 10,
   );
-  const latencyScore = Math.max(
-    0,
-    10 *
-      (1 -
-        candidate.impact.decisionLatencySeconds /
-          incident.constraints.maximumDecisionLatencySeconds),
-  );
+  const latencyScore =
+    candidate.impact.decisionLatencySeconds <=
+    incident.constraints.maximumDecisionLatencySeconds
+      ? 10
+      : 0;
   const carbonImprovement = Math.max(
     0,
     incident.baseline.operationalCarbonKg -
@@ -191,7 +187,7 @@ function calculateScore(
   );
   const sustainabilityScore = Math.min(
     5,
-    (carbonImprovement / incident.baseline.operationalCarbonKg) * 5,
+    (carbonImprovement / incident.baseline.operationalCarbonKg) * 20,
   );
 
   return Math.round(
