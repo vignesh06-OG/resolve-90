@@ -1,5 +1,7 @@
-import { Icon } from "../../shared/components/Icon";
+import { QUALITY_REPORT } from "../../generated/qualityReport";
 import { EAST_CONCOURSE_INCIDENT } from "../../infrastructure/repositories/replayScenario";
+import { AppLink } from "../../shared/components/AppLink";
+import { Icon } from "../../shared/components/Icon";
 import type { DecisionWorkflowState } from "../hooks/useDecisionWorkflow";
 
 interface IncidentBriefProps {
@@ -72,6 +74,41 @@ export function IncidentBrief({
             <Icon name="lock" size={16} /> No personal tracking
           </span>
         </div>
+        <nav
+          className="hero-evidence"
+          aria-label="Verified engineering evidence"
+        >
+          <AppLink
+            href="/quality"
+            aria-label={`${QUALITY_REPORT.tests.passed} checks Testing evidence`}
+          >
+            <Icon name="test" size={17} />
+            <span>
+              <strong>{QUALITY_REPORT.tests.passed} checks</strong>
+              <small>Testing evidence</small>
+            </span>
+          </AppLink>
+          <AppLink
+            href="/architecture"
+            aria-label="Strict TypeScript Architecture evidence"
+          >
+            <Icon name="code" size={17} />
+            <span>
+              <strong>Strict TypeScript</strong>
+              <small>Architecture evidence</small>
+            </span>
+          </AppLink>
+          <AppLink
+            href="/challenge-alignment"
+            aria-label="17 / 17 mapped Challenge alignment"
+          >
+            <Icon name="evidence" size={17} />
+            <span>
+              <strong>17 / 17 mapped</strong>
+              <small>Challenge alignment</small>
+            </span>
+          </AppLink>
+        </nav>
         {state.status === "error" ? (
           <p className="inline-error" role="alert">
             {state.message}

@@ -26,7 +26,7 @@ Resolve 90 follows OWASP ASVS-inspired controls for a public decision-support in
 - Request timeout and generic external error responses.
 - Rate-limit response with `Retry-After`.
 - Explicit allowed-origin check.
-- Security headers: CSP, HSTS, frame denial, nosniff, strict referrer policy, and permissions policy.
+- Security headers: CSP, HSTS, frame denial, nosniff, strict referrer policy, permissions policy, cross-origin opener/resource isolation, DNS-prefetch denial, and cross-domain policy denial.
 - React rendering without HTML injection.
 - No local storage of personal data.
 - Correlation ID returned without leaking provider internals.
@@ -35,7 +35,7 @@ Resolve 90 follows OWASP ASVS-inspired controls for a public decision-support in
 - Playwright boundary checks cover unsupported methods, malformed input, body limits, rate limiting, missing credentials, and provider unavailability.
 - `npm audit --audit-level=high` in CI.
 - Dependabot weekly dependency updates.
-- `scripts/verify-response-headers.mjs` verifies CSP, HSTS, Permissions Policy, frame protection, nosniff, and Referrer Policy against a supplied HTTPS deployment URL.
+- `scripts/verify-response-headers.mjs` verifies ten controls against a supplied HTTPS deployment URL: CSP, HSTS, Permissions Policy, frame protection, nosniff, Referrer Policy, COOP, CORP, DNS-prefetch denial, and cross-domain policy denial.
 
 ## Content Security Policy
 

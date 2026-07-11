@@ -2,21 +2,21 @@
 import type { QualityReport } from "./qualityReportTypes";
 
 export const QUALITY_REPORT: QualityReport = {
-  generatedAt: "2026-07-11T09:30:35.116Z",
-  commit: "2ebc196",
+  generatedAt: "2026-07-11T11:08:11.080Z",
+  commit: "b3a7d8d",
   tests: {
     status: "pass",
-    total: 70,
-    passed: 70,
+    total: 77,
+    passed: 77,
     failed: 0,
     vitest: {
-      files: 14,
-      total: 60,
-      passed: 60,
+      files: 15,
+      total: 66,
+      passed: 66,
     },
     playwright: {
-      total: 10,
-      passed: 10,
+      total: 11,
+      passed: 11,
       failed: 0,
     },
   },
@@ -29,9 +29,9 @@ export const QUALITY_REPORT: QualityReport = {
   },
   build: {
     status: "pass",
-    javascriptGzipBytes: 106796,
-    cssGzipBytes: 9380,
-    javascriptChunks: 12,
+    javascriptGzipBytes: 106874,
+    cssGzipBytes: 9505,
+    javascriptChunks: 11,
     largestJavaScriptGzipBytes: 59002,
   },
   security: {
@@ -54,8 +54,8 @@ export const QUALITY_REPORT: QualityReport = {
       bestPractices: 100,
       seo: 100,
       cls: 0,
-      fcpMilliseconds: 1351.8722,
-      lcpMilliseconds: 1501.8722,
+      fcpMilliseconds: 1425.5583,
+      lcpMilliseconds: 1425.5583,
       totalBlockingTimeMilliseconds: 0,
     },
   },
@@ -68,6 +68,10 @@ export const QUALITY_REPORT: QualityReport = {
     status: "configured",
     workflows: ["ci.yml", "codeql.yml"],
     remoteVerified: false,
+    repositoryUrl: null,
+    verifiedCommit: null,
+    codeql: "unverified",
+    dependabot: false,
   },
   headers: {
     status: "unverified",

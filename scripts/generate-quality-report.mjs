@@ -29,6 +29,7 @@ const [
   security,
   lighthouse,
   headers,
+  github,
 ] = await Promise.all([
   readJson("reports/vitest.json"),
   readJson("reports/playwright.json"),
@@ -37,6 +38,7 @@ const [
   readJson("reports/security-audit.json"),
   readJson("reports/lighthouse.json", false),
   readJson("reports/headers.json", false),
+  readJson("reports/github.json", false),
 ]);
 
 const vitestFiles = vitest.testResults.length;
@@ -152,7 +154,11 @@ const report = {
   ci: {
     status: workflowNames.length >= 2 ? "configured" : "missing",
     workflows: workflowNames,
-    remoteVerified: false,
+    remoteVerified: github?.status === "pass",
+    repositoryUrl: github?.repositoryUrl ?? null,
+    verifiedCommit: github?.commit ?? null,
+    codeql: github?.codeql?.conclusion ?? "unverified",
+    dependabot: github?.dependabot?.configured ?? false,
   },
   headers: headers
     ? {

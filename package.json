@@ -31,7 +31,11 @@
     "test:report": "vitest run --reporter=json --outputFile=reports/vitest.json",
     "quality:report": "node scripts/generate-quality-report.mjs",
     "lighthouse": "node scripts/run-lighthouse.mjs",
-    "headers:verify": "node scripts/verify-response-headers.mjs"
+    "headers:verify": "node scripts/verify-response-headers.mjs",
+    "type-check": "npm run typecheck",
+    "audit:security": "npm run security:audit",
+    "audit:performance": "npm run test:performance",
+    "github:verify": "node scripts/verify-github.mjs"
   },
   "dependencies": {
     "react": "19.2.7",

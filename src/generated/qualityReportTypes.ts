@@ -69,6 +69,10 @@ export interface QualityReport {
     readonly status: "configured" | "missing";
     readonly workflows: readonly string[];
     readonly remoteVerified: boolean;
+    readonly repositoryUrl: string | null;
+    readonly verifiedCommit: string | null;
+    readonly codeql: string;
+    readonly dependabot: boolean;
   };
   readonly headers: {
     readonly status: "pass" | "fail" | "unverified";

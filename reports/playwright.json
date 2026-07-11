@@ -8,7 +8,7 @@
     "configFile": "/home/user/stadium-ops/playwright.config.ts",
     "rootDir": "/home/user/stadium-ops/tests/e2e",
     "failOnFlakyTests": false,
-    "forbidOnly": true,
+    "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
     "globalTeardown": null,
@@ -24,7 +24,7 @@
       {
         "outputDir": "/home/user/stadium-ops/test-results",
         "repeatEach": 1,
-        "retries": 2,
+        "retries": 0,
         "metadata": {
           "actualWorkers": 1
         },
@@ -65,7 +65,7 @@
     "webServer": {
       "command": "npm run preview -- --host 127.0.0.1",
       "port": 4173,
-      "reuseExistingServer": false
+      "reuseExistingServer": true
     }
   },
   "suites": [
@@ -91,12 +91,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 771,
+                  "duration": 705,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-11T10:21:38.657Z",
+                  "startTime": "2026-07-11T11:08:07.474Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -125,12 +125,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 604,
+                  "duration": 641,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-11T10:21:39.596Z",
+                  "startTime": "2026-07-11T11:08:08.351Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -159,12 +159,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 420,
+                  "duration": 411,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-11T10:21:40.218Z",
+                  "startTime": "2026-07-11T11:08:09.010Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -193,12 +193,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 700,
+                  "duration": 660,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-11T10:21:40.650Z",
+                  "startTime": "2026-07-11T11:08:09.433Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -209,6 +209,40 @@
           "id": "316e4272d13ffa8f4bb0-af9691cef4ab54c589ce",
           "file": "critical-path.spec.ts",
           "line": 83,
+          "column": 1
+        },
+        {
+          "title": "robots and sitemap are served as valid evaluator surfaces",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 24,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-11T11:08:10.108Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "316e4272d13ffa8f4bb0-729a2c6233f2cfdb46cd",
+          "file": "critical-path.spec.ts",
+          "line": 98,
           "column": 1
         },
         {
@@ -227,12 +261,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 557,
+                  "duration": 500,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-11T10:21:41.362Z",
+                  "startTime": "2026-07-11T11:08:10.144Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -242,7 +276,7 @@
           ],
           "id": "316e4272d13ffa8f4bb0-435b4494ed754bfe5ac3",
           "file": "critical-path.spec.ts",
-          "line": 98,
+          "line": 112,
           "column": 1
         }
       ]
@@ -274,7 +308,7 @@
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-11T10:21:42.020Z",
+                  "startTime": "2026-07-11T11:08:10.747Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -308,7 +342,7 @@
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-11T10:21:42.036Z",
+                  "startTime": "2026-07-11T11:08:10.762Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -342,7 +376,7 @@
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-11T10:21:42.049Z",
+                  "startTime": "2026-07-11T11:08:10.774Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -376,7 +410,7 @@
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-11T10:21:42.060Z",
+                  "startTime": "2026-07-11T11:08:10.785Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -410,7 +444,7 @@
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-11T10:21:42.074Z",
+                  "startTime": "2026-07-11T11:08:10.796Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -428,9 +462,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-07-11T10:21:37.633Z",
-    "duration": 4514.726,
-    "expected": 10,
+    "startTime": "2026-07-11T11:08:06.264Z",
+    "duration": 4599.011,
+    "expected": 11,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

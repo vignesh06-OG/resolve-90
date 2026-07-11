@@ -28,6 +28,17 @@ describe("visible decision workflow", () => {
     ).toBeVisible();
     expect(screen.getByText("AI stadium incident command")).toBeVisible();
     expect(screen.getByText("Human approval required")).toBeVisible();
+    expect(
+      screen.getByRole("link", { name: /checks Testing evidence/ }),
+    ).toHaveAttribute("href", "/quality");
+    expect(
+      screen.getByRole("link", {
+        name: /Strict TypeScript Architecture evidence/,
+      }),
+    ).toHaveAttribute("href", "/architecture");
+    expect(
+      screen.getByRole("link", { name: /17 \/ 17 mapped Challenge alignment/ }),
+    ).toHaveAttribute("href", "/challenge-alignment");
   });
 
   it("surfaces reasoning, confidence, constraints, validation, and rejected alternatives", async () => {

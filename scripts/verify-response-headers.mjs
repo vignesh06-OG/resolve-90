@@ -33,6 +33,22 @@ const definitions = {
     header: "x-content-type-options",
     valid: (value) => value.toLowerCase() === "nosniff",
   },
+  crossOriginOpenerPolicy: {
+    header: "cross-origin-opener-policy",
+    valid: (value) => value.toLowerCase() === "same-origin",
+  },
+  crossOriginResourcePolicy: {
+    header: "cross-origin-resource-policy",
+    valid: (value) => value.toLowerCase() === "same-origin",
+  },
+  dnsPrefetchControl: {
+    header: "x-dns-prefetch-control",
+    valid: (value) => value.toLowerCase() === "off",
+  },
+  permittedCrossDomainPolicies: {
+    header: "x-permitted-cross-domain-policies",
+    valid: (value) => value.toLowerCase() === "none",
+  },
   referrerPolicy: {
     header: "referrer-policy",
     valid: (value) => value.toLowerCase() === "no-referrer",

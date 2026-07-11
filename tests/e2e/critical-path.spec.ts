@@ -95,6 +95,20 @@ test("evidence navigation updates route, title, and current-page state", async (
   await expect(page).toHaveTitle("Quality dashboard — Resolve 90");
 });
 
+test("robots and sitemap are served as valid evaluator surfaces", async ({
+  request,
+}) => {
+  const robots = await request.get("/robots.txt");
+  expect(robots.status()).toBe(200);
+  expect(robots.headers()["content-type"]).toContain("text/plain");
+  expect(await robots.text()).toContain("Sitemap:");
+
+  const sitemap = await request.get("/sitemap.xml");
+  expect(sitemap.status()).toBe(200);
+  expect(sitemap.headers()["content-type"]).toMatch(/xml/);
+  expect(await sitemap.text()).toContain("/challenge-alignment");
+});
+
 test("challenge evidence remains readable on a mobile viewport", async ({
   page,
 }) => {

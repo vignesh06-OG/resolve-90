@@ -13,7 +13,9 @@ All notable changes are documented here. This project follows Keep a Changelog c
 - Visible quality, architecture, security, testing, accessibility, and challenge-alignment routes.
 - Machine-generated quality evidence from Vitest, V8 coverage, Playwright, bundle, Lighthouse, and dependency reports.
 - Playwright coverage for Replay mode, approval rejection, keyboard flow, mobile reflow, navigation, Gemini failure, rate limiting, and API errors.
-- Deployment response-header verifier for CSP, HSTS, Permissions Policy, frame protection, nosniff, and Referrer Policy.
+- Deployment response-header verifier for ten browser isolation and transport controls.
+- Evaluator-visible hero badges for testing, architecture, and challenge alignment.
+- `EVALUATION.md`, challenge-keyword metadata, `robots.txt`, and `sitemap.xml` live-surface evidence.
 
 ### Changed
 

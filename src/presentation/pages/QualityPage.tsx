@@ -100,7 +100,11 @@ export default function QualityPage(): React.JSX.Element {
           <QualityCard
             title="CI"
             metric={`${quality.ci.workflows.length} workflows`}
-            detail={`${quality.ci.workflows.join(" + ")} · remote ${quality.ci.remoteVerified ? "verified" : "not verified"}`}
+            detail={
+              quality.ci.remoteVerified
+                ? `Remote ${quality.ci.verifiedCommit?.slice(0, 7) ?? "commit"} · CodeQL ${quality.ci.codeql} · Dependabot ${quality.ci.dependabot ? "configured" : "missing"}`
+                : `${quality.ci.workflows.join(" + ")} · remote not verified`
+            }
             status={quality.ci.remoteVerified ? "pass" : "warn"}
             label={quality.ci.status}
             icon="code"

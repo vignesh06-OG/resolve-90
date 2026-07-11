@@ -89,6 +89,58 @@
     color: var(--mint);
   }
 
+  .hero-evidence {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-top: 1.1rem;
+  }
+
+  .hero-evidence a {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.55rem 0.7rem;
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius-sm);
+    background: rgb(13 36 37 / 68%);
+    color: var(--muted-strong);
+    text-decoration: none;
+    transition:
+      border-color 160ms ease,
+      background-color 160ms ease,
+      transform 160ms ease;
+  }
+
+  .hero-evidence a:hover {
+    border-color: rgb(115 228 185 / 38%);
+    background: var(--surface-2);
+    color: var(--ink);
+    transform: translateY(-1px);
+  }
+
+  .hero-evidence a > .icon {
+    color: var(--mint);
+  }
+
+  .hero-evidence strong,
+  .hero-evidence small {
+    display: block;
+    line-height: 1.2;
+  }
+
+  .hero-evidence strong {
+    color: var(--ink);
+    font-size: 0.72rem;
+  }
+
+  .hero-evidence small {
+    margin-top: 0.15rem;
+    color: var(--muted);
+    font-size: 0.59rem;
+  }
+
   .inline-error {
     max-width: 600px;
     margin-top: 1rem;
@@ -1420,6 +1472,15 @@
   }
 
   .incident-hero__actions .button {
+    width: 100%;
+  }
+
+  .hero-evidence {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-evidence a {
     width: 100%;
   }
 

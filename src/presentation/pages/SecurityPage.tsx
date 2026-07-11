@@ -181,7 +181,7 @@ export default function SecurityPage(): React.JSX.Element {
             </span>
           </div>
           <p className="evidence-card__metric">
-            {passedHeaders} / 6 <small>deployed header checks</small>
+            {passedHeaders} / 10 <small>deployed header checks</small>
           </p>
           <h3>Browser hardening</h3>
           <p>

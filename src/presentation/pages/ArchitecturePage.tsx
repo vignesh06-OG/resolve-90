@@ -6,28 +6,28 @@ import { Icon } from "../../shared/components/Icon";
 const layers = [
   {
     number: "01",
-    title: "Presentation",
+    title: "Presentation Layer",
     description:
       "Accessible React renders state and invokes use cases. No risk math, validation, or fetch calls.",
     modules: ["pages + components", "workflow hook", "lazy route shell"],
   },
   {
     number: "02",
-    title: "Application",
+    title: "Application Layer",
     description:
       "Use cases orchestrate incident retrieval, generation, guardrails, approval, and audit ports.",
     modules: ["CompileIncident", "ApproveDecision", "typed ports"],
   },
   {
     number: "03",
-    title: "Domain safety kernel",
+    title: "Domain Layer · safety kernel",
     description:
       "Pure rules rank plans and veto unsafe, inaccessible, ungrounded, or incomplete output.",
     modules: ["evaluateCandidate", "selectDecision", "approveDecision"],
   },
   {
     number: "04",
-    title: "Infrastructure adapters",
+    title: "Infrastructure Layer · adapters",
     description:
       "Replay, Gemini gateway, repositories, clocks, and audit implementations plug into ports.",
     modules: ["Gemini / Replay", "Zod schemas", "server gateway"],
@@ -117,8 +117,10 @@ export default function ArchitecturePage(): React.JSX.Element {
       <section className="content-section" aria-labelledby="rules-title">
         <div className="section-intro">
           <div>
-            <p className="section-kicker">Enforced architecture rules</p>
-            <h2 id="rules-title">What cannot leak across a boundary</h2>
+            <p className="section-kicker">SOLID principles · enforced rules</p>
+            <h2 id="rules-title">
+              Single responsibility. Dependency inversion. Explicit boundaries.
+            </h2>
           </div>
         </div>
         <div className="boundary-rules">
