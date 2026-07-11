@@ -3,7 +3,7 @@ import { createCompileIncident } from "../application/use-cases/compileIncident"
 import type { ApproveCompiledDecision } from "../application/use-cases/approveCompiledDecision";
 import type { CompileIncident } from "../application/use-cases/compileIncident";
 import type { GenerationMode } from "../domain/entities/decision";
-import { GatewayDecisionProvider } from "./ai/GatewayDecisionProvider";
+import { LazyGatewayDecisionProvider } from "./ai/LazyGatewayDecisionProvider";
 import { ReplayDecisionProvider } from "./ai/ReplayDecisionProvider";
 import { InMemoryAuditPort } from "./repositories/InMemoryAuditPort";
 import { ReplayIncidentRepository } from "./repositories/ReplayIncidentRepository";
@@ -31,7 +31,7 @@ export function createApplicationServices(
   const incidents = new ReplayIncidentRepository();
   const provider =
     configuration.mode === "live"
-      ? new GatewayDecisionProvider(configuration.apiUrl)
+      ? new LazyGatewayDecisionProvider(configuration.apiUrl)
       : new ReplayDecisionProvider();
 
   return {

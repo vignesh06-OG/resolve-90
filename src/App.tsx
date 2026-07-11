@@ -1,8 +1,10 @@
+import { ErrorBoundary } from "./presentation/components/ErrorBoundary";
+import { AppRouter } from "./presentation/routes/AppRouter";
+
 export function App(): React.JSX.Element {
   return (
-    <main>
-      <h1>Resolve 90</h1>
-      <p>Stadium decision compiler</p>
-    </main>
+    <ErrorBoundary>
+      <AppRouter />
+    </ErrorBoundary>
   );
 }

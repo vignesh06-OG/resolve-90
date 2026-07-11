@@ -9,7 +9,7 @@ import { InMemoryAuditPort } from "../../src/infrastructure/repositories/InMemor
 import { ReplayIncidentRepository } from "../../src/infrastructure/repositories/ReplayIncidentRepository";
 import { EAST_CONCOURSE_INCIDENT } from "../../src/infrastructure/repositories/replayScenario";
 import { failure, success } from "../../src/shared/types/result";
-import { buildCandidate } from "../fixtures/builders";
+import { buildCandidate, buildCompiledDecision } from "../fixtures/builders";
 
 const clock = { now: () => "2026-06-19T18:42:36.000Z" };
 const ids = {
@@ -155,5 +155,44 @@ describe("decision workflow", () => {
     expect(approved.ok).toBe(true);
     expect(audit.events).toHaveLength(1);
     expect(audit.events[0]?.decisionId).toBe(compiled.value.id);
+  });
+
+  it("keeps acknowledgement failures out of the audit log", async () => {
+    const audit = new InMemoryAuditPort();
+    const approve = createApproveCompiledDecision({ audit, clock, ids });
+
+    const result = await approve.execute(buildCompiledDecision(), {
+      understandsModeledImpact: true,
+      reviewedAccessibility: false,
+    });
+
+    expect(result).toMatchObject({
+      ok: false,
+      error: { code: "ACKNOWLEDGEMENT_REQUIRED" },
+    });
+    expect(audit.events).toHaveLength(0);
+  });
+
+  it("does not report approval when audit persistence fails", async () => {
+    const audit = {
+      append: () =>
+        Promise.resolve(
+          failure({
+            code: "AUDIT_UNAVAILABLE" as const,
+            message: "Audit store unavailable.",
+          }),
+        ),
+    };
+    const approve = createApproveCompiledDecision({ audit, clock, ids });
+
+    const result = await approve.execute(buildCompiledDecision(), {
+      understandsModeledImpact: true,
+      reviewedAccessibility: true,
+    });
+
+    expect(result).toMatchObject({
+      ok: false,
+      error: { code: "AUDIT_FAILURE" },
+    });
   });
 });
