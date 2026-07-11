@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-11T08:44:12.978Z",
+  "generatedAt": "2026-07-11T08:47:13.943Z",
   "passed": true,
   "failures": [],
   "totals": {
-    "javascriptGzipBytes": 106610,
+    "javascriptGzipBytes": 106597,
     "cssGzipBytes": 8776,
     "javascriptChunks": 12,
     "largestJavaScriptGzipBytes": 59002
@@ -16,19 +16,19 @@
   },
   "assets": [
     {
-      "name": "AccessibilityPage-DOuIUbvE.js",
+      "name": "AccessibilityPage-CW6qtuNW.js",
       "type": "js",
-      "gzipBytes": 2362
+      "gzipBytes": 2361
     },
     {
-      "name": "ArchitecturePage-FQ4kG2se.js",
+      "name": "ArchitecturePage-BF_uoXzX.js",
       "type": "js",
-      "gzipBytes": 2049
+      "gzipBytes": 2048
     },
     {
-      "name": "ChallengeAlignmentPage-iJG6Dna5.js",
+      "name": "ChallengeAlignmentPage-BGjYJ5A_.js",
       "type": "js",
-      "gzipBytes": 2791
+      "gzipBytes": 2792
     },
     {
       "name": "EvidencePageHeader-BEByN45T.js",
@@ -41,24 +41,24 @@
       "gzipBytes": 2049
     },
     {
-      "name": "GatewayDecisionProvider-1RrDVC1O.js",
+      "name": "GatewayDecisionProvider-CtQv6cM3.js",
       "type": "js",
-      "gzipBytes": 1479
+      "gzipBytes": 1475
     },
     {
-      "name": "QualityPage-CzYOn9wV.js",
+      "name": "QualityPage-lTTb6j1a.js",
       "type": "js",
-      "gzipBytes": 1831
+      "gzipBytes": 1826
     },
     {
-      "name": "SecurityPage-BJtjsAYi.js",
+      "name": "SecurityPage-DmtKvNwy.js",
       "type": "js",
-      "gzipBytes": 2583
+      "gzipBytes": 2581
     },
     {
-      "name": "TestingPage-CxX4Dj5l.js",
+      "name": "TestingPage-9L32evVZ.js",
       "type": "js",
-      "gzipBytes": 1812
+      "gzipBytes": 1810
     },
     {
       "name": "index-CsnXXnWZ.css",
@@ -66,14 +66,14 @@
       "gzipBytes": 6727
     },
     {
-      "name": "index-DW3uFAqx.js",
+      "name": "index-CteGX-Th.js",
       "type": "js",
-      "gzipBytes": 14502
+      "gzipBytes": 14501
     },
     {
-      "name": "qualityReport-CkVW4xDg.js",
+      "name": "qualityReport-DZKtSEaC.js",
       "type": "js",
-      "gzipBytes": 564
+      "gzipBytes": 566
     },
     {
       "name": "react-DieaS26h.js",

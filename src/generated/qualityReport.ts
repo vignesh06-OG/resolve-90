@@ -2,8 +2,8 @@
 import type { QualityReport } from "./qualityReportTypes";
 
 export const QUALITY_REPORT: QualityReport = {
-  generatedAt: "2026-07-11T08:45:43.108Z",
-  commit: "2c9df8a",
+  generatedAt: "2026-07-11T08:47:32.525Z",
+  commit: "48f7486",
   tests: {
     status: "pass",
     total: 70,
@@ -29,7 +29,7 @@ export const QUALITY_REPORT: QualityReport = {
   },
   build: {
     status: "pass",
-    javascriptGzipBytes: 106610,
+    javascriptGzipBytes: 106597,
     cssGzipBytes: 8776,
     javascriptChunks: 12,
     largestJavaScriptGzipBytes: 59002,
@@ -54,8 +54,8 @@ export const QUALITY_REPORT: QualityReport = {
       bestPractices: 100,
       seo: 100,
       cls: 0,
-      fcpMilliseconds: 1440.0888,
-      lcpMilliseconds: 1440.0888,
+      fcpMilliseconds: 1408.1795,
+      lcpMilliseconds: 1408.1795,
       totalBlockingTimeMilliseconds: 0,
     },
   },
