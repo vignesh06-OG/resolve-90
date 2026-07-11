@@ -2,8 +2,8 @@
 import type { QualityReport } from "./qualityReportTypes";
 
 export const QUALITY_REPORT: QualityReport = {
-  generatedAt: "2026-07-11T11:08:11.080Z",
-  commit: "b3a7d8d",
+  generatedAt: "2026-07-11T11:33:01.393Z",
+  commit: "4b6bfae",
   tests: {
     status: "pass",
     total: 77,
@@ -29,7 +29,7 @@ export const QUALITY_REPORT: QualityReport = {
   },
   build: {
     status: "pass",
-    javascriptGzipBytes: 106874,
+    javascriptGzipBytes: 106868,
     cssGzipBytes: 9505,
     javascriptChunks: 11,
     largestJavaScriptGzipBytes: 59002,
@@ -67,11 +67,11 @@ export const QUALITY_REPORT: QualityReport = {
   ci: {
     status: "configured",
     workflows: ["ci.yml", "codeql.yml"],
-    remoteVerified: false,
-    repositoryUrl: null,
-    verifiedCommit: null,
-    codeql: "unverified",
-    dependabot: false,
+    remoteVerified: true,
+    repositoryUrl: "https://github.com/vignesh06-OG/resolve-90",
+    verifiedCommit: "4b6bfae42ebb2690ec422bb7cf7d562605be7b36",
+    codeql: "success",
+    dependabot: true,
   },
   headers: {
     status: "unverified",
